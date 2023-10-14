@@ -9,19 +9,19 @@
         </p>
         <div class="flex gap-4 mt-10">
           <a href="https://github.com/Mare02" target="_blank" class="w-8">
-            <img src="../assets/images/socials/github-mark.png" alt="">
+            <img src="~/assets/images/socials/github-mark.png" alt="">
           </a>
           <a href="https://www.linkedin.com/in/marko-obradovi%C4%87-18b252257/" target="_blank" class="w-8">
-            <img src="../assets/images/socials/In-Blue-48.png" alt="">
+            <img src="~/assets/images/socials/In-Blue-48.png" alt="">
           </a>
         </div>
       </div>
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .hero-background {
-  background-image: url(../assets/images/hero-background.jpg);
+  background-image: url(~/assets/images/hero-background.jpg);
   background-position: top;
   background-size: cover;
 }
