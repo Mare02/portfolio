@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <Navbar />
+  <NuxtLayout>
     <LandingHero />
-  </div>
+  </NuxtLayout>
 </template>
