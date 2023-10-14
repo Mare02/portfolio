@@ -1,5 +1,5 @@
 <template>
   <NuxtLayout>
-    <LandingHero />
+    <NuxtPage></NuxtPage>
   </NuxtLayout>
 </template>
