@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Yanone+Kaffeesatz&display=swap');
+
 div.hero-background {
   background-image: url(../images/hero-background.jpg);
   background-position: top;

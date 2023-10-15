@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col justify-center">
     <div class="flex items-center gap-10 md:gap-20 mb-10 md:mb-36">
-      <h2 class="text-4xl md:text-5xl font-semibold min-w-max text-gray-900">{{$t('About me')}}</h2>
+      <h2 class="text-3xl md:text-5xl font-semibold min-w-max text-gray-900">{{$t('About me')}}</h2>
       <div class="w-full h-1 bg-gray-200"></div>
     </div>
     <div class="grid grid-cols-12">

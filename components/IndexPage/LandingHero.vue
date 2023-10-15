@@ -7,9 +7,6 @@
           class="text-6xl sm:text-7xl 2xl:text-8xl break-words max-w-fit"
           v-html="addLineBreaks($t('LandingHero.title'))"
         ></h1>
-        <!-- <p class="text-2xl 2xl:text-3xl pt-5 text-gray-800 mb-10">
-          {{$t('LandingHero.description')}}
-        </p> -->
         <p
           class="text-2xl 2xl:text-3xl pt-5 text-gray-800 mb-10"
           v-html="replaceTextBetweenEscapeCharacters($t('LandingHero.description'), 'span', 'gradient-text')"
