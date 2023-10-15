@@ -2,27 +2,30 @@
   <div class="hero-background min-h-screen overflow-hidden grid content-center">
     <div class="container px-4 md:px-10 mx-auto">
       <div class="h-fit max-w-4xl font-semibold">
-        <span class="text-3xl 2xl:text-4xl">Hello,</span>
-        <h1 class="text-6xl sm:text-7xl 2xl:text-8xl break-words max-w-fit">I am a <br> Web Developer</h1>
-        <p class="text-2xl 2xl:text-3xl pt-5 text-gray-800">
-          I am Marko Obradović, a Web Developer. My passion lies in the art of crafting modern digital experiences that harmonize both form and function.
-        </p>
-        <div class="flex gap-4 mt-10">
-          <a href="https://github.com/Mare02" target="_blank" class="w-8">
-            <img src="~/assets/images/socials/github-mark.png" alt="">
-          </a>
-          <a href="https://www.linkedin.com/in/marko-obradovi%C4%87-18b252257/" target="_blank" class="w-8">
-            <img src="~/assets/images/socials/In-Blue-48.png" alt="">
-          </a>
-        </div>
+        <span class="text-3xl 2xl:text-4xl">{{$t('Hello')}},</span>
+        <h1
+          class="text-6xl sm:text-7xl 2xl:text-8xl break-words max-w-fit"
+          v-html="addLineBreaks($t('LandingHero.title'))"
+        ></h1>
+        <!-- <p class="text-2xl 2xl:text-3xl pt-5 text-gray-800 mb-10">
+          {{$t('LandingHero.description')}}
+        </p> -->
+        <p
+          class="text-2xl 2xl:text-3xl pt-5 text-gray-800 mb-10"
+          v-html="replaceTextBetweenEscapeCharacters($t('LandingHero.description'), 'span', 'gradient-text')"
+        ></p>
+        <Socials />
       </div>
     </div>
   </div>
 </template>
-<style scoped>
-.hero-background {
-  background-image: url(~/assets/images/hero-background.jpg);
-  background-position: top;
-  background-size: cover;
-}
-</style>
+
+<script>
+import { utilsMixin } from '@/mixins/utilsMixin.js';
+import Socials from '../MainElements/Socials.vue';
+
+export default {
+  mixins: [utilsMixin],
+  components: { Socials },
+};
+</script>

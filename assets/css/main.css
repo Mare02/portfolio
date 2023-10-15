@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+div.hero-background {
+  background-image: url(../images/hero-background.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+span.gradient-text {
+  background: linear-gradient(
+    to right,
+    rgb(0, 0, 0) 20%,
+    #7953cd 40%,
+    #0190cd 60%,
+    #9e10d2 80%,
+    rgb(0, 0, 0) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 4s ease-in-out infinite alternate;
+}
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
