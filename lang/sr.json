@@ -4,10 +4,14 @@
     "title": "Ja sam \nWeb Developer",
     "description": "Ja sam Marko Obradović, Web Developer. Moja strast leži u umetnosti kreiranja savremenih \\digitalnih\\ iskustava koja usklađuju \\dizajn\\ i funkcionalnost."
   },
+  "About me": "O meni",
   "AboutMe": {
     "section1": "\\Strastveni\\ sam i ambiciozni programer koji uživa u pretvaranju redova koda u značajna rešenja.",
     "section2": "Kao entuzijasta za tehnologiju, neprestano istražujem svet \\programiranja\\ koji se neprestano razvija, i uvek sam spreman da učim i prilagođavam se.",
     "section3": "Moj \\put\\ u svet programiranja počeo je iz radoznalosti koja se brzo pretvorila u strast."
   },
-  "About me": "O meni"
+  "My skills": "Moje veštine",
+  "MySkills": {
+    "description": "Kao softverski inženjer, razvio sam različite vještine tijekom godina rada. Ovladao sam frontend i backend tehnologijama, uz korištenje raznih tehničkih alatki za izvanredno izvršavanje projekata."
+  }
 }

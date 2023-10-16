@@ -33,3 +33,10 @@ span.gradient-text {
     background-position: 100% 50%;
   }
 }
+
+.section-title {
+  @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900
+}
+.section-pharagraph {
+  @apply text-xl lg:text-2xl 2xl:text-3xl font-semibold text-gray-800 lg:leading-7
+}
