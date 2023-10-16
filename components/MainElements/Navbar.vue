@@ -1,7 +1,11 @@
 <template>
   <div
-    class="fixed z-10 top-0 w-full py-4 shadow transition-all duration-200"
-    :class="{'shadow-md bg-white': isScrolled}"
+    class="fixed z-10 w-full py-4 shadow-md transition-all duration-300 bg-white"
+    :class="
+      isScrolled
+      ? 'top-0'
+      : 'top-0 sm:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0'
+    "
   >
     <div class="container px-4 md:px-10 mx-auto flex justify-between">
       <div class="text-2xl font-semibold">
@@ -11,33 +15,34 @@
     </div>
   </div>
 </template>
+
 <script>
 import Socials from './Socials.vue';
 
 export default {
   mounted() {
   this.handleScroll();
-  window.addEventListener("scroll", this.requestedScroll);
-},
-
-methods: {
-  handleScroll() {
-    this.isScrolled = window.scrollY > 50;
+    window.addEventListener("scroll", this.requestedScroll);
   },
-  requestedScroll() {
-    window.requestAnimationFrame(this.handleScroll);
+
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 80;
+    },
+    requestedScroll() {
+      window.requestAnimationFrame(this.handleScroll);
+    },
   },
-},
 
-data() {
-  return {
-    isScrolled: false,
-  };
-},
+  data() {
+    return {
+      isScrolled: false,
+    };
+  },
 
-beforeDestroy() {
-  window.removeEventListener("scroll", this.requestedScroll);
-},
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.requestedScroll);
+  },
   components: { Socials },
 }
 </script>
