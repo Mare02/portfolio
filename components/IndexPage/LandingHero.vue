@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-background min-h-screen overflow-hidden grid content-center">
+  <div class="hero-background min-h-screen grid content-center">
     <div class="container px-4 md:px-10 mx-auto">
       <div class="h-fit max-w-4xl font-semibold">
         <span class="text-3xl 2xl:text-4xl">{{$t('Hello')}},</span>
