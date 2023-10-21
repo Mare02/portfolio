@@ -12,17 +12,17 @@
           >
         </div>
       </div>
-      <div class="mt-10 md:mt-20 flex flex-col sm:flex-row justify-evenly gap-5 md:gap-10 mx-auto">
+      <div class="mt-10 md:mt-20 flex flex-col md:flex-row justify-evenly gap-5 md:gap-10 mx-auto">
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full"
+          class="flex flex-col w-full p-4 bg-gray-100 rounded-2xl"
         >
           <div class="flex items-center gap-5 mb-5">
-            <span class="capitalize font-bold text-2xl md:text-3xl underline">{{ categoryName }}</span>
+            <span class="capitalize font-bold text-xl lg:text-2xl underline">{{ categoryName }}</span>
             <div class="w-full h-0.5 bg-gray-200"></div>
           </div>
-          <ul class="text-gray-800 text-xl md:text-2xl font-semibold list-inside list-disc">
+          <ul class="text-gray-800 text-xl lg:text-2xl font-semibold list-inside list-disc">
             <li v-for="skill in category" :key="skill.name">
               {{ skill.name }}
             </li>
@@ -64,8 +64,12 @@ export default {
             iconName: 'vue.png',
           },
           {
-            name: 'Nuxt 3',
+            name: 'Nuxt',
             iconName: 'Nuxt3.png',
+          },
+          {
+            name: 'Responsive design',
+            iconName: undefined,
           },
         ],
         backend: [
@@ -73,11 +77,23 @@ export default {
             name: 'MySQL',
             iconName: 'mysql.png',
           },
+          {
+            name: 'RESTful API',
+            iconName: undefined,
+          },
         ],
         other: [
           {
+            name: 'Git',
+            iconName: 'git.png',
+          },
+          {
             name: 'SourceTree',
-            iconName: 'sourcetree.png',
+            iconName: undefined,
+          },
+          {
+            name: 'Unix',
+            iconName: undefined,
           },
         ],
       },
@@ -89,7 +105,7 @@ export default {
         ...this.skills.frontend,
         ...this.skills.backend,
         ...this.skills.other
-      ];
+      ].filter(skill => skill.iconName);
     },
   },
 }

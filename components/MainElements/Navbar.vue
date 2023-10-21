@@ -3,12 +3,12 @@
     class="fixed z-10 w-full py-4 shadow-md transition-all duration-300 bg-white"
     :class="
       isScrolled
-      ? 'top-0'
-      : 'top-0 sm:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0'
+        ? 'top-0'
+        : 'top-0 sm:top-6 2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0'
     "
   >
     <div class="container px-4 md:px-10 mx-auto flex justify-between">
-      <div class="text-2xl font-semibold">
+      <div class="text-xl 2xl:text-2xl font-semibold">
         &#60;Marko Obradović /&#62;
       </div>
       <Socials />
