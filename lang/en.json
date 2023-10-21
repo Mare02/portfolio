@@ -12,6 +12,9 @@
   },
   "My skills": "My skills",
   "MySkills": {
-    "description": "As a software engineer, I've developed various skills over the years. I've become proficient in both frontend and backend technologies, using various technical tools to excel in project execution."
-  }
+    "description": "As a developer with a year of professional experience, I'm on a continuous learning journey. I've had a taste of both frontend and backend technologies, and I'm always on the lookout for new technical tools to enhance my work."
+  },
+  "frontend": "Frontend",
+  "backend": "Backend",
+  "additional": "Additional"
 }

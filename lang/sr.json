@@ -12,6 +12,9 @@
   },
   "My skills": "Moje veštine",
   "MySkills": {
-    "description": "Kao softverski inženjer, razvio sam različite vještine tijekom godina rada. Ovladao sam frontend i backend tehnologijama, uz korištenje raznih tehničkih alatki za izvanredno izvršavanje projekata."
-  }
+    "description": "Kao programer sa godinu dana iskustva, neprestano učim i istražujem. Imam iskustva sa frontend i backend tehnologijama i uvek tragam za novim kako bih unapredio svoj rad."
+  },
+  "frontend": "Frontend",
+  "backend": "Backend",
+  "additional": "Dodatno"
 }

@@ -16,13 +16,13 @@
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full p-4 bg-gray-100 rounded-2xl section-pharagraph"
+          class="flex flex-col w-full p-6 bg-gray-100 rounded-2xl section-pharagraph"
         >
           <div class="flex items-center gap-5 mb-5">
-            <span class="capitalize font-bold underline">{{ categoryName }}</span>
-            <div class="w-full h-0.5 bg-gray-200"></div>
+            <span class="capitalize font-bold underline">{{ $t(categoryName) }}</span>
+            <div class="w-full h-0.5 bg-gray-300"></div>
           </div>
-          <ul class="text-gray-800 font-semibold list-inside list-disc">
+          <ul class="text-gray-800">
             <li v-for="skill in category" :key="skill.name">
               {{ skill.name }}
             </li>
@@ -78,7 +78,7 @@ export default {
             iconName: undefined,
           },
         ],
-        other: [
+        additional: [
           {
             name: 'Git',
             iconName: 'git.png',
@@ -100,7 +100,7 @@ export default {
       return [
         ...this.skills.frontend,
         ...this.skills.backend,
-        ...this.skills.other
+        ...this.skills.additional
       ].filter(skill => skill.iconName);
     },
   },
