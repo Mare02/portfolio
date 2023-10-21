@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed z-10 w-full py-4 shadow-md transition-all duration-300 bg-white"
+    class="fixed z-50 w-full py-4 shadow-md transition-all duration-300 bg-white"
     :class="
       isScrolled
         ? 'top-0'
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Socials from './Socials.vue';
+import Socials from '@/components/MainElements/Socials.vue';
 
 export default {
   mounted() {

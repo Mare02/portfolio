@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { utilsMixin } from '@/mixins/utilsMixin.js';
+import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
 
 export default {
   mixins: [ utilsMixin ],

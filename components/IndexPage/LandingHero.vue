@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import { utilsMixin } from '@/mixins/utilsMixin.js';
-import Socials from '../MainElements/Socials.vue';
+import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
+import Socials from '@/components/MainElements/Socials.vue';
 
 export default {
   mixins: [utilsMixin],

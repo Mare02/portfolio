@@ -1,0 +1,57 @@
+[
+  {
+    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "title": {
+      "en": "Project Kickoff",
+      "sr": "Srpski title"
+    },
+    "description": {
+      "en": "Our team gathered to kick off an exciting new project.",
+      "sr": "Srpski bate"
+    }
+  },
+  {
+    "date": "Nov 5, 2023 - Dec 15, 2023",
+    "title": {
+      "en": "Milestone Achieved",
+      "sr": "Srpski title"
+    },
+    "description": {
+      "en": "We reached a significant milestone in the development process, demonstrating remarkable progress and teamwork. This achievement has put us on the right track to deliver an outstanding product to our clients.",
+      "sr": "Srpski bate"
+    }
+  },
+  {
+    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "title": {
+      "en": "Team Building Workshop",
+      "sr": "Team Srpski title"
+    },
+    "description": {
+      "en": "Engaging team-building workshop.",
+      "sr": "Srpski bate"
+    }
+  },
+  {
+    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "title": {
+      "en": "Product Launch",
+      "sr": "Srpski title"
+    },
+    "description": {
+      "en": "A spectacular product launch event that showcased our innovative product to a wide audience.",
+      "sr": "Srpski bate"
+    }
+  },
+  {
+    "date": "Nov 5, 2023 - Dec 15, 2023",
+    "title": {
+      "en": "Customer Feedback Session",
+      "sr": "Customer Srpski title"
+    },
+    "description": {
+      "en": "Interactive session with customers to gather valuable feedback and insights. The feedback will be used to enhance our product and services, ensuring customer satisfaction and loyalty.",
+      "sr": "Srpski bate"
+    }
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "frontend": [
+    {
+      "name": "JavaScript",
+      "iconName": "JavaScript.png"
+    },
+    {
+      "name": "HTML",
+      "iconName": "html5.png"
+    },
+    {
+      "name": "CSS",
+      "iconName": "css3.png"
+    },
+    {
+      "name": "SASS",
+      "iconName": "sass.png"
+    },
+    {
+      "name": "Tailwind",
+      "iconName": "tailwind.png"
+    },
+    {
+      "name": "Vue",
+      "iconName": "vue.png"
+    },
+    {
+      "name": "Nuxt",
+      "iconName": "Nuxt3.png"
+    }
+  ],
+  "backend": [
+    {
+      "name": "MySQL",
+      "iconName": "mysql.png"
+    },
+    {
+      "name": "RESTful API",
+      "iconName": null
+    }
+  ],
+  "additional": [
+    {
+      "name": "Git",
+      "iconName": "git.png"
+    },
+    {
+      "name": "SourceTree",
+      "iconName": null
+    },
+    {
+      "name": "Unix",
+      "iconName": null
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     <div>
       <p class="section-pharagraph">{{ $t('MySkills.description') }}</p>
       <div class="mt-10 md:mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
-        <div v-for="skill in allSkills" :key="skill.name" class="w-auto h-10 lg:h-12 2xl:h-14">
+        <div v-for="skill in skillsWithIcons" :key="skill.name" class="w-auto h-10 lg:h-12 2xl:h-14">
           <img
             class="h-full w-full object-cover"
             :src="`/techLogos/${skill.iconName}`"
@@ -34,69 +34,14 @@
 </template>
 
 <script>
+import mySkills from '@/utils/data/mySkills.json';
+
 export default {
-  data() {
-    return {
-      skills: {
-        frontend: [
-          {
-            name: 'JavaScript',
-            iconName: 'JavaScript.png',
-          },
-          {
-            name: 'HTML',
-            iconName: 'html5.png',
-          },
-          {
-            name: 'CSS',
-            iconName: 'css3.png',
-          },
-          {
-            name: 'SASS',
-            iconName: 'sass.png',
-          },
-          {
-            name: 'Tailwind',
-            iconName: 'tailwind.png',
-          },
-          {
-            name: 'Vue',
-            iconName: 'vue.png',
-          },
-          {
-            name: 'Nuxt',
-            iconName: 'Nuxt3.png',
-          },
-        ],
-        backend: [
-          {
-            name: 'MySQL',
-            iconName: 'mysql.png',
-          },
-          {
-            name: 'RESTful API',
-            iconName: undefined,
-          },
-        ],
-        additional: [
-          {
-            name: 'Git',
-            iconName: 'git.png',
-          },
-          {
-            name: 'SourceTree',
-            iconName: undefined,
-          },
-          {
-            name: 'Unix',
-            iconName: undefined,
-          },
-        ],
-      },
-    }
-  },
   computed: {
-    allSkills() {
+    skills() {
+      return mySkills;
+    },
+    skillsWithIcons() {
       return [
         ...this.skills.frontend,
         ...this.skills.backend,
