@@ -11,7 +11,7 @@ div.hero-background {
   background-size: cover;
 }
 
-span.gradient-text {
+.gradient-text {
   background: linear-gradient(
     to right,
     rgb(0, 0, 0) 20%,
