@@ -2,8 +2,8 @@
   <NuxtLayout name="full-screen-section" :title="$t('My skills')">
     <div>
       <p class="section-pharagraph">{{ $t('MySkills.description') }}</p>
-      <div class="mt-10 md:mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-16">
-        <div v-for="skill in allSkills" :key="skill.name" class="w-auto h-10 lg:h-12">
+      <div class="mt-10 md:mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
+        <div v-for="skill in allSkills" :key="skill.name" class="w-auto h-10 lg:h-12 2xl:h-14">
           <img
             class="h-full w-full object-cover"
             :src="`/techLogos/${skill.iconName}`"
@@ -12,17 +12,17 @@
           >
         </div>
       </div>
-      <div class="mt-10 md:mt-20 flex flex-col md:flex-row justify-evenly gap-5 md:gap-10 mx-auto">
+      <div class="mt-10 md:mt-20 flex flex-col md:flex-row justify-evenly gap-5 md:gap-10 xl:gap-20 mx-auto">
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full p-4 bg-gray-100 rounded-2xl"
+          class="flex flex-col w-full p-4 bg-gray-100 rounded-2xl section-pharagraph"
         >
           <div class="flex items-center gap-5 mb-5">
-            <span class="capitalize font-bold text-xl lg:text-2xl underline">{{ categoryName }}</span>
+            <span class="capitalize font-bold underline">{{ categoryName }}</span>
             <div class="w-full h-0.5 bg-gray-200"></div>
           </div>
-          <ul class="text-gray-800 text-xl lg:text-2xl font-semibold list-inside list-disc">
+          <ul class="text-gray-800 font-semibold list-inside list-disc">
             <li v-for="skill in category" :key="skill.name">
               {{ skill.name }}
             </li>
@@ -66,10 +66,6 @@ export default {
           {
             name: 'Nuxt',
             iconName: 'Nuxt3.png',
-          },
-          {
-            name: 'Responsive design',
-            iconName: undefined,
           },
         ],
         backend: [
