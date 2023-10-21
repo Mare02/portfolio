@@ -16,7 +16,7 @@
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full p-6 bg-gray-100 rounded-2xl section-pharagraph"
+          class="flex flex-col w-full p-6 bg-gray-100 rounded-2xl shadow-md shadow-indigo-300 section-pharagraph"
         >
           <div class="flex items-center gap-5 mb-5">
             <span class="capitalize font-bold underline">{{ $t(categoryName) }}</span>
