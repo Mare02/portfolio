@@ -14,5 +14,14 @@ export const utilsMixin = {
       );
       return replacedText;
     },
+    getFormattedDate(date) {
+      if (!date) {
+        return;
+      }
+      return new Date(date).toLocaleDateString(
+        this.$i18n.locale === 'sr' ? 'sr-Latn-RS' : 'en-us',
+        { year:"numeric", month:"short", day:"numeric"}
+      );
+    },
   }
 };

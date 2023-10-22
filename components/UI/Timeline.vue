@@ -3,8 +3,8 @@
     <div class="w-1 h-full bg-gray-300 block flex-shrink-0 absolute left-[6px] top-0"></div>
     <ul class="flex flex-col gap-10 z-10">
       <li
-        v-if="events && events.length"
-        v-for="(event, index) in events"
+        v-if="computedEvents && computedEvents.length"
+        v-for="(event, index) in computedEvents"
         :key="index"
         class="flex items-start"
       >
@@ -14,9 +14,13 @@
         </div>
 
         <div class="flex flex-col border-2 border-gray-300 p-6 rounded-xl">
-          <span class="text-gray-700 text-xl">
-            {{ event.date }}
-          </span>
+          <div class="flex items-center gap-1">
+            <span>{{ event.date.from }}</span>
+            <span>-</span>
+            <span :class="{'italic': !event.date.to}">
+              {{ event.date.to ? event.date.to : $t('Present')}}
+            </span>
+          </div>
           <h3 class="font-semibold text-2xl gradient-text">
             {{ event.title }}
           </h3>
@@ -28,19 +32,35 @@
     </ul>
   </div>
 </template>
+
 <script>
-  export default {
-    props: {
-      // array of objects
-      // {
-      //   date: date,
-      //   title: title,
-      //   description: description,
-      // }
-      events: {
-        type: Array,
-        required: true,
+import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
+
+export default {
+  props: {
+    events: {
+      type: Array,
+      required: true,
+    },
+  },
+  computed: {
+    computedEvents() {
+      const eventsArr = [];
+      for (const event of this.events) {
+        eventsArr.push(
+          {
+            date: {
+              from: this.getFormattedDate(event.date.from),
+              to: this.getFormattedDate(event.date.to),
+            },
+            title: event.title,
+            description: event.description,
+          }
+        )
       }
-    }
-  }
+      return eventsArr;
+    },
+  },
+  mixins: [ utilsMixin ],
+}
 </script>

@@ -1,6 +1,9 @@
 [
   {
-    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "date": {
+      "from": "2023-11-05",
+      "to": null
+    },
     "title": {
       "en": "Project Kickoff",
       "sr": "Srpski title"
@@ -11,7 +14,10 @@
     }
   },
   {
-    "date": "Nov 5, 2023 - Dec 15, 2023",
+    "date": {
+      "from": "2023-11-05",
+      "to": "2023-12-10"
+    },
     "title": {
       "en": "Milestone Achieved",
       "sr": "Srpski title"
@@ -22,7 +28,10 @@
     }
   },
   {
-    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "date": {
+      "from": "2023-11-05",
+      "to": "2023-12-10"
+    },
     "title": {
       "en": "Team Building Workshop",
       "sr": "Team Srpski title"
@@ -33,7 +42,10 @@
     }
   },
   {
-    "date": "Nov 5, 2023 - Dec 10, 2023",
+    "date": {
+      "from": "2023-11-05",
+      "to": "2023-12-10"
+    },
     "title": {
       "en": "Product Launch",
       "sr": "Srpski title"
@@ -44,7 +56,10 @@
     }
   },
   {
-    "date": "Nov 5, 2023 - Dec 15, 2023",
+    "date": {
+      "from": "2023-11-05",
+      "to": "2023-12-10"
+    },
     "title": {
       "en": "Customer Feedback Session",
       "sr": "Customer Srpski title"
