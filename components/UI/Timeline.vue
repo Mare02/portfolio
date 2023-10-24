@@ -10,7 +10,7 @@
           class="flex items-start"
         >
           <div class="flex items-center mt-8">
-            <div class="w-4 h-4 bg-indigo-500 rounded-full"></div>
+            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
             <div class="w-5 md:w-10 h-1 bg-gray-300"></div>
           </div>
 

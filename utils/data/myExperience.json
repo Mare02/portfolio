@@ -1,6 +1,28 @@
 [
   {
     "date": {
+      "from": "November 2022",
+      "to": null
+    },
+    "title": {
+      "en": "Web Developer",
+      "sr": "Web Developer"
+    },
+    "description": {
+      "en": "Bookaweb.com is a portal that deals with advertising apartments and all accompanying content that the user (guest) can be informed and whose services can be booked. The portal is intended to promote and provide all kinds of information about various types of travel.",
+      "sr": "Bookaweb.com is a portal that deals with advertising apartments and all accompanying content that the user (guest) can be informed and whose services can be booked. The portal is intended to promote and provide all kinds of information about various types of travel."
+    },
+    "workplace": {
+      "en": "Bookaweb",
+      "sr": "Bookaweb"
+    },
+    "location": {
+      "en": "Belgrade",
+      "sr": "Beograd"
+    }
+  },
+  {
+    "date": {
       "from": "June 2022",
       "to": "November 2022"
     },
