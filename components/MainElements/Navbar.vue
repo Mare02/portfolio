@@ -21,7 +21,7 @@ import Socials from '@/components/MainElements/Socials.vue';
 
 export default {
   mounted() {
-  this.handleScroll();
+    this.handleScroll();
     window.addEventListener("scroll", this.requestedScroll);
   },
 

@@ -39,8 +39,8 @@ div.hero-background {
   @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900
 }
 .section-pharagraph {
-  @apply text-xl lg:text-2xl font-semibold text-gray-800 lg:leading-7
+  @apply text-xl lg:text-2xl 2xl:text-3xl font-semibold text-gray-800 lg:leading-7
 }
 .section-pharagraph-small {
-  @apply text-lg lg:text-xl font-semibold text-gray-800 lg:leading-7
+  @apply text-lg lg:text-xl 2xl:text-2xl font-semibold text-gray-800 lg:leading-7
 }

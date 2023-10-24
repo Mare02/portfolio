@@ -2,7 +2,7 @@
   {
     "date": {
       "from": "June 2022",
-      "to": null
+      "to": "November 2022"
     },
     "title": {
       "en": "Web Development Practice",
@@ -13,8 +13,30 @@
       "sr": "Učenje i rad na projektu u timu, organizovano od strane IT Practice Centra uz pomoć kompanije ENON Solutions. Stekao sam lepo iskustvo i naučio sam osnove o razvoju web aplikacija koristeći Vue 3, Web API (RESTful) i MySQL bazu podataka."
     },
     "workplace": {
-      "en": "IT Academy Practice Center",
-      "sr": "IT Academy Practice Center"
+      "en": "ITAcademy Practice Center",
+      "sr": "ITAcademy Practice Center"
+    },
+    "location": {
+      "en": "Belgrade",
+      "sr": "Beograd"
+    }
+  },
+  {
+    "date": {
+      "from": "November 2021",
+      "to": "September 2022"
+    },
+    "title": {
+      "en": "Microsoft Development Course",
+      "sr": "Microsoft Development Kurs"
+    },
+    "description": {
+      "en": "Completed 1-year Microsoft Development course <br> Technologies: ASP.NET, MSSQL <br> Language: C# <br> Additional: HTML, CSS, JavaScript",
+      "sr": "Completed 1-year Microsoft Development course <br> Technologies: ASP.NET, MSSQL <br> Language: C# <br> Additional: HTML, CSS, JavaScript"
+    },
+    "workplace": {
+      "en": "ITAcademy",
+      "sr": "ITAcademy"
     },
     "location": {
       "en": "Belgrade",
