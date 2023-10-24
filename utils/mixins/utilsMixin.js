@@ -20,7 +20,7 @@ export const utilsMixin = {
       }
       return new Date(date).toLocaleDateString(
         this.$i18n.locale === 'sr' ? 'sr-Latn-RS' : 'en-us',
-        { year:"numeric", month:"short", day:"numeric"}
+        { year:"numeric", month:"short" }
       );
     },
   }

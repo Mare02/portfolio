@@ -12,20 +12,16 @@ export default {
   components: { Timeline },
   computed: {
     localeEvents() {
-      const eventArr = [];
-      for (const experience of myExperience) {
-        eventArr.push(
-          {
-            date: {
-              from: experience.date.from,
-              to: experience.date.to,
-            },
-            title: experience.title[this.$i18n.locale],
-            description: experience.description[this.$i18n.locale],
-          }
-        );
-      }
-      return eventArr;
+      return myExperience.map(experience => ({
+        date: {
+          from: experience.date.from,
+          to: experience.date.to,
+        },
+        title: experience.title[this.$i18n.locale],
+        description: experience.description[this.$i18n.locale],
+        workplace: experience.workplace[this.$i18n.locale],
+        location: experience.location[this.$i18n.locale],
+      }));
     },
   }
 }

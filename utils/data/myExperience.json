@@ -1,72 +1,68 @@
 [
   {
     "date": {
-      "from": "2023-11-05",
+      "from": "June 2022",
       "to": null
     },
     "title": {
-      "en": "Project Kickoff",
-      "sr": "Srpski title"
+      "en": "Web Development Practice",
+      "sr": "Praksa Web Programiranja"
     },
     "description": {
-      "en": "Our team gathered to kick off an exciting new project.",
-      "sr": "Srpski bate"
+      "en": "Learning and work on a team project, hosted by the IT Practice Center with the help of ENON Solutions. I've had great experience and learned a lot about Web Development using Vue 3, Web APIs (RESTful) and MySQL.",
+      "sr": "Učenje i rad na projektu u timu, organizovano od strane IT Practice Centra uz pomoć kompanije ENON Solutions. Stekao sam lepo iskustvo i naučio sam osnove o razvoju web aplikacija koristeći Vue 3, Web API (RESTful) i MySQL bazu podataka."
+    },
+    "workplace": {
+      "en": "IT Academy Practice Center",
+      "sr": "IT Academy Practice Center"
+    },
+    "location": {
+      "en": "Belgrade",
+      "sr": "Beograd"
     }
   },
   {
     "date": {
-      "from": "2023-11-05",
-      "to": "2023-12-10"
+      "from": "June 2021",
+      "to": "October 2021"
     },
     "title": {
-      "en": "Milestone Achieved",
-      "sr": "Srpski title"
+      "en": "Ground Service / Baggage Handler",
+      "sr": "Zemaljska Obsluga / Utovar Bagaža"
     },
     "description": {
-      "en": "We reached a significant milestone in the development process, demonstrating remarkable progress and teamwork. This achievement has put us on the right track to deliver an outstanding product to our clients.",
-      "sr": "Srpski bate"
+      "en": "Although irrelevant to coding, here I developed work ethic and team work ability. Because of the job's 10-12h long shifts, it hardened me to work long hours which later helped me stay energetic and focused for hours while coding. I learned how important are team work and good organization.",
+      "sr": "Iako nije direktno povezano s programiranjem, ovde sam razvio radnu etiku i sposobnost timskog rada. Zbog toga što su smene na poslu trajale 10-12 sati, naučio sam da radim dugi niz sati, što mi je kasnije pomoglo da ostanem pun energije i fokusiran tokom dugih programerskih sesija. Takođe sam naučio koliko je važna saradnja u timu i dobra organizacija."
+    },
+    "workplace": {
+      "en": "Airport Nikola Tesla",
+      "sr": "Aerodrom Nikola Tesla"
+    },
+    "location": {
+      "en": "Belgrade",
+      "sr": "Beograd"
     }
   },
   {
     "date": {
-      "from": "2023-11-05",
-      "to": "2023-12-10"
+      "from": "April 2021",
+      "to": "June 2021"
     },
     "title": {
-      "en": "Team Building Workshop",
-      "sr": "Team Srpski title"
+      "en": "Internet Cafe Cashier",
+      "sr": "Internet Kafe Blagajnik"
     },
     "description": {
-      "en": "Engaging team-building workshop.",
-      "sr": "Srpski bate"
-    }
-  },
-  {
-    "date": {
-      "from": "2023-11-05",
-      "to": "2023-12-10"
+      "en": "Here I had experience dealing with different sorts of customers, both positive and negative interactions and learned to stay calm in negative and tense situations.",
+      "sr": "Ovde sam stekao iskustvo u komunikaciji s različitim vrstama klijenata, kako pozitivno tako i u negativnim interakcijama, i naučio da ostanem smiren u stresnim situacijama."
     },
-    "title": {
-      "en": "Product Launch",
-      "sr": "Srpski title"
+    "workplace": {
+      "en": "KGB eSports Internet Cafe",
+      "sr": "KGB eSports Internet Kafe "
     },
-    "description": {
-      "en": "A spectacular product launch event that showcased our innovative product to a wide audience.",
-      "sr": "Srpski bate"
-    }
-  },
-  {
-    "date": {
-      "from": "2023-11-05",
-      "to": "2023-12-10"
-    },
-    "title": {
-      "en": "Customer Feedback Session",
-      "sr": "Customer Srpski title"
-    },
-    "description": {
-      "en": "Interactive session with customers to gather valuable feedback and insights. The feedback will be used to enhance our product and services, ensuring customer satisfaction and loyalty.",
-      "sr": "Srpski bate"
+    "location": {
+      "en": "Belgrade",
+      "sr": "Beograd"
     }
   }
 ]
