@@ -2,11 +2,11 @@
   <NuxtLayout name="full-screen-section" :title="$t('About me')">
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-4 max-md:flex justify-center mb-10">
-        <div class="w-36 md:w-80 max-w-fit rounded-2xl overflow-hidden shadow-md shadow-indigo-400">
+        <div class="w-36 md:w-80 max-w-fit rounded-2xl overflow-hidden border-2 border-indigo-300" data-aos="fade-right">
           <img loading="lazy" src="~/assets/images/profile.jpeg" alt="">
         </div>
       </div>
-      <div class="col-span-12 md:col-span-7 md:col-start-6">
+      <div class="col-span-12 md:col-span-7 md:col-start-6" data-aos="fade-left">
         <p
           class="section-pharagraph"
           v-html="replaceTextBetweenEscapeCharacters(

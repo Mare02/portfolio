@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
   ],
+  plugins: [
+    { src: "@/plugins/aos.client.ts", ssr: false, mode: "client" }
+  ],
   css: ['@/assets/css/main.css'],
   postcss: {
     plugins: {

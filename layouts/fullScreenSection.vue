@@ -1,5 +1,5 @@
 <template>
-  <div class="py-20 lg:py-40 flex flex-col justify-center">
+  <div class="py-20 lg:py-32 flex flex-col justify-center" data-aos="fade-right">
     <div v-if="title" class="flex items-center gap-10 md:gap-20 mb-10 md:mb-20">
       <h2 class="section-title">{{ title }}</h2>
       <div class="w-full h-1 bg-gray-200"></div>
