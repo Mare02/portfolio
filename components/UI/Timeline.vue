@@ -1,8 +1,8 @@
 <template>
-  <div class="flex">
-    <div class="flex relative">
+  <div class="grid grid-cols-4">
+    <div class="flex relative col-span-4 lg:col-span-3">
       <div class="w-1 h-full bg-gray-300 block flex-shrink-0 absolute left-[6px] top-0"></div>
-      <ul class="flex flex-col gap-10 z-10 max-w-4xl 2xl:max-w-5xl">
+      <ul class="flex flex-col gap-10 z-10">
         <li
           v-if="computedEvents && computedEvents.length"
           v-for="(event, index) in computedEvents"
@@ -21,7 +21,7 @@
               </h3>
               <div class="flex flex-col md:flex-row md:items-center md:gap-2 section-pharagraph-small">
                 <div class="flex flex-col sm:flex-row sm:gap-2 font-medium">
-                  <span class="font-semibold text-indigo-500">{{ event.workplace }}</span>
+                  <span class="font-semibold text-blue-500">{{ event.workplace }}</span>
                   <span class="hidden md:block font-semibold">|</span>
                   <span>{{ event.location }}</span>
                 </div>
@@ -57,7 +57,7 @@
       </ul>
     </div>
 
-    <div class="min-h-full w-48 relative ml-10 hidden lg:block">
+    <div class="min-h-full relative ml-10 hidden lg:block col-span-1">
       <div class="sticky top-1/2">
         <span class="font-semibold text-4xl text-gray-400 whitespace-nowrap italic displayDate">
           {{ focusedDate }}
@@ -79,7 +79,7 @@ export default {
   },
   data() {
     return {
-      focusedDate: [],
+      focusedDate: undefined,
     }
   },
   mounted() {
@@ -126,11 +126,14 @@ export default {
     changeFocusedDate() {
       let currentDate;
       const displayDate = document.querySelector('.displayDate');
+      const displayRect = displayDate.getBoundingClientRect();
+      if (displayRect.top > window.innerHeight) {
+        return;
+      }
       let dateElements;
       dateElements = document.querySelectorAll('.event-date-mark');
       dateElements.forEach((elem) => {
         const dateRect = elem.getBoundingClientRect();
-        const displayRect = displayDate.getBoundingClientRect();
         if (dateRect.top <= displayRect.top) {
           currentDate = elem.textContent;
         }

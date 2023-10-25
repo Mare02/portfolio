@@ -10,7 +10,7 @@
     },
     "description": {
       "en": "Bookaweb.com is a portal that deals with advertising apartments and all accompanying content that the user (guest) can be informed and whose services can be booked. The portal is intended to promote and provide all kinds of information about various types of travel.",
-      "sr": "Bookaweb.com is a portal that deals with advertising apartments and all accompanying content that the user (guest) can be informed and whose services can be booked. The portal is intended to promote and provide all kinds of information about various types of travel."
+      "sr": "Bookaweb.com predstavlja portal koji se bavi oglašavanjem apartmana i svih propratnih sadržaja o kojima se korisnik (gost) može informisati i čije usluge može rezervisati. Portal je namenjen promociji i pružanju svih vrsta informacija o raznim tipovima putovanja."
     },
     "workplace": {
       "en": "Bookaweb",
@@ -35,8 +35,8 @@
       "sr": "Učenje i rad na projektu u timu, organizovano od strane IT Practice Centra uz pomoć kompanije ENON Solutions. Stekao sam lepo iskustvo i naučio sam osnove o razvoju web aplikacija koristeći Vue 3, Web API (RESTful) i MySQL bazu podataka."
     },
     "workplace": {
-      "en": "ITAcademy Practice Center",
-      "sr": "ITAcademy Practice Center"
+      "en": "ENON Solutions",
+      "sr": "ENON Solutions"
     },
     "location": {
       "en": "Belgrade",
