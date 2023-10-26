@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/i18n',
+    'nuxt-mdi',
+    '@vueuse/nuxt',
   ],
   css: ['@/assets/css/main.css'],
   postcss: {
@@ -20,13 +22,13 @@ export default defineNuxtConfig({
       {
         code: 'en',
         iso: 'en-US',
-        name: 'English(US)',
+        name: 'English',
         file: 'en.json',
       },
       {
         code: 'sr',
         iso: 'sr',
-        name: 'Serbian(Latin)',
+        name: 'Srpski',
         file: 'sr.json',
       },
     ],
