@@ -8,7 +8,10 @@
     <div class="cursor-pointer p-1">
       <MdiIcon icon="mdiWeb" size="2.2em" />
     </div>
-    <div v-if="isOpen" class="transition-all absolute right-0 w-max py-2 bg-white border border-gray-300 rounded shadow-lg">
+    <div
+      v-if="isOpen"
+      class="transition-all absolute right-0 w-max py-2 bg-white border border-gray-300 rounded shadow-lg"
+    >
       <NuxtLink
         v-for="option in locales"
         :key="option.code"

@@ -1,7 +1,7 @@
 <template>
   <div class="hero-background min-h-screen grid content-center">
     <div class="container px-4 md:px-10 mx-auto">
-      <div class="h-fit max-w-4xl font-semibold" data-aos="zoom-in">
+      <div class="h-fit max-w-4xl font-semibold">
         <span class="section-pharagraph">{{$t('Hello')}},</span>
         <h1
           class="text-6xl sm:text-7xl 2xl:text-8xl break-words max-w-fit"
