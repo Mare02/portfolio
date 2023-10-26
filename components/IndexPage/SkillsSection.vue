@@ -30,7 +30,7 @@
             <div class="w-full h-0.5 bg-gray-800"></div>
           </div>
           <ul class="text-gray-800 section-pharagraph-small">
-            <li v-for="skill in category" :key="skill.name">
+            <li v-for="(skill, index) in category" :key="index">
               {{ skill.name }}
             </li>
           </ul>
