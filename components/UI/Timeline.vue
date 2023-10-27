@@ -55,6 +55,7 @@
       </ul>
     </div>
 
+    <div class="hidden lg:block h-full relative ml-10">
       <div class="sticky top-1/2">
         <span class="font-semibold text-4xl text-gray-400 whitespace-nowrap italic displayDate">
           {{ focusedDate }}
