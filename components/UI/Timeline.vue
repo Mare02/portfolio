@@ -21,7 +21,7 @@
               </h3>
               <div class="flex flex-col md:flex-row md:items-center md:gap-2 section-pharagraph-small">
                 <div class="flex flex-col sm:flex-row sm:gap-2 font-medium">
-                  <span class="font-semibold text-blue-500">{{ event.workplace }}</span>
+                  <span class="font-semibold gradient-text">{{ event.workplace }}</span>
                   <span class="hidden md:block font-semibold">|</span>
                   <span>{{ event.location }}</span>
                 </div>
