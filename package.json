@@ -11,7 +11,6 @@
   "devDependencies": {
     "@nuxt/devtools": "^1.0.0-beta.1",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
-    "@types/aos": "^3.0.6",
     "@types/node": "^18",
     "@vueuse/nuxt": "^10.5.0",
     "autoprefixer": "^10.4.16",
@@ -19,9 +18,5 @@
     "nuxt-mdi": "^1.1.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3"
-  },
-  "dependencies": {
-    "v-click-outside": "^3.2.0",
-    "aos": "^2.3.4"
   }
 }

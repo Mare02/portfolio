@@ -9,7 +9,6 @@
             :src="`/techLogos/${skill.iconName}`"
             :alt="`${skill.name} logo`"
             loading="lazy"
-            data-aos="zoom-out"
           >
         </div>
       </div>
@@ -23,7 +22,6 @@
             'bg-orange-100': categoryName === 'backend',
             'bg-red-100': categoryName === 'additional',
           }"
-          data-aos="flip-left"
         >
           <div class="flex items-center gap-5 mb-4 md:mb-6">
             <span class="capitalize font-bold underline">{{ $t(categoryName) }}</span>

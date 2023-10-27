@@ -8,7 +8,6 @@
           v-for="(event, index) in computedEvents"
           :key="index"
           class="flex items-start"
-          data-aos="fade-right"
         >
           <div class="flex items-center mt-8">
             <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
@@ -56,7 +55,6 @@
       </ul>
     </div>
 
-    <div class="min-h-full relative ml-10 hidden lg:block col-span-1" data-aos="fade-in">
       <div class="sticky top-1/2">
         <span class="font-semibold text-4xl text-gray-400 whitespace-nowrap italic displayDate">
           {{ focusedDate }}
