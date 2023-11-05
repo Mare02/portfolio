@@ -16,7 +16,7 @@
 
           <div class="flex">
             <div class="flex flex-col border-2 border-gray-300 bg-gray-100 p-4 md:p-6 rounded-xl">
-              <h3 class="section-pharagraph underline" v-if="event.title">
+              <h3 class="section-pharagraph font-semibold underline" v-if="event.title">
                 {{ event.title }}
               </h3>
               <div class="flex flex-col md:flex-row md:items-center md:gap-2 section-pharagraph-small">

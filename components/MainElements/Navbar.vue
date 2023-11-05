@@ -8,7 +8,7 @@
     "
   >
     <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
-      <div class="text-xl 2xl:text-2xl font-semibold">
+      <div class="text-xl font-semibold">
         &#60;Marko Obradović /&#62;
       </div>
       <LocaleSwitcher />

@@ -53,56 +53,12 @@
       "sr": "Microsoft Development Kurs"
     },
     "description": {
-      "en": "Completed 1-year Microsoft Development course <br> Technologies: ASP.NET, MSSQL <br> Language: C# <br> Additional: HTML, CSS, JavaScript",
-      "sr": "Completed 1-year Microsoft Development course <br> Technologies: ASP.NET, MSSQL <br> Language: C# <br> Additional: HTML, CSS, JavaScript"
+      "en": "The beginning of my journey. Having previously worked as a baggage handler at the airport, this marked my decision to turn my dreams into goals.<br><br> <b>Completed 1-year Microsoft Development course</b> <br> Technologies: ASP.NET, MSSQL <br> Language: C# <br> Additional: HTML, CSS, JavaScript",
+      "sr": "Moj početak. Prethodno radeći kao rukovalac prtljagom na aerodromu, ovo je obeležilo moju odluku da svoje snove pretvorim u ciljeve. <br><br> <b>Završen jednogodišnji Microsoft Development kurs</b> <br> Tehnologije: .NET, ASP.NET, MSSQL <br> Jezik: C# <br> Dodatno: HTML, CSS, JavaScript"
     },
     "workplace": {
       "en": "ITAcademy",
       "sr": "ITAcademy"
-    },
-    "location": {
-      "en": "Belgrade",
-      "sr": "Beograd"
-    }
-  },
-  {
-    "date": {
-      "from": "June 2021",
-      "to": "October 2021"
-    },
-    "title": {
-      "en": "Ground Service / Baggage Handler",
-      "sr": "Zemaljska Obsluga / Utovar Bagaža"
-    },
-    "description": {
-      "en": "Although irrelevant to coding, here I developed work ethic and team work ability. Because of the job's 10-12h long shifts, it hardened me to work long hours which later helped me stay energetic and focused for hours while coding. I learned how important are team work and good organization.",
-      "sr": "Iako nije direktno povezano s programiranjem, ovde sam razvio radnu etiku i sposobnost timskog rada. Zbog toga što su smene na poslu trajale 10-12 sati, naučio sam da radim dugi niz sati, što mi je kasnije pomoglo da ostanem pun energije i fokusiran tokom dugih programerskih sesija. Takođe sam naučio koliko je važna saradnja u timu i dobra organizacija."
-    },
-    "workplace": {
-      "en": "Airport Nikola Tesla",
-      "sr": "Aerodrom Nikola Tesla"
-    },
-    "location": {
-      "en": "Belgrade",
-      "sr": "Beograd"
-    }
-  },
-  {
-    "date": {
-      "from": "April 2021",
-      "to": "June 2021"
-    },
-    "title": {
-      "en": "Internet Cafe Cashier",
-      "sr": "Internet Kafe Blagajnik"
-    },
-    "description": {
-      "en": "Here I had experience dealing with different sorts of customers, both positive and negative interactions and learned to stay calm in negative and tense situations.",
-      "sr": "Ovde sam stekao iskustvo u komunikaciji s različitim vrstama klijenata, kako pozitivno tako i u negativnim interakcijama, i naučio da ostanem smiren u stresnim situacijama."
-    },
-    "workplace": {
-      "en": "KGB eSports Internet Cafe",
-      "sr": "KGB eSports Internet Kafe "
     },
     "location": {
       "en": "Belgrade",
