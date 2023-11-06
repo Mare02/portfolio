@@ -1,12 +1,10 @@
 <template>
   <NuxtLayout name="full-screen-section" :title="$t('About me')">
-    <div class="grid grid-cols-12">
-      <div class="col-span-12 md:col-span-4 max-md:flex justify-center mb-10">
-        <div class="w-36 md:w-80 max-w-fit rounded-2xl overflow-hidden border-2 border-x-teal-600 border-y-blue-500">
-          <img loading="lazy" src="~/assets/images/profile.jpeg" alt="my profile image">
-        </div>
+    <div class="flex flex-col md:flex-row gap-10 lg:gap-20 justify-between">
+      <div class="h-fit w-fit shrink-0 max-md:mx-auto rounded-2xl overflow-hidden border-2 border-x-teal-600 border-y-blue-500">
+        <img class="w-40 md:w-60 lg:w-80" loading="lazy" src="~/assets/images/profile.jpeg" alt="my profile image">
       </div>
-      <div class="col-span-12 md:col-span-7 md:col-start-6">
+      <div class="max-w-4xl">
         <p
           class="section-pharagraph"
           v-html="replaceTextBetweenEscapeCharacters(
