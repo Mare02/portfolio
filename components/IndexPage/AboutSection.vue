@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="full-screen-section" :title="$t('About me')">
-    <div class="flex flex-col md:flex-row gap-10 lg:gap-20 justify-between">
+    <div class="flex flex-col md:flex-row gap-10 md:gap-20 justify-between">
       <div class="h-fit w-fit shrink-0 max-md:mx-auto rounded-2xl overflow-hidden border-2 border-x-teal-600 border-y-blue-500">
         <img class="w-40 md:w-60 lg:w-80" loading="lazy" src="~/assets/images/profile.jpeg" alt="my profile image">
       </div>

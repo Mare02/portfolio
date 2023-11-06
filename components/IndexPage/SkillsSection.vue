@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="full-screen-section" :title="$t('My skills')">
     <div>
-      <div class="flex flex-col items-center justify-between md:flex-row gap-10 lg:gap-20">
+      <div class="flex flex-col items-center justify-between md:flex-row gap-10 md:gap-20">
         <div class="max-md:flex justify-center shrink-0">
           <img class="w-full md:w-60 lg:w-80" loading="lazy" src="@/assets/images/guy_skills.jpeg" alt="a guy handling computers">
         </div>
