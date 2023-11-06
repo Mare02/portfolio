@@ -25,7 +25,7 @@ import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
 import Socials from '@/components/MainElements/Socials.vue';
 
 export default {
-  mixins: [utilsMixin],
+  mixins: [ utilsMixin ],
   components: { Socials },
 };
 </script>

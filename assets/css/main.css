@@ -4,13 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-div.hero-background {
-  background-image: url(../images/hero-background.avif);
-  background-position: top;
-  background-size: cover;
-}
-
 .gradient-text {
   -webkit-background-clip: text;
   background-clip: text;
