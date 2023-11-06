@@ -39,7 +39,7 @@
             <span class="capitalize font-bold">{{ $t(categoryName) }}</span>
             <div class="w-full h-0.5 bg-gray-800"></div>
           </div>
-          <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-1">
+          <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-1 gap-1">
             <span v-for="(skill, index) in category" :key="index">
               {{ skill.name }}
             </span>
