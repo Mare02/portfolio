@@ -8,7 +8,10 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  @apply from-blue-600 to-teal-600 bg-gradient-to-r
+  @apply bg-gradient-to-r from-blue-600 to-teal-700
+}
+.gradient-bg {
+  @apply bg-gradient-to-r from-blue-50 to-teal-50
 }
 
 .section-title {

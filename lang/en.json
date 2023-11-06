@@ -10,9 +10,10 @@
     "section2": "As a tech enthusiast, I'm constantly exploring the ever-evolving world of \\development\\, and I am always eager to learn and adapt.",
     "section3": "My \\journey\\ into the world of coding began with a curiosity that quickly transformed into a full-blown passion."
   },
+  "Skills": "Skills",
   "My skills": "My skills",
   "MySkills": {
-    "description": "As a developer with a year of professional experience, I'm on a continuous learning journey. I've had a taste of both frontend and backend technologies, and I'm always on the lookout for new technical tools to enhance my work."
+    "description": "As a developer with a \\year\\ of professional experience, I'm on a continuous learning journey. I've had a taste of both frontend and backend \\technologies\\, and I'm always on the lookout for new technical tools to \\enhance\\ my work."
   },
   "frontend": "Frontend",
   "backend": "Backend",
