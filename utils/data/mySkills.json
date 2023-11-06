@@ -21,6 +21,10 @@
       "iconName": "tailwind.png"
     },
     {
+      "name": "Vuetify",
+      "iconName": null
+    },
+    {
       "name": "Vue",
       "iconName": "vue.png"
     },
@@ -35,7 +39,11 @@
       "iconName": "mysql.png"
     },
     {
-      "name": "RESTful API",
+      "name": "APIs",
+      "iconName": null
+    },
+    {
+      "name": "Node.js",
       "iconName": null
     }
   ],
@@ -49,7 +57,15 @@
       "iconName": null
     },
     {
+      "name": "Terminal",
+      "iconName": null
+    },
+    {
       "name": "Unix",
+      "iconName": null
+    },
+    {
+      "name": "NPM",
       "iconName": null
     }
   ]

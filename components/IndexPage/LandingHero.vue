@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen md:bg-gray-100 grid content-center relative">
     <div class="container flex flex-col md:flex-row items-center lg:gap-10 px-4 md:px-10 mx-auto">
-      <div class="h-fit max-w-4xl font-semibold">
+      <div class="h-fit max-w-4xl font-semibold relative z-10">
         <span class="section-pharagraph">{{$t('Hello')}},</span>
         <h1
           class="text-6xl sm:text-7xl 2xl:text-8xl break-words max-w-fit gradient-text to-black"

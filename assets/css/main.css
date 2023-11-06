@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  @apply from-blue-500 to-indigo-500 bg-gradient-to-r
+  @apply from-blue-600 to-teal-600 bg-gradient-to-r
 }
 
 .section-title {

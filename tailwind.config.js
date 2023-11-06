@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif',],
+        ibmsans: ['IBM Plex', 'sans-serif',],
       },
       screens: {
         'xs': '480px',
