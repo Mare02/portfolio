@@ -130,9 +130,9 @@ function calculateEventDates(dates) {
   let end = dates.to ? new Date(dates.to) : new Date();
   let middle = new Date((start.getTime() + end.getTime()) / 2);
 
-  start = this.getFormattedDate(start);
-  end = this.getFormattedDate(end);
-  middle = this.getFormattedDate(middle);
+  start = getFormattedDate(start);
+  end = getFormattedDate(end);
+  middle = getFormattedDate(middle);
 
   return [
     end,
