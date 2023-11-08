@@ -30,10 +30,7 @@
   </NuxtLayout>
 </template>
 
-<script>
-import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
-
-export default {
-  mixins: [ utilsMixin ],
-};
+<script setup>
+import { useUtils } from '@/composables/useUtils';
+const { replaceTextBetweenEscapeCharacters } = useUtils();
 </script>

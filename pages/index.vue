@@ -8,17 +8,10 @@
     </NuxtLayout>
   </div>
 </template>
-<script>
+
+<script setup lang="ts">
 import LandingHero from '~/components/IndexPage/LandingHero.vue';
 import AboutSection from '~/components/IndexPage/AboutSection.vue';
 import SkillsSection from '~/components/IndexPage/SkillsSection.vue';
 import TimelineSection from '~/components/IndexPage/TimelineSection.vue';
-export default {
-  components: {
-    LandingHero,
-    AboutSection,
-    SkillsSection,
-    TimelineSection,
-  },
-}
 </script>

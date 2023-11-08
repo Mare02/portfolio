@@ -20,12 +20,8 @@
   </div>
 </template>
 
-<script>
-import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
+<script setup>
+import { useUtils } from '@/composables/useUtils';
+const { addLineBreaks, replaceTextBetweenEscapeCharacters } = useUtils();
 import Socials from '@/components/MainElements/Socials.vue';
-
-export default {
-  mixins: [ utilsMixin ],
-  components: { Socials },
-};
 </script>

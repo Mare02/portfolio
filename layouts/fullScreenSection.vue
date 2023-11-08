@@ -8,13 +8,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      required: false,
-    },
-  },
-}
+<script setup lang="ts">
+defineProps<{
+  title?: string
+}>()
 </script>
+

@@ -1,28 +1,24 @@
 <template>
   <NuxtLayout name="full-screen-section" :title="$t('My experience')">
-    <Timeline :events="localeEvents"></Timeline>
+    <Timeline :events="events"></Timeline>
   </NuxtLayout>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
 import Timeline from '@/components/UI/Timeline.vue';
-import myExperience from '@/utils/data/myExperience.json';
+import myExperience from '@/data/myExperience.json';
 
-export default {
-  components: { Timeline },
-  computed: {
-    localeEvents() {
-      return myExperience.map(experience => ({
-        date: {
-          from: experience.date.from,
-          to: experience.date.to,
-        },
-        title: experience.title[this.$i18n.locale],
-        description: experience.description[this.$i18n.locale],
-        workplace: experience.workplace[this.$i18n.locale],
-        location: experience.location[this.$i18n.locale],
-      }));
-    },
-  }
-}
+const events = ref(myExperience.map(experience => ({
+  date: {
+    from: experience.date.from,
+    to: experience.date.to,
+  },
+  title: experience.title[locale.value],
+  description: experience.description[locale.value],
+  workplace: experience.workplace[locale.value],
+  location: experience.location[locale.value],
+})));
 </script>

@@ -26,7 +26,7 @@
       </div>
       <div class="mt-10 md:mt-20 flex flex-col sm:flex-row justify-evenly gap-5 md:gap-10 xl:gap-20 mx-auto">
         <div
-          v-for="(category, categoryName) in skills"
+          v-for="(category, categoryName) in allSkills"
           :key="category"
           class="flex flex-col w-full p-4 md:p-6 rounded-2xl section-pharagraph"
           :class="{
@@ -50,30 +50,21 @@
   </NuxtLayout>
 </template>
 
-<script>
-import mySkills from '@/utils/data/mySkills.json';
-import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
+<script setup>
+import { computed } from 'vue';
+import { useUtils } from '@/composables/useUtils';
+const { replaceTextBetweenEscapeCharacters } = useUtils();
+import mySkills from '@/data/mySkills.json';
 
-export default {
-  computed: {
-    skills() {
-      return mySkills;
-    },
-    skillsWithIcons() {
-      return [
-        ...this.skills.frontend,
-        ...this.skills.backend,
-        ...this.skills.additional
-      ].filter(skill => skill.iconName);
-    },
-    allSkills() {
-      return [
-        ...this.skills.frontend,
-        ...this.skills.backend,
-        ...this.skills.additional
-      ];
-    },
-  },
-  mixins: [ utilsMixin ],
-}
+const skillsWithIcons = computed(() => {
+  return [
+    ...mySkills.frontend,
+    ...mySkills.backend,
+    ...mySkills.additional
+  ].filter(skill => skill.iconName);
+});
+
+const allSkills = computed(() => {
+  return mySkills;
+});
 </script>

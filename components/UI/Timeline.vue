@@ -65,83 +65,79 @@
   </div>
 </template>
 
-<script>
-import { utilsMixin } from '@/utils/mixins/utilsMixin.js';
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useUtils } from '@/composables/useUtils';
+const { getFormattedDate } = useUtils();
 
-export default {
-  props: {
-    events: {
-      type: Array,
-      required: true,
-    },
+
+const props = defineProps({
+  events: {
+    type: Array,
+    required: true
+  }
+});
+
+const focusedDate = ref();
+
+const computedEvents = computed(() => props.events.map(event => ({
+  date: {
+    from: event.date.from,
+    to: event.date.to || null
   },
-  data() {
-    return {
-      focusedDate: undefined,
+  title: event.title,
+  description: event.description,
+  workplace: event.workplace,
+  location: event.location
+})));
+
+const requestedScroll = () => {
+  window.requestAnimationFrame(changeFocusedDate);
+};
+
+onMounted(() => {
+  changeFocusedDate();
+  window.addEventListener('scroll', requestedScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', requestedScroll);
+});
+
+function changeFocusedDate() {
+  let currentDate;
+  const displayDate = document.querySelector('.displayDate');
+  if (displayDate) {
+    const displayRect = displayDate.getBoundingClientRect();
+    if (displayRect.top > window.innerHeight) {
+      return;
     }
-  },
-  mounted() {
-    this.changeFocusedDate();
-    window.addEventListener('scroll', this.requestedScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.requestedScroll);
-  },
-  computed: {
-    computedEvents() {
-      return this.events.map(event => ({
-        date: {
-          from: event.date.from,
-          to: event.date.to ? event.date.to : null,
-        },
-        title: event.title,
-        description: event.description,
-        workplace: event.workplace,
-        location: event.location,
-      }));
-    },
-  },
-  methods: {
-    requestedScroll() {
-      window.requestAnimationFrame(this.changeFocusedDate);
-    },
-    calculateEventDates(dates) {
-      let start = new Date(dates.from);
-      let end = dates.to ? new Date(dates.to) : new Date();
-      // Calculate the middle date as the average of start and end
-      let middle = new Date((start.getTime() + end.getTime()) / 2);
-
-      start = this.getFormattedDate(start);
-      end = this.getFormattedDate(end);
-      middle = this.getFormattedDate(middle);
-
-      return [
-        end,
-        middle,
-        start,
-      ];
-    },
-    changeFocusedDate() {
-      let currentDate;
-      const displayDate = document.querySelector('.displayDate');
-      const displayRect = displayDate.getBoundingClientRect();
-      if (displayRect.top > window.innerHeight) {
-        return;
+    const dateElements = document.querySelectorAll('.event-date-mark');
+    dateElements.forEach((elem) => {
+      const dateRect = elem.getBoundingClientRect();
+      if (dateRect.top <= displayRect.top) {
+        currentDate = elem.textContent;
       }
-      let dateElements;
-      dateElements = document.querySelectorAll('.event-date-mark');
-      dateElements.forEach((elem) => {
-        const dateRect = elem.getBoundingClientRect();
-        if (dateRect.top <= displayRect.top) {
-          currentDate = elem.textContent;
-        }
-      });
-      if (!currentDate) {
-        currentDate = dateElements[0].textContent;
-      }
-      this.focusedDate = currentDate;
-    },
-  },
-  mixins: [ utilsMixin ],
+    });
+    if (!currentDate && dateElements.length) {
+      currentDate = dateElements[0].textContent;
+    }
+    focusedDate.value = currentDate;
+  }
+}
+function calculateEventDates(dates) {
+  let start = new Date(dates.from);
+  let end = dates.to ? new Date(dates.to) : new Date();
+  let middle = new Date((start.getTime() + end.getTime()) / 2);
+
+  start = this.getFormattedDate(start);
+  end = this.getFormattedDate(end);
+  middle = this.getFormattedDate(middle);
+
+  return [
+    end,
+    middle,
+    start,
+  ];
 }
 </script>

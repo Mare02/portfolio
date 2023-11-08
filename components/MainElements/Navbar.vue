@@ -16,34 +16,27 @@
   </div>
 </template>
 
-<script>
-import Socials from '@/components/MainElements/Socials.vue';
-import LocaleSwitcher from '~/components/UI/LocaleSwitcher.vue';
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
 
-export default {
-  mounted() {
-    this.handleScroll();
-    window.addEventListener("scroll", this.requestedScroll);
-  },
+const isScrolled = ref(false);
 
-  methods: {
-    handleScroll() {
-      this.isScrolled = window.scrollY > 80;
-    },
-    requestedScroll() {
-      window.requestAnimationFrame(this.handleScroll);
-    },
-  },
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 80;
+};
 
-  data() {
-    return {
-      isScrolled: false,
-    };
-  },
+const requestedScroll = () => {
+  window.requestAnimationFrame(handleScroll);
+};
 
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.requestedScroll);
-  },
-  components: { Socials, LocaleSwitcher },
-}
+onMounted(() => {
+  handleScroll();
+  window.addEventListener('scroll', requestedScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', requestedScroll);
+});
 </script>
+
