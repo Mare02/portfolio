@@ -4,8 +4,8 @@
       <div class="w-1 h-full bg-gray-300 block flex-shrink-0 absolute left-[6px] top-0"></div>
       <ul class="flex flex-col gap-10 z-10">
         <li
-          v-if="computedEvents && computedEvents.length"
-          v-for="(event, index) in computedEvents"
+          v-if="formattedEvents && formattedEvents.length"
+          v-for="(event, index) in formattedEvents"
           :key="index"
           class="flex items-start"
         >
@@ -67,7 +67,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useUtils } from '@/composables/useUtils';
 const { getFormattedDate } = useUtils();
 
 
@@ -80,7 +79,7 @@ const props = defineProps({
 
 const focusedDate = ref();
 
-const computedEvents = computed(() => props.events.map(event => ({
+const formattedEvents = props.events.map(event => ({
   date: {
     from: event.date.from,
     to: event.date.to || null
@@ -89,7 +88,7 @@ const computedEvents = computed(() => props.events.map(event => ({
   description: event.description,
   workplace: event.workplace,
   location: event.location
-})));
+}));
 
 const requestedScroll = () => {
   window.requestAnimationFrame(changeFocusedDate);

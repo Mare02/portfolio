@@ -6,7 +6,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 import Timeline from '@/components/UI/Timeline.vue';
 import myExperience from '@/data/myExperience.json';

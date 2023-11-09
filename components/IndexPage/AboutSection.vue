@@ -31,6 +31,5 @@
 </template>
 
 <script setup>
-import { useUtils } from '@/composables/useUtils';
 const { replaceTextBetweenEscapeCharacters } = useUtils();
 </script>

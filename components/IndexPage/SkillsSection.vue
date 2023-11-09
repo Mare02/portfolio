@@ -21,7 +21,7 @@
       </div>
       <div class="mt-10 md:mt-20 flex flex-col sm:flex-row justify-evenly gap-5 md:gap-10 xl:gap-20 mx-auto">
         <div
-          v-for="(category, categoryName) in allSkills"
+          v-for="(category, categoryName) in skills"
           :key="category"
           class="flex flex-col w-full p-4 md:p-6 rounded-2xl section-pharagraph"
           :class="{
@@ -46,20 +46,12 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useUtils } from '@/composables/useUtils';
 const { replaceTextBetweenEscapeCharacters } = useUtils();
-import mySkills from '@/data/mySkills.json';
+import skills from '@/data/mySkills.json';
 
-const skillsWithIcons = computed(() => {
-  return [
-    ...mySkills.frontend,
-    ...mySkills.backend,
-    ...mySkills.additional
+const skillsWithIcons = [
+    ...skills.frontend,
+    ...skills.backend,
+    ...skills.additional
   ].filter(skill => skill.iconName);
-});
-
-const allSkills = computed(() => {
-  return mySkills;
-});
 </script>

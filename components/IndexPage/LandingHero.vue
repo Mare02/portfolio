@@ -21,7 +21,6 @@
 </template>
 
 <script setup>
-import { useUtils } from '@/composables/useUtils';
 const { addLineBreaks, replaceTextBetweenEscapeCharacters } = useUtils();
 import Socials from '@/components/MainElements/Socials.vue';
 </script>
