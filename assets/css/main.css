@@ -21,7 +21,11 @@
   @apply text-xl lg:text-2xl text-gray-800 lg:leading-7
 }
 .section-pharagraph-small {
-  @apply text-lg lg:text-xl font-medium text-gray-800 lg:leading-7
+  @apply text-lg lg:text-xl text-gray-800 lg:leading-7
+}
+
+.nav-top-padding {
+  @apply pt-24 sm:pt-36 2xl:pt-44
 }
 
 @media (min-width: 2160px) {

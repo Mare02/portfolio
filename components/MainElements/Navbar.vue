@@ -8,15 +8,24 @@
     "
   >
     <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
-      <div class="text-xl font-semibold">
+      <nuxt-link class="section-pharagraph-small font-semibold" :to="localePath('/')">
         &#60;Marko Obradović /&#62;
+      </nuxt-link>
+      <div class="flex items-center gap-4 md:gap-6">
+        <nuxt-link
+          class="section-pharagraph-small font-semibold"
+          :to="localePath('/contact')"
+        >
+          Contact
+        </nuxt-link>
+        <LocaleSwitcher />
       </div>
-      <LocaleSwitcher />
     </div>
   </div>
 </template>
 
 <script setup>
+const localePath = useLocalePath();
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 const localePath = useLocalePath();
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';

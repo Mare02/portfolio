@@ -1,16 +1,18 @@
 <template>
   <div class="py-16 lg:py-32 flex flex-col justify-center">
-    <div v-if="title" class="flex items-center gap-10 md:gap-20 mb-10 md:mb-20">
-      <h2 class="section-title">{{ title }}</h2>
-      <div class="w-full h-1 bg-gray-200"></div>
-    </div>
+    <section-title :title="title" class="mb-10 md:mb-20"></section-title>
     <slot />
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  title?: string
-}>()
+<script setup>
+import SectionTitle from '~/components/MainElements/SectionTitle.vue';
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  }
+});
 </script>
 

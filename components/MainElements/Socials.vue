@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-6">
+  <div class="flex gap-4 md:gap-6">
     <a href="https://github.com/Mare02" target="_blank" class="w-8">
       <img loading="lazy" src="~/assets/images/socials/github-mark.png" alt="">
     </a>
