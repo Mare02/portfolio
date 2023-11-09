@@ -16,7 +16,7 @@
           class="section-pharagraph-small font-semibold"
           :to="localePath('/contact')"
         >
-          Contact
+          {{ $t('Contact') }}
         </nuxt-link>
         <LocaleSwitcher />
       </div>

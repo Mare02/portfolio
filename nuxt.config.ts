@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      MAILJET_API_KEY: process.env.MAILJET_API_KEY,
+      MAILJET_API_SECRET: process.env.MAILJET_API_SECRET,
+    },
+  },
   modules: [
     '@nuxtjs/i18n',
     'nuxt-mdi',
@@ -14,7 +20,6 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    /* module options */
     lazy: true,
     langDir: 'lang',
     strategy: 'prefix_except_default',
