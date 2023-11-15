@@ -1,13 +1,15 @@
 <template>
   <div
-    @click="toggleDropdown"
-    class="relative hover:bg-gray-200 rounded-full"
-    :class="{'bg-gray-200': isOpen}"
-    ref="target"
+    class="relative"
   >
-    <div class="cursor-pointer p-1">
+    <Button
+      @click="toggleDropdown"
+      :class="{'bg-gray-200': isOpen}"
+      ref="target"
+      icon
+    >
       <MdiIcon icon="mdiWeb" size="1.8rem" />
-    </div>
+    </Button>
     <div
       v-if="isOpen"
       :class="isOpen ? 'slide-down' : 'slide-up'"
@@ -32,11 +34,11 @@
 </template>
 
 <script setup>
-import { onClickOutside } from '@vueuse/core';
 import { ref } from 'vue';
-
+import { onClickOutside } from '@vueuse/core';
 const { locale, locales } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
+import Button from '@/components/UI/Button.vue';
 
 let isOpen = ref(false);
 

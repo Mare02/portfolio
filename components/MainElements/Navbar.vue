@@ -18,7 +18,9 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+const localePath = useLocalePath();
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
+import Button from '@/components/UI/Button.vue';
 
 const isScrolled = ref(false);
 

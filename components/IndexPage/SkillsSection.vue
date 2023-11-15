@@ -2,20 +2,15 @@
   <NuxtLayout name="full-screen-section" :title="$t('My skills')">
     <div>
       <div class="flex flex-col items-center justify-between md:flex-row gap-10 md:gap-20">
-        <div class="max-md:flex justify-center shrink-0">
-          <img class="w-full md:w-60 lg:w-80" loading="lazy" src="@/assets/images/guy_skills.jpeg" alt="a guy handling computers">
-        </div>
-        <div class="max-w-4xl">
-          <p
-            class="section-pharagraph"
-            v-html="replaceTextBetweenEscapeCharacters(
-              $t('MySkills.description'), 'span', 'gradient-text'
-            )"
-          ></p>
-        </div>
+        <p
+          class="section-pharagraph"
+          v-html="replaceTextBetweenEscapeCharacters(
+            $t('MySkills.description'), 'span', 'gradient-text'
+          )"
+        ></p>
       </div>
       <div class="mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
-        <div v-for="skill in skillsWithIcons" :key="skill.name" class="w-auto h-10 lg:h-12 2xl:h-14">
+        <div v-for="skill in skillsWithIcons" :key="skill.name" class="w-fit h-10 lg:h-12 2xl:h-14">
           <img
             class="h-full w-full object-cover"
             :src="`/techLogos/${skill.iconName}`"
