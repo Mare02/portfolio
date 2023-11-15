@@ -12,7 +12,7 @@
       <div class="mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
         <div v-for="skill in skillsWithIcons" :key="skill.name" class="w-fit h-10 lg:h-12 2xl:h-14">
           <img
-            class="h-full w-full object-cover"
+            class="h-full w-auto object-cover"
             :src="`/techLogos/${skill.iconName}`"
             :alt="`${skill.name} logo`"
             loading="lazy"
