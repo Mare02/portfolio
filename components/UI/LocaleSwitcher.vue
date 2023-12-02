@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative"
+    class="relative h-fit"
   >
     <Button
       @click="toggleDropdown"

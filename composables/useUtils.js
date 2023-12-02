@@ -22,5 +22,35 @@ export function useUtils() {
     );
   }
 
-  return { addLineBreaks, replaceTextBetweenEscapeCharacters, getFormattedDate };
+  function createEmailTemplate(data) {
+    return `
+      <div>
+        <h1>${data.sender} has contacted you</h1>
+        <p>Someone has contacted you via your personal website contact form.</p>
+        <ul>
+          <li>
+            <h3>Message:</h3>
+            <p>${data.message}</p>
+          </li>
+          <hr>
+          <li>
+            <h3>Sender email:</h3>
+            <p>${data.sender}</p>
+          </li>
+          <hr>
+          <li>
+            <h3>Sent at:</h3>
+            <p>${data.sentAt}</p>
+          </li>
+        </ul>
+      </div>
+    `
+  }
+
+  return {
+    addLineBreaks,
+    replaceTextBetweenEscapeCharacters,
+    getFormattedDate,
+    createEmailTemplate,
+  };
 }

@@ -1,10 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const development = process.env.NODE_ENV !== 'production';
+const baseUrl = development
+  ? process.env.DEV_DOMAIN
+  : process.env.PROD_DOMAIN;
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
       MAILJET_API_KEY: process.env.MAILJET_API_KEY,
       MAILJET_API_SECRET: process.env.MAILJET_API_SECRET,
+
+      ELASTIC_EMAIL_API_KEY: process.env.ELASTIC_EMAIL_API_KEY,
+      ELASTIC_EMAIL_SMTP_USERNAME: process.env.ELASTIC_EMAIL_SMTP_USERNAME,
+      ELASTIC_EMAIL_SMTP_PASSWORD: process.env.ELASTIC_EMAIL_SMTP_PASSWORD,
+      ELASTIC_EMAIL_SMTP_HOST: process.env.ELASTIC_EMAIL_SMTP_HOST,
+      API_URL: `${baseUrl}/api`,
     },
   },
   modules: [

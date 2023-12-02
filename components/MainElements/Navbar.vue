@@ -20,12 +20,9 @@
             loading="lazy"
           >
         </nuxt-link>
-        <div class="flex flex-col mb-1">
-          <nuxt-link :to="localePath('/')">
-            <span class="leading-5 font-semibold text-lg">Marko Obradović</span>
-          </nuxt-link>
-          <span class="leading-4">Developer</span>
-        </div>
+        <nuxt-link :to="localePath('/')" class="leading-5 font-semibold text-lg">
+          Marko Obradović
+        </nuxt-link>
       </div>
       <div class="flex items-center">
         <nuxt-link
@@ -44,6 +41,8 @@
 
 <script setup>
 const localePath = useLocalePath();
+const { currentRoute } = useRouter();
+import { computed } from 'vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
 import Button from '@/components/UI/Button.vue';
