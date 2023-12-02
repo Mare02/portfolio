@@ -26,5 +26,9 @@
   "Your email": "Vaša email adresa",
   "Subject": "Naslov",
   "Your message": "Vaša poruka",
-  "Submit": "Pošalji"
+  "Submit": "Pošalji",
+  "errorMessages": {
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Email mora biti važeći"
+  }
 }

@@ -36,3 +36,10 @@
     @apply text-2xl
   }
 }
+
+.input-field {
+  @apply w-full p-2 md:p-4 rounded-lg border-4 outline-none border-gray-200
+}
+.input-field.invalid {
+  @apply border-red-400
+}

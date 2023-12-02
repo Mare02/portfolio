@@ -26,5 +26,9 @@
   "Your email": "Your email",
   "Subject": "Subject",
   "Your message": "Your message",
-  "Submit": "Submit"
+  "Submit": "Submit",
+  "errorMessages": {
+    "required": "This field is required",
+    "invalidEmail": "Must be a valid email"
+  }
 }

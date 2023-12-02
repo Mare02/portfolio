@@ -19,10 +19,20 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@vee-validate/nuxt',
     '@nuxtjs/i18n',
-    'nuxt-mdi',
     '@vueuse/nuxt',
+    'nuxt-mdi',
   ],
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage',
+    },
+  },
   css: ['@/assets/css/main.css'],
   postcss: {
     plugins: {
