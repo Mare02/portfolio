@@ -30,5 +30,6 @@
   "errorMessages": {
     "required": "Ovo polje je obavezno",
     "invalidEmail": "Email mora biti važeći"
-  }
+  },
+  "contact-submit-success": "Vaš obrazac je uspešno poslat."
 }

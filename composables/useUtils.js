@@ -22,7 +22,7 @@ export function useUtils() {
     );
   }
 
-  function createEmailTemplate(data) {
+  function createContactEmailTemplate(data) {
     return `
       <div>
         <h1>${data.sender} has contacted you</h1>
@@ -51,6 +51,6 @@ export function useUtils() {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
-    createEmailTemplate,
+    createContactEmailTemplate,
   };
 }

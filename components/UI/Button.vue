@@ -1,12 +1,21 @@
 <template>
   <button
-    class="cursor-pointer select-none transition-all font-semibold section-pharagraph-small"
+    class="cursor-pointer select-none transition-all font-semibold flex justify-center items-center"
     :class="
-      (icon ? 'px-1.5 py-1.5 rounded-full' : 'px-4 py-2 rounded-xl'),
-      (link ? 'hover:underline hover:bg-gray-100' : 'hover:bg-gray-200')
+      (icon ? 'px-1.5 py-1.5 rounded-full' : 'rounded-xl px-3 py-2 '),
+      (link ? 'hover:underline hover:bg-gray-100' : (primary ? 'hover:bg-blue-600' : 'hover:bg-gray-200')),
+      (primary ? 'section-pharagraph-small-white bg-blue-500' : 'section-pharagraph-small'),
+      (block ? 'w-full' : 'w-max-content'),
+      (large && !icon ? 'px-4 py-3' : ''),
+      (disabled ? 'pointer-events-none opacity-75' : '')
     "
   >
-    <slot>{{ label }}</slot>
+    <template v-if="loading">
+      <span class="loading-spinner"></span>
+    </template>
+    <template v-else>
+      <slot>{{ label }}</slot>
+    </template>
   </button>
 </template>
 
@@ -21,6 +30,26 @@
     default: false,
   },
   link: {
+    type: Boolean,
+    default: false,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  primary: {
+    type: Boolean,
+    default: false,
+  },
+  block: {
+    type: Boolean,
+    default: false,
+  },
+  large: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
     type: Boolean,
     default: false,
   },

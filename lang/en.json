@@ -30,5 +30,6 @@
   "errorMessages": {
     "required": "This field is required",
     "invalidEmail": "Must be a valid email"
-  }
+  },
+  "contact-submit-success": "Your form has been submitted."
 }

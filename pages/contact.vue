@@ -52,13 +52,15 @@
             </div>
 
             <div :class="{'cursor-not-allowed': !meta.valid}">
-              <button
-                class="bg-blue-500 w-full font-semibold rounded-lg p-4 hover:bg-blue-600 section-pharagraph-small-white"
-                :class="{'opacity-75 pointer-events-none select-none': !meta.valid}"
-                type="submit"
+              <Button
+                :loading="loading"
+                :disabled="!meta.valid"
+                primary
+                block
+                large
               >
                 {{ t('Submit') }}
-              </button>
+              </Button>
             </div>
           </form>
         </div>
@@ -71,10 +73,11 @@
   import { snackbarStore } from '~/store/snackbarStore.js';
   import SectionTitle from '@/components/MainElements/SectionTitle.vue';
   import Socials from '@/components/MainElements/Socials.vue';
+  import Button from '@/components/UI/Button.vue';
   import Email from '@/lib/smtp.js';
   const config = useRuntimeConfig();
   const { t } = useI18n();
-  const { createEmailTemplate } = useUtils();
+  const { createContactEmailTemplate } = useUtils();
   import * as yup from 'yup';
 
   const schema = yup.object().shape({
@@ -94,6 +97,8 @@
     validationSchema: schema
   });
 
+  const loading = ref(false);
+
   const [ email, emailAttrs ] = defineField('email');
   const [ subject, subjectAttrs ] = defineField('subject');
   const [ message, messageAttrs ] = defineField('message');
@@ -103,14 +108,14 @@
       console.log('pa de ces lebati');
       return;
     }
-    snackbarStore.dispatchSnackbar('Contact form has been sent!', 'success');
-    return;
+    loading.value = true;
+
     const emailTemplateData = {
       sender: values.email,
       message: values.message,
       sentAt: new Date(),
     };
-    const emailBody = createEmailTemplate(emailTemplateData);
+    const emailBody = createContactEmailTemplate(emailTemplateData);
 
     try {
       await Email.send({
@@ -118,12 +123,18 @@
         Username : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
         Password : config.public.ELASTIC_EMAIL_SMTP_PASSWORD,
         To : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
-        From : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
         From : config.public.ELASTIC_EMAIL_SMTP_SENDER,
         Subject : values.subject,
         Body : emailBody
-      }).then((res) => {
-          console.log(res);
+      })
+        .then((res) => {
+          loading.value = false;
+          if (res === 'OK') {
+            snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
+          }
+          else {
+            console.log(res);
+          }
         }
       )
     } catch (error) {
