@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed w-full top z-50 transition-all duration-300"
+    class="fixed w-full top z-50 transition-all duration-300 "
     :class="
         isScrolled
           ? 'top-0'

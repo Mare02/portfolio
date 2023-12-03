@@ -23,22 +23,16 @@
 .section-pharagraph-small {
   @apply text-lg lg:text-xl text-gray-800 lg:leading-7
 }
+.section-pharagraph-small-white {
+  @apply text-lg lg:text-xl text-white lg:leading-7
+}
 
 .nav-top-padding {
   @apply pt-24 sm:pt-36 2xl:pt-44
 }
 
-@media (min-width: 2160px) {
-  .section-pharagraph {
-    @apply text-3xl
-  }
-  .section-pharagraph-small {
-    @apply text-2xl
-  }
-}
-
 .input-field {
-  @apply w-full p-2 md:p-4 rounded-lg border-4 outline-none border-gray-200
+  @apply w-full p-2 md:p-4 rounded-lg border-4 outline-none border-gray-200 section-pharagraph-small
 }
 .input-field.invalid {
   @apply border-red-400

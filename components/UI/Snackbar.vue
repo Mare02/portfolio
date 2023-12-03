@@ -5,7 +5,7 @@
   >
     <div
       class="bg-white mx-auto w-fit rounded-b-xl border-2 text-lg font-semibold px-6 py-4 pointer-events-auto"
-      :class="`border-${currentSnackbarColor}-300`"
+      :class="`border-${currentSnackbarColor}-400`"
     >
       <div class="flex items-center gap-4">
       <div class="h-6 w-6">

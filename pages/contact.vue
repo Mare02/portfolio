@@ -53,7 +53,7 @@
 
             <div :class="{'cursor-not-allowed': !meta.valid}">
               <button
-                class="bg-blue-500 w-full text-white font-semibold rounded-lg p-4 hover:bg-blue-600"
+                class="bg-blue-500 w-full font-semibold rounded-lg p-4 hover:bg-blue-600 section-pharagraph-small-white"
                 :class="{'opacity-75 pointer-events-none select-none': !meta.valid}"
                 type="submit"
               >
