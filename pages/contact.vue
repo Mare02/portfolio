@@ -1,5 +1,5 @@
 <template>
-  // https://web3forms.com/pricing - try with this form api in the future
+  <!-- https://web3forms.com/pricing - try with this form api in the future -->
   <div class="bg-gray-100 min-h-screen">
     <NuxtLayout class="nav-top-padding">
       <div class="flex flex-col sm:flex-row sm:items-center gap-10 md:gap-20 md:mb-20">
