@@ -15,6 +15,7 @@ export default defineNuxtConfig({
       ELASTIC_EMAIL_SMTP_USERNAME: process.env.ELASTIC_EMAIL_SMTP_USERNAME,
       ELASTIC_EMAIL_SMTP_PASSWORD: process.env.ELASTIC_EMAIL_SMTP_PASSWORD,
       ELASTIC_EMAIL_SMTP_HOST: process.env.ELASTIC_EMAIL_SMTP_HOST,
+      ELASTIC_EMAIL_SMTP_SENDER: process.env.ELASTIC_EMAIL_SMTP_SENDER,
       API_URL: `${baseUrl}/api`,
     },
   },
