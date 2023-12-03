@@ -1,11 +1,10 @@
 <template>
   <div
-    v-if="showSnackbar"
     class="w-full pointer-events-none z-50"
   >
     <div
       class="bg-white mx-auto w-fit rounded-b-xl border-2 text-lg font-semibold px-6 py-4 pointer-events-auto"
-      :class="`border-${currentSnackbarColor}-400`"
+      :style="`border-color: ${currentSnackbarColor}`"
     >
       <div class="flex items-center gap-4">
       <div class="h-6 w-6">
@@ -21,13 +20,12 @@
 
 <script setup>
 import { snackbarStore } from '~/store/snackbarStore.js';
-import { computed } from 'vue';
 
 const snackbarTypeColors = {
-  info: 'blue',
-  alert: 'orange',
-  warning: 'red',
-  success: 'green',
+  info: 'rgb(59 130 246)',
+  alert: 'rgb(253 186 116)',
+  warning: 'rgb(239 68 68)',
+  success: 'rgb(34 197 94)',
 };
 
 const snackbarTypeIcons = {
@@ -37,18 +35,15 @@ const snackbarTypeIcons = {
   success: 'mdiCheckCircle',
 };
 
-const showSnackbar = computed(() => {
-  return snackbarStore.state.showSnackbar;
-});
 const message = computed(() => {
   return snackbarStore.state.snackbarMessage;
 });
 
 const currentSnackbarColor = computed(() => {
-  return snackbarTypeColors[snackbarStore.state.snackbarType || 'info'];
+  return snackbarTypeColors[snackbarStore.state.snackbarType] || currentSnackbarColor[0];
 });
 
 const currentSnackbarIcon = computed(() => {
-  return snackbarTypeIcons[snackbarStore.state.snackbarType || 'info'];
+  return snackbarTypeIcons[snackbarStore.state.snackbarType] || snackbarTypeIcons[0];
 });
 </script>

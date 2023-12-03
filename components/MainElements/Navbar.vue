@@ -42,18 +42,22 @@
       </div>
     </div>
 
-    <Snackbar />
+    <Snackbar v-if="showSnackbar"/>
   </div>
 </template>
 
 <script setup>
-import Snackbar from '@/components/UI/Snackbar.vue';
-const localePath = useLocalePath();
-const { currentRoute } = useRouter();
 import { computed } from 'vue';
+import { snackbarStore } from '~/store/snackbarStore.js';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+const localePath = useLocalePath();
+import Snackbar from '@/components/UI/Snackbar.vue';
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
 import Button from '@/components/UI/Button.vue';
+
+const showSnackbar = computed(() => {
+  return snackbarStore.state.showSnackbar;
+});
 
 const isScrolled = ref(false);
 
