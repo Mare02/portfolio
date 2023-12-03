@@ -113,7 +113,8 @@
         Username : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
         Password : config.public.ELASTIC_EMAIL_SMTP_PASSWORD,
         To : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
-        From : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
+        // From : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
+        From : 'webaffiliatemarko@gmail.com',
         Subject : values.subject,
         Body : emailBody
       }).then((res) => {
