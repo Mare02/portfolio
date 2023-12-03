@@ -44,7 +44,7 @@
                 name="message"
                 v-model="message"
                 :bind="messageAttrs"
-                class="input-field h-40"
+                class="input-field h-36 md:h-40"
                 :class="{'invalid': errors.message}"
                 :placeholder="t('Your message')"
               >
