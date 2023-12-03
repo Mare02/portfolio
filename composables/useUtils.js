@@ -39,18 +39,27 @@ export function useUtils() {
           </li>
           <hr>
           <li>
+            <h3>Sender phone:</h3>
+            <p>${data.phone || '- not provided -'}</p>
+          </li>
+          <hr>
+          <li>
             <h3>Sent at:</h3>
             <p>${data.sentAt}</p>
           </li>
         </ul>
       </div>
-    `
+    `;
   }
+
+  const phoneNumberRegex = /^\+?\d{1,3}\d{3,14}$/;
+  ;
 
   return {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
     createContactEmailTemplate,
+    phoneNumberRegex,
   };
 }

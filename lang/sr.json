@@ -24,12 +24,15 @@
   "Contact": "Kontakt",
   "Contact me": "Kontaktirajte me",
   "Your email": "Vaša email adresa",
+  "Your phone number": "Vaš broj telefona",
+  "optional": "nije obavezno",
   "Subject": "Naslov",
   "Your message": "Vaša poruka",
   "Submit": "Pošalji",
   "errorMessages": {
     "required": "Ovo polje je obavezno",
-    "invalidEmail": "Email mora biti važeći"
+    "invalidEmail": "Email mora biti važeći",
+    "invalidPhoneNumber": "Broj telefona mora biti važeći"
   },
   "contact-submit-success": "Vaš obrazac je uspešno poslat."
 }

@@ -24,12 +24,15 @@
   "Contact": "Contact",
   "Contact me": "Contact me",
   "Your email": "Your email",
+  "Your phone number": "Your phone number",
+  "optional": "optional",
   "Subject": "Subject",
   "Your message": "Your message",
   "Submit": "Submit",
   "errorMessages": {
     "required": "This field is required",
-    "invalidEmail": "Must be a valid email"
+    "invalidEmail": "Must be a valid email",
+    "invalidPhoneNumber": "Must be a valid phone number"
   },
   "contact-submit-success": "Your form has been submitted."
 }
