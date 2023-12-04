@@ -34,5 +34,8 @@
     "invalidEmail": "Email mora biti važeći",
     "invalidPhoneNumber": "Broj telefona mora biti važeći"
   },
-  "contact-submit-success": "Vaš obrazac je uspešno poslat."
+  "contact-submit-success": "Vaš obrazac je uspešno poslat.",
+  "contact-submit-success-title": "Vaš kontakt obrazac je uspešno poslat.",
+  "contact-submit-success-description": "Hvala vam na pažnji, potrudiću se da odgovorim u najkraćem roku.",
+  "Go back to homepage": "Vrati se na početnu"
 }

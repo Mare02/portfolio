@@ -3,7 +3,7 @@
     class="cursor-pointer select-none transition-all font-semibold flex justify-center items-center"
     :class="
       (icon ? 'px-1.5 py-1.5 rounded-full' : 'rounded-lg px-3 py-2 '),
-      (link ? 'hover:underline hover:bg-gray-100' : (primary ? 'hover:bg-blue-600' : 'hover:bg-gray-200')),
+      (link ? 'underline hover:bg-gray-100' : (primary ? 'hover:bg-blue-600' : 'hover:bg-gray-200')),
       (primary ? 'section-pharagraph-small-white bg-blue-500' : 'section-pharagraph-small'),
       (block ? 'w-full' : 'w-max-content'),
       (large && !icon ? 'px-4 py-3' : ''),

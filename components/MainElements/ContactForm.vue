@@ -105,8 +105,10 @@
   const [ phone, phoneAttrs ] = defineField('phone');
 
   const onSubmit = async () => {
+    if (loading.value) {
+      return;
+    }
     if (Object.keys(errors.value).length) {
-      console.log('pa de ces lebati');
       return;
     }
 

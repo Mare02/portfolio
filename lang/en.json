@@ -34,5 +34,8 @@
     "invalidEmail": "Must be a valid email",
     "invalidPhoneNumber": "Must be a valid phone number"
   },
-  "contact-submit-success": "Your form has been submitted."
+  "contact-submit-success": "Your form has been submitted.",
+  "contact-submit-success-title": "Your contact form has been sent.",
+  "contact-submit-success-description": "Thank you for your attention, I'll do my best to reply as soon as possible.",
+  "Go back to homepage": "Go back to homepage"
 }

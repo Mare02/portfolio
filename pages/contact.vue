@@ -34,19 +34,25 @@
           ></contact-form>
 
           <div v-else class="mt-4 md:mt-0">
-            <div class="section-pharagraph font-semibold flex items-center gap-4">
-              <MdiIcon icon="mdiCheckCircle" color="green"/>
-              <span>
-                The form has been submitted.
+            <div class="section-pharagraph font-semibold flex gap-3 mb-4">
+              <MdiIcon icon="mdiCheckCircle" color="green" class="shrink-0"/>
+              <span class="leading-6">
+                {{ $t('contact-submit-success-title') }}
               </span>
             </div>
-            <div class="section-pharagraph-small mt-4">
-              Thank you for contacting me, I will respond back to your email as soon as possible.
+            <div class="section-pharagraph-small">
+              {{ $t('contact-submit-success-description') }}
             </div>
-            <div class="section-pharagraph-small mt-4 flex items-center gap-4">
-              <loading-spinner small class="opacity-50"></loading-spinner>
+            <div class="section-pharagraph-small mt-2 flex items-center gap-4">
               <span class="text-gray-600">
-                Redirecting to home page...
+                <nuxt-link :to="localePath('/')">
+                  <Button link class="flex items-center gap-2">
+                    <MdiIcon icon="mdiArrowLeft"/>
+                    <div>
+                      {{ $t('Go back to homepage') }}
+                    </div>
+                  </Button>
+                </nuxt-link>
               </span>
             </div>
           </div>
@@ -57,11 +63,10 @@
 </template>
 
 <script setup>
-  import LoadingSpinner from '@/components/UI/LoadingSpinner.vue';
   import SectionTitle from '@/components/MainElements/SectionTitle.vue';
   import ContactForm from '@/components/MainElements/ContactForm.vue';
   import Socials from '@/components/MainElements/Socials.vue';
-  const router = useRouter();
+  import Button from '@/components/UI/Button.vue';
   const localePath = useLocalePath();
   const { t } = useI18n();
 
@@ -69,10 +74,7 @@
 
   const handleFormSuccess = () => {
     isFormSubmitted.value = true;
-    setTimeout(() => {
-      router.push(localePath('/'));
-    }, 3000);
-  }
+  };
 
   useSeoMeta({
     title: t('Contact me'),
