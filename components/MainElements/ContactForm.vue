@@ -113,7 +113,6 @@
     }
 
     loading.value = true;
-    snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
 
     const emailTemplateData = {
       sender: values.email,
