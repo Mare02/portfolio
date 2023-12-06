@@ -68,13 +68,13 @@
 </template>
 
 <script setup>
-  import { snackbarStore } from '~/store/snackbarStore.js';
   import Button from '@/components/UI/Button.vue';
   import Email from '@/lib/smtp.js';
   const config = useRuntimeConfig();
-  const { t } = useI18n();
+  import { snackbarStore } from '@/store/snackbarStore.js';
   const { createContactEmailTemplate, phoneNumberRegex } = useUtils();
   import * as yup from 'yup';
+  const { t } = useI18n();
 
   const schema = yup.object().shape({
     email: yup
@@ -97,7 +97,7 @@
   });
 
   const loading = ref(false);
-  const emit = defineEmits(['success']);
+  const emit = defineEmits(['formSubmit', 'success', 'error']);
 
   const [ email, emailAttrs ] = defineField('email');
   const [ subject, subjectAttrs ] = defineField('subject');
@@ -135,17 +135,18 @@
         .then((res) => {
           loading.value = false;
           if (res === 'OK') {
-            loading.value = false;
             snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
             emit('success');
           }
           else {
-            console.log(res);
+            snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
+            emit('error');
           }
         }
       )
     } catch (error) {
-      console.log(error);
+      snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
+      emit('error');
     }
   };
 </script>

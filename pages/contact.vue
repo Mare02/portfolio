@@ -29,32 +29,58 @@
           class="w-full md:w-2/3 bg-white p-4 md:p-6 rounded-2xl border-4 border-gray-200"
         >
           <contact-form
-            v-if="!isFormSubmitted"
+            v-show="!isFormSubmitted"
+            @formSubmit="handleFormSubmit"
             @success="handleFormSuccess"
+            @error="handleFormError"
           ></contact-form>
 
-          <div v-else class="mt-4 md:mt-0">
-            <div class="section-pharagraph font-semibold flex gap-3 mb-4">
-              <MdiIcon icon="mdiCheckCircle" color="green" class="shrink-0"/>
-              <span class="leading-6">
-                {{ $t('contact-submit-success-title') }}
-              </span>
-            </div>
-            <div class="section-pharagraph-small">
-              {{ $t('contact-submit-success-description') }}
-            </div>
-            <div class="section-pharagraph-small mt-2 flex items-center gap-4">
-              <span class="text-gray-600">
-                <nuxt-link :to="localePath('/')">
-                  <Button link class="flex items-center gap-2">
-                    <MdiIcon icon="mdiArrowLeft"/>
+          <div v-show="isFormSubmitted" class="mt-4 md:mt-0">
+            <template v-if="isFormSuccess">
+              <div class="section-pharagraph font-semibold flex gap-3 mb-4">
+                <MdiIcon icon="mdiCheckCircle" color="green" class="shrink-0"/>
+                <span class="leading-6">
+                  {{ $t('contact-submit-success-title') }}
+                </span>
+              </div>
+              <div class="section-pharagraph-small">
+                {{ $t('contact-submit-success-description') }}
+              </div>
+              <div class="section-pharagraph-small mt-2 flex items-center gap-4">
+                <span class="text-gray-600">
+                  <nuxt-link :to="localePath('/')">
+                    <Button link class="flex items-center gap-2">
+                      <MdiIcon icon="mdiArrowLeft"/>
+                      <div>
+                        {{ $t('Go back to homepage') }}
+                      </div>
+                    </Button>
+                  </nuxt-link>
+                </span>
+              </div>
+            </template>
+
+            <template v-else-if="isFormError">
+              <div class="section-pharagraph font-semibold flex gap-3 mb-4">
+                <MdiIcon icon="mdiCloseCircle" color="red" class="shrink-0"/>
+                <span class="leading-6">
+                  {{ $t('contact-submit-error-title') }}
+                </span>
+              </div>
+              <div class="section-pharagraph-small">
+                {{ $t('contact-submit-error-description') }}
+              </div>
+              <div class="section-pharagraph-small mt-2 flex items-center gap-4">
+                <span class="text-gray-600">
+                  <Button link class="flex items-center gap-2" @click="retryForm">
+                    <MdiIcon icon="mdiReload"/>
                     <div>
-                      {{ $t('Go back to homepage') }}
+                      {{ $t('Try again') }}
                     </div>
                   </Button>
-                </nuxt-link>
-              </span>
-            </div>
+                </span>
+              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -71,9 +97,23 @@
   const { t } = useI18n();
 
   const isFormSubmitted = ref(false);
+  const isFormSuccess = ref(false);
+  const isFormError = ref(false);
 
-  const handleFormSuccess = () => {
+  const handleFormSubmit = () => {
     isFormSubmitted.value = true;
+  };
+  const handleFormSuccess = () => {
+    isFormSuccess.value = true;
+  };
+  const handleFormError = () => {
+    isFormError.value = true;
+  };
+
+  const retryForm = () => {
+    isFormError.value = false;
+    isFormSuccess.value = false;
+    isFormSubmitted.value = false;
   };
 
   useSeoMeta({

@@ -37,5 +37,9 @@
   "contact-submit-success": "Your form has been submitted.",
   "contact-submit-success-title": "Your contact form has been sent.",
   "contact-submit-success-description": "Thank you for your attention, I'll do my best to reply as soon as possible.",
+  "contact-submit-error": "There was an error with submitting your form.",
+  "contact-submit-error-title": "Your contact form has not been sent.",
+  "contact-submit-error-description": "An error occured while trying to submit your contact form.",
+  "Try again": "Try again",
   "Go back to homepage": "Go back to homepage"
 }

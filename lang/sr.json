@@ -37,5 +37,9 @@
   "contact-submit-success": "Vaš obrazac je uspešno poslat.",
   "contact-submit-success-title": "Vaš kontakt obrazac je uspešno poslat.",
   "contact-submit-success-description": "Hvala vam na pažnji, potrudiću se da odgovorim u najkraćem roku.",
-  "Go back to homepage": "Vrati se na početnu"
+  "contact-submit-error": "Došlo je do greške prilikom slanja vašeg obrasca.",
+  "contact-submit-error-title": "Vaš kontakt obrazac nije poslat.",
+  "contact-submit-error-description": "Došlo je do greške prilikom slanja vašeg kontakt obrasca.",
+  "Try again": "Pokušajte ponovo",
+  "Go back to homepage": "Vratite se na početnu"
 }
