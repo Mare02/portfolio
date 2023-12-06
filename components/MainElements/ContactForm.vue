@@ -134,6 +134,7 @@
       })
         .then((res) => {
           loading.value = false;
+          emit('formSubmit');
           if (res === 'OK') {
             snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
             emit('success');
@@ -145,8 +146,9 @@
         }
       )
     } catch (error) {
-      snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
+      emit('formSubmit');
       emit('error');
+      snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
     }
   };
 </script>
