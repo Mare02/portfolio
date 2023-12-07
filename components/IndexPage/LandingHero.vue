@@ -19,7 +19,7 @@
     </div>
 
     <div class="absolute bottom-20 left-0 right-0 flex justify-center">
-      <div class="scroll-indicator" v-if="!isScrolled(200)"></div>
+      <scroll-indicator v-if="!isScrolled(200)"></scroll-indicator>
     </div>
   </div>
 </template>
@@ -27,4 +27,5 @@
 <script setup>
 const { addLineBreaks, replaceTextBetweenEscapeCharacters, isScrolled } = useUtils();
 import Socials from '@/components/MainElements/Socials.vue';
+import ScrollIndicator from '@/components/UI/ScrollIndicator.vue';
 </script>
