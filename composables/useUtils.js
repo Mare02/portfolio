@@ -1,4 +1,5 @@
 import { useI18n } from 'vue-i18n';
+import { useWindowScroll } from '@vueuse/core';
 
 export function useUtils() {
   const { locale } = useI18n();
@@ -52,14 +53,19 @@ export function useUtils() {
     `;
   }
 
+  function isScrolled(value = 80) {
+    const { y } = useWindowScroll();
+    return y.value > value;
+  };
+
   const phoneNumberRegex = /^\+?\d{1,3}\d{3,14}$/;
-  ;
 
   return {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
     createContactEmailTemplate,
+    isScrolled,
     phoneNumberRegex,
   };
 }

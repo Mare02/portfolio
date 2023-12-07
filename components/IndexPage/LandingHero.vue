@@ -17,10 +17,14 @@
         <img class="max-md:h-full max-md:w-full max-md:object-cover" src="@/assets/images/hero-guy-coding.png" alt="">
       </div>
     </div>
+
+    <div class="absolute bottom-20 left-0 right-0 flex justify-center">
+      <div class="scroll-indicator" v-if="!isScrolled(200)"></div>
+    </div>
   </div>
 </template>
 
 <script setup>
-const { addLineBreaks, replaceTextBetweenEscapeCharacters } = useUtils();
+const { addLineBreaks, replaceTextBetweenEscapeCharacters, isScrolled } = useUtils();
 import Socials from '@/components/MainElements/Socials.vue';
 </script>

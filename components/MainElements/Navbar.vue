@@ -1,15 +1,15 @@
 <template>
   <div
-    class="fixed w-full top z-50 transition-all duration-300 "
+    class="fixed w-full top z-50 transition-all duration-300"
     :class="
-        isScrolled
+        isScrolled(navChangeScrollDistance)
           ? 'top-0'
           : 'top-0 sm:top-6'
       "
   >
     <div
       class="w-full py-3 shadow-md bg-white"
-      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200': !isScrolled}"
+      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200': !isScrolled(navChangeScrollDistance)}"
     >
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -49,33 +49,16 @@
 <script setup>
 import { computed } from 'vue';
 import { snackbarStore } from '~/store/snackbarStore.js';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+const { isScrolled } = useUtils();
 const localePath = useLocalePath();
 import Snackbar from '@/components/UI/Snackbar.vue';
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
 import Button from '@/components/UI/Button.vue';
 
+const navChangeScrollDistance = 80;
+
 const showSnackbar = computed(() => {
   return snackbarStore.state.showSnackbar;
-});
-
-const isScrolled = ref(false);
-
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 80;
-};
-
-const requestedScroll = () => {
-  window.requestAnimationFrame(handleScroll);
-};
-
-onMounted(() => {
-  handleScroll();
-  window.addEventListener('scroll', requestedScroll);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', requestedScroll);
 });
 </script>
 
