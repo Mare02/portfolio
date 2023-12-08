@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen md:bg-gray-100 grid content-center relative">
+  <div class="min-h-screen md:bg-gray-100 grid content-center relative nav-real-padding">
     <div class="container flex flex-col md:flex-row items-center lg:gap-10 px-4 md:px-10 mx-auto">
       <div class="h-fit max-w-4xl font-semibold relative z-10">
         <span class="section-pharagraph">{{$t('Hello')}},</span>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="absolute bottom-20 left-0 right-0 flex justify-center">
+    <div class="absolute bottom-32 left-0 right-0 flex justify-center">
       <scroll-indicator v-if="!isScrolled(200)"></scroll-indicator>
     </div>
   </div>

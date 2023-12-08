@@ -33,6 +33,10 @@
   @apply pt-24 sm:pt-32 md:pt-36 2xl:pt-44
 }
 
+.nav-real-padding {
+  @apply pt-16 sm:pt-24
+}
+
 
 .input-field {
   @apply w-full p-2 md:px-4 rounded-lg border-4 outline-none border-gray-200 section-pharagraph-small
