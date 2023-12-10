@@ -19,7 +19,9 @@
     </div>
 
     <div class="absolute bottom-32 left-0 right-0 flex justify-center">
-      <scroll-indicator v-if="!isScrolled(200)"></scroll-indicator>
+      <ClientOnly>
+        <scroll-indicator v-if="!isScrolled(200)"></scroll-indicator>
+      </ClientOnly>
     </div>
   </div>
 </template>

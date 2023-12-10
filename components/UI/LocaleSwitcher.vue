@@ -9,11 +9,12 @@
       icon
     >
       <MdiIcon icon="mdiWeb" size="1.8rem" />
+      <span class="mx-2 font-medium" v-if="showName">{{ localeProperties.name }}</span>
     </Button>
     <div
       v-if="isOpen"
-      :class="isOpen ? 'slide-down' : 'slide-up'"
-      class="transition-all absolute right-0 py-2 bg-white border border-gray-300 rounded shadow-lg"
+      :class="`${isOpen ? 'slide-down' : 'slide-up'} ${dropdownAlign === 'left' ? 'left-0' : 'right-0'}`"
+      class="transition-all absolute py-2 bg-white border border-gray-300 rounded shadow-lg z-10"
     >
       <NuxtLink
         v-for="option in locales"
@@ -36,9 +37,20 @@
 <script setup>
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-const { locale, locales } = useI18n();
+const { locale, locales, localeProperties } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 import Button from '@/components/UI/Button.vue';
+
+const props = defineProps({
+  dropdownAlign: {
+    type: String,
+    default: 'right',
+  },
+  showName: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 let isOpen = ref(false);
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="font-ibmsans">
+<div class="font-ibmsans">
     <Navbar />
     <NuxtPage></NuxtPage>
   </div>

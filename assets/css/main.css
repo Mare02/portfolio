@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body.no-scroll {
+  overflow-y: hidden;
+}
+
 .gradient-text {
   -webkit-background-clip: text;
   background-clip: text;

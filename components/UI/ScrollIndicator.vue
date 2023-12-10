@@ -10,7 +10,6 @@
 	border-radius: 60px;
   position: absolute;
   overflow: hidden;
-  box-shadow: 0 3px 5px 0.5px #14b8a6;
 }
 .scroll-indicator::before {
   content: '';
@@ -40,7 +39,6 @@
     width: 30px;
     height: 30px;
     top: 0px;
-    box-shadow: 0 3px 5px 0.5px #14b8a6;
   }
 }
 

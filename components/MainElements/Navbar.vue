@@ -14,11 +14,11 @@
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
           <nuxt-link
-            class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 flex"
+            class="w-10 max-w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 flex"
             :to="localePath('/')"
           >
             <img
-              class="h-full object-fill"
+              class="h-full w-full object-fill"
               src="@/assets/images/profile.jpeg"
               alt="profile"
               loading="lazy"
@@ -28,7 +28,7 @@
             Marko Obradović
           </nuxt-link>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center max-sm:hidden">
           <nuxt-link
             class="font-semibold mr-2"
             :to="localePath('/contact')"
@@ -39,6 +39,43 @@
           </nuxt-link>
           <LocaleSwitcher />
         </div>
+        <div class="sm:hidden">
+          <Button
+            @click="sidebarStore.toggleSidebar"
+            :class="{'bg-gray-200': showSidebar}"
+            icon
+          >
+            <MdiIcon icon="mdiMenu" size="1.8rem"/>
+          </Button>
+
+          <Sidebar
+            :show="showSidebar"
+            @click-outside="sidebarStore.hideSidebar"
+          >
+            <template #sidebar-header>
+              <span class=" section-pharagraph font-semibold">Marko Obradović</span>
+              <span>{{ $t('Personal Website') }}</span>
+            </template>
+
+            <LocaleSwitcher dropdown-align="left" show-name class="pl-1.5"/>
+            <div class="h-0.5 bg-gray-200 w-full"></div>
+
+            <nuxt-link
+              class="font-semibold mr-2 w-full flex items-center"
+              :to="localePath('/contact')"
+            >
+              <Button
+                link
+                block
+                class="flex items-center justify-start gap-2"
+                :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
+              >
+                <MdiIcon icon="mdiEmailArrowRight" size="1.8rem"/>
+                <span>{{ $t('Contact') }}</span>
+              </Button>
+            </nuxt-link>
+          </Sidebar>
+        </div>
       </div>
     </div>
 
@@ -47,18 +84,31 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { snackbarStore } from '~/store/snackbarStore.js';
+import { sidebarStore } from '~/store/sidebarStore.js';
 const { isScrolled } = useUtils();
 const localePath = useLocalePath();
 import Snackbar from '@/components/UI/Snackbar.vue';
-import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
+import Sidebar from '@/components/MainElements/Sidebar.vue';
 import Button from '@/components/UI/Button.vue';
+import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
+const route = useRoute();
 
 const navChangeScrollDistance = 80;
 
 const showSnackbar = computed(() => {
   return snackbarStore.state.showSnackbar;
 });
+
+const showSidebar = computed(() => {
+  return sidebarStore.state.showSidebar;
+});
+
+watch(
+  () => route.name,
+  () => {
+    sidebarStore.hideSidebar();
+  }
+);
 </script>
 
