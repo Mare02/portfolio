@@ -9,14 +9,34 @@
           )"
         ></p>
       </div>
-      <div class="mt-20 flex flex-wrap items-center justify-center gap-10 lg:gap-20">
-        <div v-for="skill in skillsWithIcons" :key="skill.name" class="w-fit h-10 lg:h-12 2xl:h-14">
-          <img
-            class="h-full w-auto object-cover"
-            :src="`/techLogos/${skill.iconName}`"
-            :alt="`${skill.name} logo`"
-            loading="lazy"
-          >
+      <div class="mt-10 md:mt-20 w-full">
+        <div class="marquee-wrapper">
+            <div class="marquee-container">
+              <div
+                v-for="skill in skillsWithIcons"
+                :key="skill.name"
+                class="marquee-item"
+              >
+                <img
+                  :src="`/techLogos/${skill.iconName}`"
+                  :alt="`${skill.name} logo`"
+                  class="marquee-item-logo"
+                >
+              </div>
+            </div>
+            <div class="marquee-container">
+              <div
+                v-for="skill in skillsWithIcons"
+                :key="`${skill.name}2`"
+                class="marquee-item"
+              >
+                <img
+                  :src="`/techLogos/${skill.iconName}`"
+                  :alt="`${skill.name} logo`"
+                  class="marquee-item-logo"
+                >
+              </div>
+            </div>
         </div>
       </div>
       <div class="mt-10 md:mt-20 flex flex-col sm:flex-row justify-evenly gap-5 md:gap-10 xl:gap-20 mx-auto">
