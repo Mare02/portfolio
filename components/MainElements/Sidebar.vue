@@ -5,8 +5,8 @@
   >
     <div
       ref="target"
-      class="transform transition-all ease-in-out duration-500 h-full bg-white shadow-lg shadow-gray-500 overflow-y-auto"
-      :class="show ? 'w-2/3 translate-x-0' : 'w-0 -translate-x-full'"
+      class="h-full bg-white shadow-lg shadow-gray-500 overflow-y-auto transition-all sidebar"
+      :class="`${show ? 'w-2/3 active' : 'w-0'}`"
     >
       <div class="h-32 bg-gray-200 grid content-center p-4">
         <slot name="sidebar-header"></slot>

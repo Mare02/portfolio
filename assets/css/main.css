@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body.no-scroll {
+body:has(.sidebar.active) {
   overflow-y: hidden;
 }
 
