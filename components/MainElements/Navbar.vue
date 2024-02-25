@@ -14,11 +14,11 @@
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
           <nuxt-link
-            class="w-10 max-w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 flex"
+            class="rounded-full overflow-hidden border-2 border-gray-300 flex"
             :to="localePath('/')"
           >
             <img
-              class="h-full w-full object-fill"
+              class="w-10 h-10 aspect-square object-cover"
               src="@/assets/images/profile.jpeg"
               alt="profile"
               loading="lazy"
