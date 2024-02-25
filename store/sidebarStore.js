@@ -7,7 +7,7 @@ const state = reactive({
 export const sidebarStore = {
   toggleSidebar() {
     state.showSidebar = !state.showSidebar;
-    document.body.style.overflowY = 'hidden';
+    document.body.style.overflowY = state.showSidebar ? 'hidden' : 'auto';
   },
   hideSidebar() {
     state.showSidebar = false;
