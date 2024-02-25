@@ -91,3 +91,20 @@ body:has(.sidebar.active) {
       transform: translateX(-100%);
   }
 }
+
+.sidebar-wrapper {
+  @apply fixed inset-0 bg-black bg-opacity-20 z-50 flex justify-start md:hidden transition-all
+}
+.sidebar {
+  transform: translateX(-100%);
+  @apply h-full bg-white shadow-lg shadow-gray-500 overflow-y-auto transition-all duration-500 w-2/3
+}
+.sidebar-wrapper.visible .sidebar {
+  transform: translateX(0);
+}
+.sidebar .sidebar-header {
+  @apply h-32 bg-gray-200 grid content-center p-4
+}
+.sidebar .sidebar-content {
+  @apply flex flex-col items-start gap-2 px-4 py-2
+}

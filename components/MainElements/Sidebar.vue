@@ -1,18 +1,17 @@
 <template>
   <div
-    v-show="show"
-    class="fixed inset-0 bg-black bg-opacity-20 z-50 flex justify-start md:hidden"
+    class="sidebar-wrapper"
+    :class="`${show ? 'visible' : 'invisible'}`"
   >
     <div
-      ref="target"
-      class="h-full bg-white shadow-lg shadow-gray-500 overflow-y-auto transition-all sidebar"
-      :class="`${show ? 'w-2/3 active' : 'w-0'}`"
+      ref="clickOutsideTarget"
+      class="sidebar"
     >
-      <div class="h-32 bg-gray-200 grid content-center p-4">
+      <div class="sidebar-header">
         <slot name="sidebar-header"></slot>
       </div>
-      <div class="flex flex-col items-start gap-2 px-4 py-2">
-        <slot></slot>
+      <div class="sidebar-content">
+        <slot name="sidebar-content"></slot>
       </div>
     </div>
   </div>
@@ -30,6 +29,6 @@ const props = defineProps({
 
 const emit = defineEmits(['clickOutside']);
 
-const target = ref(null);
-onClickOutside(target, () => emit('clickOutside'));
+const clickOutsideTarget = ref(null);
+onClickOutside(clickOutsideTarget, () => emit('clickOutside'));
 </script>

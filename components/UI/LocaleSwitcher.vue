@@ -71,23 +71,19 @@ const toggleDropdown = () => {
 }
 @keyframes slidedown {
   from {
-    opacity: 0;
     transform: translateY(-20%);
   }
 
   to {
-    opacity: 100;
     transform: translateY(0%);
   }
 }
 @keyframes slideup {
   from {
-    opacity: 100;
     transform: translateY(0%);
   }
 
   to {
-    opacity: 0;
     transform: translateY(-20%);
   }
 }

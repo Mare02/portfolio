@@ -57,23 +57,25 @@
               <span>{{ $t('Personal Website') }}</span>
             </template>
 
-            <LocaleSwitcher dropdown-align="left" show-name class="pl-1.5"/>
-            <div class="h-0.5 bg-gray-200 w-full"></div>
+            <template #sidebar-content>
+              <LocaleSwitcher dropdown-align="left" show-name class="pl-1.5"/>
+              <div class="h-0.5 bg-gray-200 w-full"></div>
 
-            <nuxt-link
-              class="font-semibold mr-2 w-full flex items-center"
-              :to="localePath('/contact')"
-            >
-              <Button
-                link
-                block
-                class="flex items-center justify-start gap-2"
-                :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
+              <nuxt-link
+                class="font-semibold mr-2 w-full flex items-center"
+                :to="localePath('/contact')"
               >
-                <MdiIcon icon="mdiEmailArrowRight" size="1.8rem"/>
-                <span>{{ $t('Contact') }}</span>
-              </Button>
-            </nuxt-link>
+                <Button
+                  link
+                  block
+                  class="flex items-center justify-start gap-2"
+                  :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
+                >
+                  <MdiIcon icon="mdiEmailArrowRight" size="1.8rem"/>
+                  <span>{{ $t('Contact') }}</span>
+                </Button>
+              </nuxt-link>
+            </template>
           </Sidebar>
         </div>
       </div>
