@@ -34,7 +34,6 @@ export function useUtils() {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
-    createContactEmailTemplate,
     isScrolled,
     phoneNumberRegex,
   };
