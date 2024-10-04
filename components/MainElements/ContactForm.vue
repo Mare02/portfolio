@@ -68,11 +68,9 @@
 </template>
 
 <script setup>
+  import axios from 'axios';
   import Button from '@/components/UI/Button.vue';
-  import Email from '@/lib/smtp.js';
-  const config = useRuntimeConfig();
   import { snackbarStore } from '@/store/snackbarStore.js';
-  const { createContactEmailTemplate, phoneNumberRegex } = useUtils();
   import * as yup from 'yup';
   const { t } = useI18n();
 
@@ -89,7 +87,7 @@
       .required(t('errorMessages.required')),
     phone: yup
       .string()
-      .matches(phoneNumberRegex, t('errorMessages.invalidPhoneNumber')),
+      // .matches(phoneNumberRegex, t('errorMessages.invalidPhoneNumber')),
   });
 
   const { values, errors, meta, defineField } = useForm({
@@ -105,49 +103,40 @@
   const [ phone, phoneAttrs ] = defineField('phone');
 
   const onSubmit = async () => {
-    if (loading.value) {
-      return;
-    }
-    if (Object.keys(errors.value).length) {
-      return;
-    }
-
-    loading.value = true;
-
-    const emailTemplateData = {
-      sender: values.email,
-      phone: values.phone,
-      message: values.message,
-      sentAt: new Date(),
-    };
-    const emailBody = createContactEmailTemplate(emailTemplateData);
-
     try {
-      await Email.send({
-        Host : config.public.ELASTIC_EMAIL_SMTP_HOST,
-        Username : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
-        Password : config.public.ELASTIC_EMAIL_SMTP_PASSWORD,
-        To : config.public.ELASTIC_EMAIL_SMTP_USERNAME,
-        From : config.public.ELASTIC_EMAIL_SMTP_SENDER,
-        Subject : values.subject,
-        Body : emailBody
-      })
+      if (loading.value) {
+        return;
+      }
+      if (Object.keys(errors.value).length) {
+        return;
+      }
+
+      loading.value = true;
+
+      const emailTemplateData = {
+        from: values.email,
+        to: 'marko123obradovic@gmail.com',
+        subject: values.subject,
+        text: values.message,
+      };
+
+      await axios.post('/api/sendEmail', emailTemplateData)
         .then((res) => {
-          loading.value = false;
-          emit('formSubmit');
-          if (res === 'OK') {
+          console.log(res);
+          if (res.data.success) {
             snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
-            emit('success');
           }
-          else {
-            snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
-            emit('error');
-          }
-        }
-      )
+        })
+        .catch((error) => {
+          throw new Error(error);
+        })
+        .finally(() => {
+          loading.value = false;
+        });
     } catch (error) {
       emit('formSubmit');
       emit('error');
+      console.log(error);
       snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
     }
   };

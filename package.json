@@ -22,6 +22,7 @@
   "dependencies": {
     "@vee-validate/i18n": "^4.12.2",
     "@vee-validate/nuxt": "^4.12.2",
-    "@vee-validate/yup": "^4.12.2"
+    "@vee-validate/yup": "^4.12.2",
+    "mailgun.js": "^10.2.3"
   }
 }
