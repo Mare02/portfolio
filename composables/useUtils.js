@@ -28,13 +28,16 @@ export function useUtils() {
     return y.value > value;
   };
 
-  const phoneNumberRegex = /^\+?\d{1,3}\d{3,14}$/;
+  function isValidPhoneNumber(phoneNumber) {
+    const phoneRegex = /^\+\d{1,3}\s?\d{4,14}$/;
+    return phoneRegex.test(phoneNumber);
+  };
 
   return {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
     isScrolled,
-    phoneNumberRegex,
+    isValidPhoneNumber,
   };
 }

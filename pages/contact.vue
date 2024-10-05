@@ -30,7 +30,6 @@
         >
           <contact-form
             v-show="!isFormSubmitted"
-            @formSubmit="handleFormSubmit"
             @success="handleFormSuccess"
             @error="handleFormError"
           ></contact-form>
@@ -96,13 +95,11 @@
   const localePath = useLocalePath();
   const { t } = useI18n();
 
-  const isFormSubmitted = ref(false);
   const isFormSuccess = ref(false);
   const isFormError = ref(false);
 
-  const handleFormSubmit = () => {
-    isFormSubmitted.value = true;
-  };
+  const isFormSubmitted = computed(() => isFormSuccess.value || isFormError.value);
+
   const handleFormSuccess = () => {
     isFormSuccess.value = true;
   };
@@ -113,7 +110,6 @@
   const retryForm = () => {
     isFormError.value = false;
     isFormSuccess.value = false;
-    isFormSubmitted.value = false;
   };
 
   useSeoMeta({

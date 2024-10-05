@@ -73,6 +73,7 @@
   import { snackbarStore } from '@/store/snackbarStore.js';
   import * as yup from 'yup';
   const { t } = useI18n();
+  const { isValidPhoneNumber } = useUtils();
 
   const schema = yup.object().shape({
     email: yup
@@ -87,7 +88,17 @@
       .required(t('errorMessages.required')),
     phone: yup
       .string()
-      // .matches(phoneNumberRegex, t('errorMessages.invalidPhoneNumber')),
+      .test(
+        'isValidPhoneNumber',
+        `${t('errorMessages.invalidPhoneNumber')} (${t('must include a country code')}, ${t('example')}: +381611234567)`,
+        (value) => {
+          if (!value || value === '') {
+            return true;
+          }
+          value = value.replace(/\s/g, '');
+          return isValidPhoneNumber(value);
+        }
+      ),
   });
 
   const { values, errors, meta, defineField } = useForm({
@@ -115,11 +126,11 @@
       emit('formSubmit');
 
       const emailTemplateData = {
-        from: values.email,
-        subject: values.subject,
-        phone: values.phone,
-        email: values.email,
-        message: values.message,
+        from: values.email.trim(),
+        subject: values.subject.trim(),
+        phone: values.phone.trim(),
+        email: values.email.trim(),
+        message: values.message.trim(),
       };
 
       await axios.post('/api/sendEmail', emailTemplateData)

@@ -26,13 +26,15 @@
   "Your email": "Vaša email adresa",
   "Your phone number": "Vaš broj telefona",
   "optional": "nije obavezno",
+  "must include a country code": "mora da sadrži pozivni broj",
+  "example": "primer",
   "Subject": "Naslov",
   "Your message": "Vaša poruka",
   "Submit": "Pošalji",
   "errorMessages": {
     "required": "Ovo polje je obavezno",
-    "invalidEmail": "Email mora biti važeći",
-    "invalidPhoneNumber": "Broj telefona mora biti važeći"
+    "invalidEmail": "Email nije validan",
+    "invalidPhoneNumber": "Broj telefona nije validan"
   },
   "contact-submit-success": "Vaš obrazac je uspešno poslat.",
   "contact-submit-success-title": "Vaš kontakt obrazac je uspešno poslat.",
