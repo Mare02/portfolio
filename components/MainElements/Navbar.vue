@@ -63,6 +63,21 @@
 
               <nuxt-link
                 class="font-semibold mr-2 w-full flex items-center"
+                :to="localePath('/')"
+              >
+                <Button
+                  link
+                  block
+                  class="flex items-center justify-start gap-2"
+                  :class="{'bg-blue-100': route.fullPath === localePath('/')}"
+                >
+                  <MdiIcon icon="mdiHomeOutline" size="1.8rem"/>
+                  <span>{{ $t('Home') }}</span>
+                </Button>
+              </nuxt-link>
+
+              <nuxt-link
+                class="font-semibold mr-2 w-full flex items-center"
                 :to="localePath('/contact')"
               >
                 <Button
@@ -71,7 +86,7 @@
                   class="flex items-center justify-start gap-2"
                   :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
                 >
-                  <MdiIcon icon="mdiEmailArrowRight" size="1.8rem"/>
+                  <MdiIcon icon="mdiEmailArrowRightOutline" size="1.8rem"/>
                   <span>{{ $t('Contact') }}</span>
                 </Button>
               </nuxt-link>

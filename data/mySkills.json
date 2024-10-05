@@ -5,6 +5,10 @@
       "iconName": "JavaScript.png"
     },
     {
+      "name": "Vue",
+      "iconName": "vue.png"
+    },
+    {
       "name": "HTML",
       "iconName": "html5.png"
     },
@@ -25,25 +29,37 @@
       "iconName": null
     },
     {
-      "name": "Vue",
-      "iconName": "vue.png"
-    },
-    {
       "name": "Nuxt",
       "iconName": "Nuxt3.png"
+    },
+    {
+      "name": "React",
+      "iconName": null
+    },
+    {
+      "name": "Next.js",
+      "iconName": null
     }
   ],
   "backend": [
+    {
+      "name": "Node JS",
+      "iconName": null
+    },
+    {
+      "name": "PHP",
+      "iconName": null
+    },
+    {
+      "name": "Laravel",
+      "iconName": null
+    },
     {
       "name": "MySQL",
       "iconName": "mysql.png"
     },
     {
       "name": "APIs",
-      "iconName": null
-    },
-    {
-      "name": "Node.js",
       "iconName": null
     }
   ],

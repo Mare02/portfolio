@@ -12,7 +12,7 @@
       <span class="mx-2 font-medium" v-if="showName">{{ localeProperties.name }}</span>
     </Button>
     <div
-      v-if="isOpen"
+      v-show="isOpen"
       :class="`${isOpen ? 'slide-down' : 'slide-up'} ${dropdownAlign === 'left' ? 'left-0' : 'right-0'}`"
       class="transition-all absolute py-2 bg-white border border-gray-300 rounded shadow-lg z-10"
     >
