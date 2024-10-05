@@ -112,20 +112,20 @@
       }
 
       loading.value = true;
+      emit('formSubmit');
 
       const emailTemplateData = {
         from: values.email,
-        to: 'marko123obradovic@gmail.com',
         subject: values.subject,
-        text: values.message,
+        phone: values.phone,
+        email: values.email,
+        message: values.message,
       };
 
       await axios.post('/api/sendEmail', emailTemplateData)
-        .then((res) => {
-          console.log(res);
-          if (res.data.success) {
-            snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
-          }
+        .then(() => {
+          snackbarStore.dispatchSnackbar(t('contact-submit-success'), 'success');
+          emit('success');
         })
         .catch((error) => {
           throw new Error(error);
@@ -134,10 +134,9 @@
           loading.value = false;
         });
     } catch (error) {
-      emit('formSubmit');
       emit('error');
-      console.log(error);
       snackbarStore.dispatchSnackbar(t('contact-submit-error'), 'warning');
+      loading.value = false;
     }
   };
 </script>
