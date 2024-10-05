@@ -23,49 +23,21 @@ export function useUtils() {
     );
   }
 
-  function createContactEmailTemplate(data) {
-    return `
-      <div>
-        <h1>${data.sender} has contacted you</h1>
-        <p>Someone has contacted you via your personal website contact form.</p>
-        <ul>
-          <li>
-            <h3>Message:</h3>
-            <p>${data.message}</p>
-          </li>
-          <hr>
-          <li>
-            <h3>Sender email:</h3>
-            <p>${data.sender}</p>
-          </li>
-          <hr>
-          <li>
-            <h3>Sender phone:</h3>
-            <p>${data.phone || '- not provided -'}</p>
-          </li>
-          <hr>
-          <li>
-            <h3>Sent at:</h3>
-            <p>${data.sentAt}</p>
-          </li>
-        </ul>
-      </div>
-    `;
-  }
-
   function isScrolled(value = 80) {
     const { y } = useWindowScroll();
     return y.value > value;
   };
 
-  const phoneNumberRegex = /^\+?\d{1,3}\d{3,14}$/;
+  function isValidPhoneNumber(phoneNumber) {
+    const phoneRegex = /^\+\d{1,3}\s?\d{4,14}$/;
+    return phoneRegex.test(phoneNumber);
+  };
 
   return {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
-    createContactEmailTemplate,
     isScrolled,
-    phoneNumberRegex,
+    isValidPhoneNumber,
   };
 }

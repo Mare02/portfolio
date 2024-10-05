@@ -26,13 +26,15 @@
   "Your email": "Your email",
   "Your phone number": "Your phone number",
   "optional": "optional",
+  "must include a country code": "must include a country code",
+  "example": "example",
   "Subject": "Subject",
   "Your message": "Your message",
   "Submit": "Submit",
   "errorMessages": {
     "required": "This field is required",
-    "invalidEmail": "Must be a valid email",
-    "invalidPhoneNumber": "Must be a valid phone number"
+    "invalidEmail": "Email is not valid",
+    "invalidPhoneNumber": "Phone number is not valid"
   },
   "contact-submit-success": "Your form has been submitted.",
   "contact-submit-success-title": "Your contact form has been sent.",
