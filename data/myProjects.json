@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Project One",
+    "description": "Description of project one.",
+    "image": "https://img1.wsimg.com/cdnassets/transform/fc524f9d-e34b-44d7-9ab3-d824e96c6083/gd-websitebuilder-marquee-desktop",
+    "link": "https://example.com/project-one"
+  },
+  {
+    "title": "Project Two",
+    "description": "Description of project two.",
+    "image": "https://img1.wsimg.com/cdnassets/transform/fc524f9d-e34b-44d7-9ab3-d824e96c6083/gd-websitebuilder-marquee-desktop",
+    "link": "https://example.com/project-two"
+  },
+  {
+    "title": "Project Three",
+    "description": "Description of project three.",
+    "image": "https://img1.wsimg.com/cdnassets/transform/fc524f9d-e34b-44d7-9ab3-d824e96c6083/gd-websitebuilder-marquee-desktop",
+    "link": "https://example.com/project-three"
+  }
+]
