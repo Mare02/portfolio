@@ -14,7 +14,7 @@
     "@types/node": "^18",
     "@vueuse/nuxt": "^10.5.0",
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.17.5",
     "nuxt-mdi": "^1.1.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3"
@@ -24,5 +24,9 @@
     "@vee-validate/i18n": "^4.12.2",
     "@vee-validate/nuxt": "^4.12.2",
     "@vee-validate/yup": "^4.12.2"
+  },
+  "overrides": {
+    "@jridgewell/sourcemap-codec": "1.4.15",
+    "cookie-es": "1.2.2"
   }
 }
