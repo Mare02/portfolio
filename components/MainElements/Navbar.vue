@@ -28,7 +28,7 @@
             Marko Obradović
           </nuxt-link>
         </div>
-        <div class="flex items-center max-sm:hidden">
+        <div class="flex items-center max-md:hidden">
           <nuxt-link
             class="font-semibold mr-2"
             :to="localePath('/contact')"
@@ -39,7 +39,7 @@
           </nuxt-link>
           <LocaleSwitcher />
         </div>
-        <div class="sm:hidden">
+        <div class="md:hidden">
           <Button
             @click="sidebarStore.toggleSidebar"
             :class="{'bg-gray-200': showSidebar}"
