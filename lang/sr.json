@@ -44,5 +44,10 @@
   "contact-submit-error-description": "Došlo je do greške prilikom slanja vašeg kontakt obrasca.",
   "Try again": "Pokušajte ponovo",
   "Go back to homepage": "Vratite se na početnu",
-  "Personal Website": "Lična stranica"
+  "Personal Website": "Lični sajt",
+  "errorPage": {
+    "title": "Stranica nije pronađena",
+    "description": "Stranica koju tražite ne postoji.",
+    "goHome": "Vratite se na početnu"
+  }
 }

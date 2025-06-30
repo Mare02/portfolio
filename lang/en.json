@@ -44,5 +44,10 @@
   "contact-submit-error-description": "An error occured while trying to submit your contact form.",
   "Try again": "Try again",
   "Go back to homepage": "Go back to homepage",
-  "Personal Website": "Personal Website"
+  "Personal Website": "Personal Website",
+  "errorPage": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "goHome": "Go back to homepage"
+  }
 }

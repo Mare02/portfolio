@@ -45,7 +45,7 @@
             :class="{'bg-gray-200': showSidebar}"
             icon
           >
-            <MdiIcon icon="mdiMenu" size="1.8rem"/>
+            <MdiIcon icon="mdiMenu"/>
           </Button>
 
           <Sidebar
@@ -53,12 +53,24 @@
             @click-outside="sidebarStore.hideSidebar"
           >
             <template #sidebar-header>
-              <span class=" section-pharagraph font-semibold">Marko Obradović</span>
-              <span>{{ $t('Personal Website') }}</span>
+              <div class="flex items-center gap-2">
+                <div class="rounded-full overflow-hidden border-2 border-gray-300 flex">
+                  <img
+                    class="w-12 h-12 aspect-square object-cover"
+                    src="@/assets/images/profile.jpeg"
+                    alt="profile"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span class=" section-pharagraph-small font-semibold">Marko Obradović</span>
+                  <span>{{ $t('Personal Website') }}</span>
+                </div>
+              </div>
             </template>
 
             <template #sidebar-content>
-              <LocaleSwitcher dropdown-align="left" show-name class="pl-1.5"/>
+              <LocaleSwitcher dropdown-align="left" show-name/>
               <div class="h-0.5 bg-gray-200 w-full"></div>
 
               <nuxt-link
@@ -71,7 +83,7 @@
                   class="flex items-center justify-start gap-2"
                   :class="{'bg-blue-100': route.fullPath === localePath('/')}"
                 >
-                  <MdiIcon icon="mdiHomeOutline" size="1.8rem"/>
+                  <MdiIcon icon="mdiHomeOutline"/>
                   <span>{{ $t('Home') }}</span>
                 </Button>
               </nuxt-link>
@@ -86,7 +98,7 @@
                   class="flex items-center justify-start gap-2"
                   :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
                 >
-                  <MdiIcon icon="mdiEmailArrowRightOutline" size="1.8rem"/>
+                  <MdiIcon icon="mdiEmailArrowRightOutline"/>
                   <span>{{ $t('Contact') }}</span>
                 </Button>
               </nuxt-link>

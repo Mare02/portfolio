@@ -20,13 +20,13 @@
   @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900
 }
 .section-pharagraph {
-  @apply text-xl lg:text-2xl text-gray-800 lg:leading-7
+  @apply text-xl text-gray-800
 }
 .section-pharagraph-small {
-  @apply text-lg lg:text-xl text-gray-800 lg:leading-7
+  @apply text-lg text-gray-800
 }
 .section-pharagraph-small-white {
-  @apply text-lg lg:text-xl text-white lg:leading-7
+  @apply text-lg text-white
 }
 
 
@@ -100,7 +100,7 @@
   transform: translateX(0);
 }
 .sidebar-wrapper .sidebar .sidebar-header {
-  @apply h-32 bg-gray-200 grid content-center p-4
+  @apply h-32 bg-gray-200 grid content-center p-4 pl-7
 }
 .sidebar-wrapper .sidebar .sidebar-content {
   @apply flex flex-col items-start gap-2 px-4 py-2

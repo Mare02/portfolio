@@ -4,11 +4,11 @@
   >
     <Button
       @click="toggleDropdown"
-      :class="{'bg-gray-200': isOpen}"
+      :class="{'bg-gray-200': isOpen, 'px-3': showName}"
       ref="target"
       icon
     >
-      <MdiIcon icon="mdiWeb" size="1.8rem" />
+      <MdiIcon icon="mdiWeb"/>
       <span class="mx-2 font-medium" v-if="showName">{{ localeProperties.name }}</span>
     </Button>
     <div
