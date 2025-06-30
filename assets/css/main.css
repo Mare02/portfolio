@@ -105,3 +105,7 @@
 .sidebar-wrapper .sidebar .sidebar-content {
   @apply flex flex-col items-start gap-2 px-4 py-2
 }
+
+.dark-icons .github-link img {
+  filter: brightness(0) invert(1);
+}
