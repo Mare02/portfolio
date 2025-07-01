@@ -75,7 +75,7 @@
               <div class="h-0.5 bg-gray-200 w-full"></div>
 
               <nuxt-link
-                class="font-semibold mr-2 w-full flex items-center"
+                class="mr-2 w-full flex items-center"
                 :to="localePath('/')"
               >
                 <Button
@@ -90,7 +90,7 @@
               </nuxt-link>
 
               <nuxt-link
-                class="font-semibold mr-2 w-full flex items-center"
+                class="mr-2 w-full flex items-center"
                 :to="localePath('/contact')"
               >
                 <Button
@@ -103,7 +103,7 @@
                   <span>{{ $t('Contact') }}</span>
                 </Button>
               </nuxt-link>
-              <div class="absolute bottom-5 left-5">
+              <div class="absolute bottom-5 left-7">
                 <ThemeSwitcher/>
               </div>
             </template>

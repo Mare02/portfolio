@@ -21,7 +21,7 @@
         :key="option.code"
         :to="switchLocalePath(option.code)"
         class="flex items-center gap-2 px-4 py-2 text-gray-800 dark:text-gray-200 cursor-pointer"
-        :class="option.code === locale ? 'bg-indigo-100 dark:bg-blue-900' : 'hover:bg-indigo-50 dark:hover:bg-blue-900'"
+        :class="option.code === locale ? 'bg-indigo-100 dark:bg-teal-800' : 'hover:bg-indigo-50 dark:hover:bg-teal-900'"
       >
         <div class="w-max">
           <img class="w-6 h-auto" :src="`/svg-icons/${option.code}.svg`" alt="">
