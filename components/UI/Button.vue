@@ -7,7 +7,8 @@
       (primary ? 'bg-blue-500 dark:bg-white section-pharagraph-inverted' : 'section-pharagraph-small'),
       (block ? 'w-full' : 'w-max-content'),
       (large && !icon ? 'px-4 py-3' : ''),
-      (disabled ? 'pointer-events-none opacity-75' : '')
+      (disabled ? 'pointer-events-none opacity-75' : ''),
+      (active ? 'bg-gray-200 dark:bg-slate-600' : '')
     "
   >
     <loading-spinner v-if="loading" white></loading-spinner>
@@ -50,6 +51,10 @@
       default: false,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    active: {
       type: Boolean,
       default: false,
     },

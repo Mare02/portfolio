@@ -24,6 +24,13 @@
           >
             <span>{{ $t('Contact') }}</span>
           </nuxt-link>
+          <div>•</div>
+          <nuxt-link
+            class="underline text-center md:text-left"
+            :to="localePath('/projects')"
+          >
+            <span>{{ $t('Projects') }}</span>
+          </nuxt-link>
         </div>
       </div>
 
