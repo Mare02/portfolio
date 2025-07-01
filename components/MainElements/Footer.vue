@@ -10,7 +10,7 @@
 
         <Socials class="dark:dark-icons"/>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 w-36 justify-center md:justify-end">
           <nuxt-link
             class="underline text-center md:text-left"
             :to="localePath('/')"
