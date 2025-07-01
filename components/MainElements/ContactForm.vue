@@ -128,7 +128,7 @@
       const emailTemplateData = {
         from: values.email.trim(),
         subject: values.subject.trim(),
-        phone: values.phone.trim(),
+        phone: values.phone ? values.phone.trim() : null,
         email: values.email.trim(),
         message: values.message.trim(),
       };
