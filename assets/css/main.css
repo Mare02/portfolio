@@ -31,6 +31,7 @@ html, body {
 }
 
 .section-title {
+  line-height: 1.1 !important;
   @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900 dark:text-gray-100 theme-transition
 }
 .section-pharagraph {

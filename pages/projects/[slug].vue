@@ -11,7 +11,7 @@
     <div class="flex flex-col lg:flex-row lg:items-center lg:gap-20 mb-4 lg:mb-0">
       <section-title class="mb-4 md:mb-6 mt-8 gradient-text" :title="project.name[locale]"></section-title>
       <div class="flex items-center gap-4 min-w-max">
-        <a :href="project.website_url" target="_blank" rel="noopener noreferrer" v-if="project.website_url">
+        <a :href="project.website_url[locale]" target="_blank" rel="noopener noreferrer" v-if="project.website_url[locale]">
           <Button link class="border-2">
             <MdiIcon icon="mdiSearchWeb" class="mr-2"/>
             {{ $t('Website') }}
