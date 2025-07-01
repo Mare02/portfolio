@@ -36,7 +36,7 @@
               </div>
               <p
                 v-if="event.description"
-                class="mt-4 section-pharagraph-small"
+                class="mt-4 section-pharagraph"
                 v-html="event.description"
               ></p>
             </div>
