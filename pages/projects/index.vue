@@ -9,7 +9,7 @@
         <MdiIcon icon="mdiFormatListBulleted"/>
       </Button>
     </div>
-    <div class="grid grid-cols-1 py-8 gap-6 lg:gap-8" :class="resourceView === 'grid' ? 'md:grid-cols-2' : ''">
+    <div class="grid py-8 gap-6 lg:gap-8" :class="resourceView === 'grid' ? 'md:grid-cols-2' : ''">
       <NuxtLink
         v-for="project in projects"
         :key="project.name.en"

@@ -122,7 +122,7 @@
                   class="flex items-center justify-start gap-2 theme-transition"
                   :class="{'bg-blue-100 dark:bg-blue-900': route.fullPath === localePath('/projects')}"
                 >
-                  <MdiIcon icon="mdiFolderOutline"/>
+                  <MdiIcon icon="mdiHammer"/>
                   <span>{{ $t('My projects') }}</span>
                 </Button>
               </nuxt-link>
