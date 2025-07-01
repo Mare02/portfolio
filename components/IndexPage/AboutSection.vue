@@ -4,26 +4,20 @@
       <div class="h-fit w-fit shrink-0 max-md:mx-auto rounded-2xl overflow-hidden border-2 border-x-teal-600 border-y-blue-500">
         <img class="w-40 md:w-60 lg:w-80" loading="lazy" src="~/assets/images/profile.jpeg" alt="my profile image">
       </div>
-      <div class="max-w-4xl">
-        <p
-          class="section-pharagraph"
-          v-html="replaceTextBetweenEscapeCharacters(
+      <div class="max-w-4xl main-section-pharagraph">
+        <p v-html="replaceTextBetweenEscapeCharacters(
             $t('AboutMe.section1'), 'span', 'gradient-text'
-          )"
+        )"
         ></p>
         <hr class="my-3 border-gray-200 dark:border-slate-700 theme-transition">
-        <p
-          class="section-pharagraph"
-          v-html="replaceTextBetweenEscapeCharacters(
+        <p v-html="replaceTextBetweenEscapeCharacters(
             $t('AboutMe.section2'), 'span', 'gradient-text'
-          )"
+        )"
         ></p>
         <hr class="my-3 border-gray-200 dark:border-slate-700 theme-transition">
-        <p
-          class="section-pharagraph"
-          v-html="replaceTextBetweenEscapeCharacters(
+        <p v-html="replaceTextBetweenEscapeCharacters(
             $t('AboutMe.section3'), 'span', 'gradient-text'
-          )"
+        )"
         ></p>
       </div>
     </div>
