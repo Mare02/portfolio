@@ -16,10 +16,10 @@
 
           <div class="flex">
             <div class="flex flex-col border-2 border-gray-300 bg-gray-100 dark:bg-slate-900 p-4 md:p-6 rounded-xl theme-transition">
-              <h3 class="section-pharagraph font-semibold" v-if="event.title">
+              <h3 class="main-section-pharagraph font-semibold" v-if="event.title">
                 {{ event.title }}
               </h3>
-              <div class="flex flex-col md:flex-row md:items-center md:gap-2 section-pharagraph-small">
+              <div class="flex flex-col md:flex-row md:items-center md:gap-2 section-pharagraph">
                 <div class="flex flex-col sm:flex-row sm:gap-2 font-medium">
                   <span class="font-semibold gradient-text">{{ event.workplace }}</span>
                   <span class="hidden md:block font-semibold">|</span>

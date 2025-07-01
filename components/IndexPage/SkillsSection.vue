@@ -3,7 +3,7 @@
     <div>
       <div class="flex flex-col items-center justify-between md:flex-row gap-10 md:gap-20">
         <p
-          class="section-pharagraph"
+          class="main-section-pharagraph"
           v-html="replaceTextBetweenEscapeCharacters(
             $t('MySkills.description'), 'span', 'gradient-text'
           )"
@@ -43,7 +43,7 @@
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full p-4 md:p-6 rounded-2xl section-pharagraph theme-transition"
+          class="flex flex-col w-full p-4 md:p-6 rounded-2xl main-section-pharagraph theme-transition"
           :class="{
             'bg-green-100 dark:bg-green-900': categoryName === 'frontend',
             'bg-blue-100 dark:bg-blue-900': categoryName === 'backend',

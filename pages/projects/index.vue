@@ -25,7 +25,7 @@
               class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <div class="rounded-b-2xl bg-gray-100 dark:bg-slate-900 flex-1 p-4 md:p-6" :class="resourceView === 'grid' ? 'border-t-2' : ''">
+          <div class="rounded-b-2xl bg-gray-100 dark:bg-slate-900 flex-1 p-4 md:p-6 theme-transition" :class="resourceView === 'grid' ? 'border-t-2' : ''">
             <h2 class="section-pharagraph font-semibold gradient-text">
               {{ project.name[locale] }}
             </h2>
