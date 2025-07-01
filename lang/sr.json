@@ -20,6 +20,8 @@
   "additional": "Dodatno",
   "My experience": "Moje iskustvo",
   "Present": "Sadašnjost",
+  "Projects": "Projekti",
+  "My projects": "Moji projekti",
   "Home": "Početna",
   "Contact": "Kontakt",
   "Contact me": "Kontaktirajte me",
@@ -57,7 +59,7 @@
       "description": "Marko Obradovic, Personalni sajt, Web Developer iz Srbije."
     },
     "contact": {
-      "title": "Kontakt",
+      "title": "Kontakt | Marko Obradovic",
       "description": "Javite mi se za saradnju i usluge ili postavite pitanja o vašem projektu."
     }
   }

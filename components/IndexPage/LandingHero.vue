@@ -8,7 +8,7 @@
           v-html="addLineBreaks($t('LandingHero.title'))"
         ></h1>
         <p
-          class="max-md:text-black section-pharagraph font-semibold pt-5 text-gray-800 mb-10"
+          class="max-md:text-black main-section-pharagraph font-semibold pt-5 text-gray-800 mb-10"
           v-html="replaceTextBetweenEscapeCharacters($t('LandingHero.description'), 'span', 'gradient-text')"
         ></p>
         <Socials />

@@ -1,0 +1,102 @@
+[
+  {
+    "name": {
+      "en": "Bookaweb",
+      "sr": "Bookaweb"
+    },
+    "slug": {
+      "en": "bookaweb",
+      "sr": "bookaweb"
+    },
+    "description": {
+      "en": "Travel and accommodation booking platform",
+      "sr": "Platforma za putovanje i rezervaciju smeštaja"
+    },
+    "images": [
+      "https://poslovnikontakt.com/wp-content/uploads/bookaweb_blog-2000x1024.jpg"
+    ],
+    "website_url": {
+      "en": "https://bookaweb.com",
+      "sr": "https://bookaweb.com/sr"
+    },
+    "html": {
+      "en": "<div class='project-highlights'><h3>Key Features</h3><ul><li>Real-time booking system</li><li>Multi-language support</li><li>Secure payment processing</li><li>Mobile-responsive design</li></ul></div>",
+      "sr": "<div class='project-highlights'><h3>Ključne karakteristike</h3><ul><li>Sistem rezervacije u realnom vremenu</li><li>Podrška za više jezika</li><li>Sigurno procesuiranje plaćanja</li><li>Dizajn prilagođen mobilnim uređajima</li></ul></div>"
+    }
+  },
+  {
+    "name": {
+      "en": "Apartmani u Beogradu",
+      "sr": "Apartmani u Beogradu"
+    },
+    "slug": {
+      "en": "apartmani-u-beogradu",
+      "sr": "apartmani-u-beogradu"
+    },
+    "description": {
+      "en": "Accommodation booking platform",
+      "sr": "Platforma za rezervaciju smeštaja"
+    },
+    "images": [
+      "https://i.ytimg.com/vi/i9oiseldPq8/maxresdefault.jpg"
+    ],
+    "website_url": {
+      "en": "https://www.apartmani-u-beogradu.com/en",
+      "sr": "https://www.apartmani-u-beogradu.com"
+    },
+    "html": {
+      "en": "<div class='tech-stack'><p><strong>Technologies used:</strong></p><div class='badges'><span class='badge'>Vue.js</span><span class='badge'>PHP</span><span class='badge'>Laravel</span><span class='badge'>MySQL</span></div></div>",
+      "sr": "<div class='tech-stack'><p><strong>Korišćene tehnologije:</strong></p><div class='badges'><span class='badge'>Vue.js</span><span class='badge'>PHP</span><span class='badge'>Laravel</span><span class='badge'>MySQL</span></div></div>"
+    }
+  },
+  {
+    "name": {
+      "en": "Bookaweb",
+      "sr": "Bookaweb"
+    },
+    "slug": {
+      "en": "bookaweb",
+      "sr": "bookaweb"
+    },
+    "description": {
+      "en": "Travel and accommodation booking platform",
+      "sr": "Platforma za putovanje i rezervaciju smeštaja"
+    },
+    "images": [
+      "https://poslovnikontakt.com/wp-content/uploads/bookaweb_blog-2000x1024.jpg"
+    ],
+    "website_url": {
+      "en": "https://bookaweb.com",
+      "sr": "https://bookaweb.com/sr"
+    },
+    "html": {
+      "en": "<div class='project-stats'><h4>Project Impact</h4><div class='stats-grid'><div class='stat'><span class='number'>10,000+</span><span class='label'>Active Users</span></div><div class='stat'><span class='number'>50+</span><span class='label'>Cities Covered</span></div></div></div>",
+      "sr": "<div class='project-stats'><h4>Uticaj projekta</h4><div class='stats-grid'><div class='stat'><span class='number'>10,000+</span><span class='label'>Aktivnih korisnika</span></div><div class='stat'><span class='number'>50+</span><span class='label'>Pokrivenih gradova</span></div></div></div>"
+    }
+  },
+  {
+    "name": {
+      "en": "Apartmani u Beogradu",
+      "sr": "Apartmani u Beogradu"
+    },
+    "slug": {
+      "en": "apartmani-u-beogradu",
+      "sr": "apartmani-u-beogradu"
+    },
+    "description": {
+      "en": "Accommodation booking platform",
+      "sr": "Platforma za rezervaciju smeštaja"
+    },
+    "images": [
+      "https://i.ytimg.com/vi/i9oiseldPq8/maxresdefault.jpg"
+    ],
+    "website_url": {
+      "en": "https://www.apartmani-u-beogradu.com/en",
+      "sr": "https://www.apartmani-u-beogradu.com"
+    },
+    "html": {
+      "en": "<div class='development-info'><blockquote class='quote'>'A comprehensive solution for Belgrade apartment rentals with advanced search filters and instant booking capabilities.'</blockquote><p class='role'>Role: <em>Frontend Developer & UI/UX Designer</em></p></div>",
+      "sr": "<div class='development-info'><blockquote class='quote'>'Sveobuhvatno rešenje za iznajmljivanje apartmana u Beogradu sa naprednim filterima pretrage i mogućnostima trenutne rezervacije.'</blockquote><p class='role'>Uloga: <em>Frontend developer & UI/UX dizajner</em></p></div>"
+    }
+  }
+]

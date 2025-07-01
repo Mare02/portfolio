@@ -9,7 +9,7 @@
   >
     <div
       class="w-full py-3 shadow-md bg-white dark:bg-slate-800 theme-transition"
-      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-teal-900': !isScrolled(navChangeScrollDistance)}"
+      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-cyan-900': !isScrolled(navChangeScrollDistance)}"
     >
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -29,6 +29,14 @@
           </nuxt-link>
         </div>
         <div class="flex items-center max-md:hidden">
+          <nuxt-link
+            class="mr-2"
+            :to="localePath('/projects')"
+          >
+            <Button class="hover:underline">
+              {{ $t('My projects') }}
+            </Button>
+          </nuxt-link>
           <nuxt-link
             class="mr-2"
             :to="localePath('/contact')"
@@ -101,6 +109,21 @@
                 >
                   <MdiIcon icon="mdiEmailArrowRightOutline"/>
                   <span>{{ $t('Contact') }}</span>
+                </Button>
+              </nuxt-link>
+
+              <nuxt-link
+                class="mr-2 w-full flex items-center"
+                :to="localePath('/projects')"
+              >
+                <Button
+                  link
+                  block
+                  class="flex items-center justify-start gap-2 theme-transition"
+                  :class="{'bg-blue-100 dark:bg-blue-900': route.fullPath === localePath('/projects')}"
+                >
+                  <MdiIcon icon="mdiFolderOutline"/>
+                  <span>{{ $t('My projects') }}</span>
                 </Button>
               </nuxt-link>
               <div class="absolute bottom-5 left-7">

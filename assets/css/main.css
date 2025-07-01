@@ -34,16 +34,19 @@ html, body {
   @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900 dark:text-gray-100 theme-transition
 }
 .section-pharagraph {
-  @apply text-xl text-gray-800 dark:text-gray-200 theme-transition
-}
-.section-pharagraph-inverted {
-  @apply text-xl text-white dark:text-gray-800 theme-transition
-}
-.section-pharagraph-small {
   @apply text-lg text-gray-800 dark:text-gray-200 theme-transition
 }
+.section-pharagraph-inverted {
+  @apply text-lg text-white dark:text-gray-800 theme-transition
+}
+.section-pharagraph-small {
+  @apply text-gray-800 dark:text-gray-200 theme-transition
+}
 .section-pharagraph-small-white {
-  @apply text-lg text-white theme-transition
+  @apply text-white theme-transition
+}
+.main-section-pharagraph {
+  @apply text-xl text-gray-800 dark:text-gray-200 theme-transition
 }
 
 .landing-hero-background {
