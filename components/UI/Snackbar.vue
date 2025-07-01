@@ -3,7 +3,7 @@
     class="w-full pointer-events-none z-50"
   >
     <div
-      class="bg-white mx-auto w-fit rounded-b-xl border-2 text-lg font-semibold px-6 py-4 pointer-events-auto"
+      class="bg-white dark:bg-slate-800 section-pharagraph-small mx-auto w-fit rounded-b-xl border-2 text-lg font-semibold px-6 py-4 pointer-events-auto"
       :style="`border-color: ${currentSnackbarColor}`"
     >
       <div class="flex items-center gap-4">

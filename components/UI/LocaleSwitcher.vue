@@ -4,7 +4,7 @@
   >
     <Button
       @click="toggleDropdown"
-      :class="{'bg-gray-200': isOpen, 'px-3': showName}"
+      :class="{'bg-gray-200 dark:bg-slate-700': isOpen, 'px-3': showName}"
       ref="target"
       icon
     >
@@ -14,14 +14,14 @@
     <div
       v-if="isOpen"
       :class="`${isOpen ? 'slide-down' : 'slide-up'} ${dropdownAlign === 'left' ? '' : 'right-0'}`"
-      class="transition-all absolute py-2 bg-white border border-gray-300 rounded shadow-lg z-10"
+      class="transition-all absolute py-2 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded shadow-lg z-10"
     >
       <NuxtLink
         v-for="option in locales"
         :key="option.code"
         :to="switchLocalePath(option.code)"
-        class="flex items-center gap-2 px-4 py-2 text-gray-800 cursor-pointer"
-        :class="option.code === locale ? 'bg-indigo-100' : 'hover:bg-indigo-50'"
+        class="flex items-center gap-2 px-4 py-2 text-gray-800 dark:text-gray-200 cursor-pointer"
+        :class="option.code === locale ? 'bg-indigo-100 dark:bg-blue-900' : 'hover:bg-indigo-50 dark:hover:bg-blue-900'"
       >
         <div class="w-max">
           <img class="w-6 h-auto" :src="`/svg-icons/${option.code}.svg`" alt="">

@@ -4,29 +4,72 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --landing-hero-bg-color: theme('colors.gray.100');
+  --landing-hero-dark-bg-color: theme('colors.slate.900');
+  --section-bg-color: theme('colors.white');
+  --section-dark-bg-color: theme('colors.zinc.900');
+}
+
+
 
 .gradient-text {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  @apply bg-gradient-to-r from-blue-600 to-teal-700
+  @apply bg-gradient-to-r from-blue-600 to-teal-700 dark:from-blue-400 dark:to-teal-300 theme-transition
 }
 .gradient-bg {
   @apply bg-gradient-to-r from-blue-50 to-teal-50
 }
 
+.theme-transition {
+  transition: all 0.3s ease-in-out;
+}
 
 .section-title {
-  @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900
+  @apply text-3xl md:text-5xl font-semibold min-w-max text-gray-900 dark:text-gray-100 theme-transition
 }
 .section-pharagraph {
-  @apply text-xl text-gray-800
+  @apply text-xl text-gray-800 dark:text-gray-200 theme-transition
+}
+.section-pharagraph-inverted {
+  @apply text-xl text-white dark:text-gray-800 theme-transition
 }
 .section-pharagraph-small {
-  @apply text-lg text-gray-800
+  @apply text-lg text-gray-800 dark:text-gray-200 theme-transition
 }
 .section-pharagraph-small-white {
-  @apply text-lg text-white
+  @apply text-lg text-white theme-transition
+}
+
+.landing-hero-background {
+  transition: all 0.3s ease-in-out;
+}
+.dark .landing-hero-background {
+  background-color: black;
+}
+@media (min-width: 768px) {
+  .landing-hero-background {
+    background-color: var(--landing-hero-bg-color);
+  }
+  .dark .landing-hero-background {
+    background-color: var(--landing-hero-dark-bg-color);
+  }
+}
+
+.section-background {
+  background-color: var(--section-bg-color);
+  transition: all 0.3s ease-in-out;
+}
+.dark .section-background {
+  background-color: var(--section-dark-bg-color);
+}
+.main-section-background .section-background {
+  background-color: var(--landing-hero-bg-color);
+}
+.dark .main-section-background .section-background {
+  background-color: var(--landing-hero-dark-bg-color);
 }
 
 
@@ -40,7 +83,7 @@
 
 
 .input-field {
-  @apply w-full p-2 md:px-4 rounded-lg border-4 outline-none border-gray-300 section-pharagraph-small
+  @apply w-full p-2 md:px-4 rounded-lg border-4 outline-none border-gray-300 section-pharagraph-small dark:bg-slate-700 dark:border-slate-600
 }
 .input-field.invalid {
   @apply border-red-400
@@ -59,7 +102,7 @@
   position: absolute;
   top: 0;
   height: 100%;
-  width: 40px;
+  width: 50px;
   z-index: 1;
 }
 .marquee-wrapper::after {
@@ -68,6 +111,13 @@
 }
 .marquee-wrapper::before {
   background: linear-gradient(to right, white, transparent);
+  left: 0;
+}
+.dark .marquee-wrapper::after {
+  background: linear-gradient(to left, var(--section-dark-bg-color), transparent);
+}
+.dark .marquee-wrapper::before {
+  background: linear-gradient(to right, var(--section-dark-bg-color), transparent);
   left: 0;
 }
 .marquee-container {
@@ -90,22 +140,22 @@
 }
 
 .sidebar-wrapper {
-  @apply fixed inset-0 bg-black bg-opacity-20 z-50 flex justify-start md:hidden transition-all
+  @apply fixed inset-0 bg-black bg-opacity-20 z-50 flex justify-start md:hidden theme-transition
 }
 .sidebar-wrapper .sidebar {
   transform: translateX(-100%);
-  @apply w-2/3 h-full bg-white shadow-lg shadow-gray-500 overflow-y-auto transition-all duration-300 ease-out
+  @apply w-2/3 h-full bg-white dark:bg-slate-800 shadow-lg shadow-gray-500 dark:shadow-gray-900 overflow-y-auto theme-transition
 }
 .sidebar-wrapper.visible .sidebar {
   transform: translateX(0);
 }
 .sidebar-wrapper .sidebar .sidebar-header {
-  @apply h-32 bg-gray-200 grid content-center p-4 pl-7
+  @apply h-32 bg-gray-200 dark:bg-slate-700 grid content-center p-4 pl-7 theme-transition
 }
 .sidebar-wrapper .sidebar .sidebar-content {
   @apply flex flex-col items-start gap-2 px-4 py-2
 }
 
-.dark-icons .github-link img {
+.light .dark-icons .github-link img {
   filter: brightness(0) invert(1);
 }

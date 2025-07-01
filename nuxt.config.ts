@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vueuse/nuxt',
     'nuxt-mdi',
+    '@nuxtjs/color-mode',
   ],
   veeValidate: {
     autoImports: true,
@@ -63,4 +64,15 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
   },
-})
+  colorMode: {
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storage: 'localStorage', // or 'sessionStorage' or 'cookie'
+    storageKey: 'nuxt-color-mode',
+  },
+});

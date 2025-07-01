@@ -43,16 +43,16 @@
         <div
           v-for="(category, categoryName) in skills"
           :key="category"
-          class="flex flex-col w-full p-4 md:p-6 rounded-2xl section-pharagraph"
+          class="flex flex-col w-full p-4 md:p-6 rounded-2xl section-pharagraph theme-transition"
           :class="{
-            'bg-green-100': categoryName === 'frontend',
-            'bg-blue-100': categoryName === 'backend',
-            'bg-blue-50': categoryName === 'additional',
+            'bg-green-100 dark:bg-green-900': categoryName === 'frontend',
+            'bg-blue-100 dark:bg-blue-900': categoryName === 'backend',
+            'bg-blue-50 dark:bg-indigo-900': categoryName === 'additional',
           }"
         >
           <div class="flex items-center gap-5 mb-4 md:mb-6">
             <span class="capitalize font-bold">{{ $t(categoryName) }}</span>
-            <div class="w-full h-0.5 bg-gray-800"></div>
+            <div class="w-full h-0.5 bg-gray-800 dark:bg-gray-200 theme-transition"></div>
           </div>
           <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-1 gap-1">
             <span v-for="(skill, index) in category" :key="index">

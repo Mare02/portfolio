@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen md:bg-gray-100 grid content-center relative nav-real-padding">
+  <div class="min-h-screen landing-hero-background grid content-center relative nav-real-padding">
     <div class="container flex flex-col md:flex-row items-center lg:gap-10 px-4 md:px-10 mx-auto">
       <div class="h-fit max-w-4xl font-semibold relative z-10">
         <span class="section-pharagraph">{{$t('Hello')}},</span>

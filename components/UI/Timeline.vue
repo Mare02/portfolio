@@ -15,7 +15,7 @@
           </div>
 
           <div class="flex">
-            <div class="flex flex-col border-2 border-gray-300 bg-gray-100 p-4 md:p-6 rounded-xl">
+            <div class="flex flex-col border-2 border-gray-300 bg-gray-100 dark:bg-slate-800 p-4 md:p-6 rounded-xl theme-transition">
               <h3 class="section-pharagraph font-semibold" v-if="event.title">
                 {{ event.title }}
               </h3>

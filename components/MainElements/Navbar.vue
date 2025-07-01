@@ -8,8 +8,8 @@
       "
   >
     <div
-      class="w-full py-3 shadow-md bg-white"
-      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200': !isScrolled(navChangeScrollDistance)}"
+      class="w-full py-3 shadow-md bg-white dark:bg-slate-800 theme-transition"
+      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-teal-800': !isScrolled(navChangeScrollDistance)}"
     >
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -38,11 +38,12 @@
             </Button>
           </nuxt-link>
           <LocaleSwitcher />
+          <ThemeSwitcher class="ml-2"/>
         </div>
         <div class="md:hidden">
           <Button
             @click="sidebarStore.toggleSidebar"
-            :class="{'bg-gray-200': showSidebar}"
+            :class="{'bg-gray-200 dark:bg-slate-700': showSidebar}"
             icon
           >
             <MdiIcon icon="mdiMenu"/>
@@ -62,9 +63,9 @@
                     loading="lazy"
                   >
                 </div>
-                <div class="flex flex-col">
-                  <span class=" section-pharagraph-small font-semibold">Marko Obradović</span>
-                  <span>{{ $t('Personal Website') }}</span>
+                <div class="flex flex-col section-pharagraph-small">
+                  <span class="font-semibold">Marko Obradović</span>
+                  <span class="text-base">{{ $t('Personal Website') }}</span>
                 </div>
               </div>
             </template>
@@ -80,8 +81,8 @@
                 <Button
                   link
                   block
-                  class="flex items-center justify-start gap-2"
-                  :class="{'bg-blue-100': route.fullPath === localePath('/')}"
+                  class="flex items-center justify-start gap-2 theme-transition"
+                  :class="{'bg-blue-100 dark:bg-blue-900': route.fullPath === localePath('/')}"
                 >
                   <MdiIcon icon="mdiHomeOutline"/>
                   <span>{{ $t('Home') }}</span>
@@ -95,13 +96,16 @@
                 <Button
                   link
                   block
-                  class="flex items-center justify-start gap-2"
-                  :class="{'bg-blue-100': route.fullPath === localePath('/contact')}"
+                  class="flex items-center justify-start gap-2 theme-transition"
+                  :class="{'bg-blue-100 dark:bg-blue-900': route.fullPath === localePath('/contact')}"
                 >
                   <MdiIcon icon="mdiEmailArrowRightOutline"/>
                   <span>{{ $t('Contact') }}</span>
                 </Button>
               </nuxt-link>
+              <div class="absolute bottom-5 left-5">
+                <ThemeSwitcher/>
+              </div>
             </template>
           </Sidebar>
         </div>
@@ -121,6 +125,8 @@ import Snackbar from '@/components/UI/Snackbar.vue';
 import Sidebar from '@/components/MainElements/Sidebar.vue';
 import Button from '@/components/UI/Button.vue';
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
+import ThemeSwitcher from '@/components/UI/ThemeSwitcher.vue';
+
 const route = useRoute();
 
 const navChangeScrollDistance = 80;

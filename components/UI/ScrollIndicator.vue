@@ -10,6 +10,10 @@
 	border-radius: 60px;
   position: absolute;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.dark .scroll-indicator {
+  border-color: lightgray;
 }
 .scroll-indicator::before {
   content: '';
@@ -24,6 +28,10 @@
   opacity: 1;
   animation: wheel 2s infinite;
   -webkit-animation: wheel 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+.dark .scroll-indicator::before {
+  background: lightgray;
 }
 
 @media (max-width: 768px) {

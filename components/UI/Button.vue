@@ -3,8 +3,8 @@
     class="cursor-pointer select-none transition-all font-semibold flex items-center"
     :class="
       (icon ? 'px-1.5 py-1.5 rounded-full' : 'rounded-lg px-3 py-2 '),
-      (link ? 'underline hover:bg-gray-100 justify-start' : `${primary ? 'hover:bg-blue-600' : 'hover:bg-gray-200'} justify-center`),
-      (primary ? 'section-pharagraph-small-white bg-blue-500' : 'section-pharagraph-small'),
+      (link ? 'underline hover:bg-gray-100 dark:hover:bg-slate-700 justify-start' : `${primary ? 'hover:bg-blue-600 dark:hover:bg-gray-200' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} justify-center`),
+      (primary ? 'bg-blue-500 dark:bg-white section-pharagraph-inverted' : 'section-pharagraph-small'),
       (block ? 'w-full' : 'w-max-content'),
       (large && !icon ? 'px-4 py-3' : ''),
       (disabled ? 'pointer-events-none opacity-75' : '')
