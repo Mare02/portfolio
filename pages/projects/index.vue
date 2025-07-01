@@ -18,7 +18,7 @@
         class="hover:opacity-80 theme-transition h-full"
       >
         <div class="flex rounded-2xl overflow-hidden border-2 h-full" :class="resourceView === 'grid' ? 'flex-col' : ''">
-          <div class="aspect-video overflow-hidden" :class="resourceView === 'list' ? 'w-1/3 md:w-1/5' : 'w-full'">
+          <div class="aspect-video overflow-hidden" :class="resourceView === 'list' ? 'w-1/3 md:w-1/4' : 'w-full'">
             <img
               :src="project.images[0]"
               :alt="project.name[locale]"
