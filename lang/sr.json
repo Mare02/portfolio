@@ -50,5 +50,15 @@
     "description": "Stranica koju tražite ne postoji.",
     "goHome": "Vratite se na početnu"
   },
-  "All right reserved": "Sva prava zadržana"
+  "All right reserved": "Sva prava zadržana",
+  "seo": {
+    "index": {
+      "title": "Marko Obradovic",
+      "description": "Marko Obradovic, Personalni sajt, Web Developer iz Srbije."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Javite mi se za saradnju i usluge ili postavite pitanja o vašem projektu."
+    }
+  }
 }

@@ -1,5 +1,4 @@
 <template>
-  <!-- https://web3forms.com/pricing - try with this form api in the future -->
   <div class="main-section-background">
     <NuxtLayout class="nav-top-padding pb-10">
       <div class="flex  items-center gap-10 md:gap-20 md:mb-6">
@@ -115,6 +114,9 @@
   };
 
   useSeoMeta({
-    title: t('Contact me'),
+    title: t('seo.contact.title'),
+    description: t('seo.contact.description'),
+    ogTitle: t('seo.contact.title'),
+    ogDescription: t('seo.contact.description'),
   });
 </script>
