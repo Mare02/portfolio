@@ -1,6 +1,6 @@
 <template>
   <button
-    class="cursor-pointer select-none transition-all font-semibold flex items-center"
+    class="cursor-pointer select-none transition-all flex items-center"
     :class="
       (icon ? 'px-1.5 py-1.5 rounded-full' : 'rounded-lg px-3 py-2 '),
       (link ? 'underline hover:bg-gray-100 dark:hover:bg-slate-700 justify-start' : `${primary ? 'hover:bg-blue-600 dark:hover:bg-gray-200' : 'hover:bg-gray-200 dark:hover:bg-slate-700'} justify-center`),

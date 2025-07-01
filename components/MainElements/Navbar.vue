@@ -30,10 +30,10 @@
         </div>
         <div class="flex items-center max-md:hidden">
           <nuxt-link
-            class="font-semibold mr-2"
+            class="mr-2"
             :to="localePath('/contact')"
           >
-            <Button link class="hover:underline">
+            <Button class="hover:underline">
               {{ $t('Contact') }}
             </Button>
           </nuxt-link>

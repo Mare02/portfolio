@@ -3,6 +3,7 @@ import { useWindowScroll } from '@vueuse/core';
 
 export function useUtils() {
   const { locale } = useI18n();
+  const { y } = useWindowScroll();
 
   function addLineBreaks(text) {
     return text.replace(/\n/g, '<br>');
@@ -24,7 +25,6 @@ export function useUtils() {
   }
 
   function isScrolled(value = 80) {
-    const { y } = useWindowScroll();
     return y.value > value;
   };
 
