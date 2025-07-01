@@ -5,7 +5,7 @@
 
         <div class="text-center md:text-left">
           <h3 class="text-lg font-semibold">Marko Obradović</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-1">Web Developer</p>
+          <p class="text-sm mt-1">Web Developer</p>
         </div>
 
         <Socials class="dark:dark-icons"/>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="border-t border-gray-700 mt-6 pt-6 text-center">
-        <p class="text-gray-600 dark:text-gray-300 text-sm">
+        <p class="text-gray-600 dark:text-gray-300 text-sm theme-transition">
           © {{ new Date().getFullYear() }} Marko Obradović. {{ $t('All right reserved') }}.
         </p>
       </div>

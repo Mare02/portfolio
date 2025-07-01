@@ -9,7 +9,7 @@
   >
     <div
       class="w-full py-3 shadow-md bg-white dark:bg-slate-800 theme-transition"
-      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-teal-800': !isScrolled(navChangeScrollDistance)}"
+      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-teal-900': !isScrolled(navChangeScrollDistance)}"
     >
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">

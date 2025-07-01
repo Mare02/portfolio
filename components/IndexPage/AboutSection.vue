@@ -11,16 +11,16 @@
             $t('AboutMe.section1'), 'span', 'gradient-text'
           )"
         ></p>
-        <hr class="mt-3">
+        <hr class="my-3 border-gray-200 dark:border-slate-700 theme-transition">
         <p
-          class="section-pharagraph mt-3"
+          class="section-pharagraph"
           v-html="replaceTextBetweenEscapeCharacters(
             $t('AboutMe.section2'), 'span', 'gradient-text'
           )"
         ></p>
-        <hr class="mt-3">
+        <hr class="my-3 border-gray-200 dark:border-slate-700 theme-transition">
         <p
-          class="section-pharagraph mt-3"
+          class="section-pharagraph"
           v-html="replaceTextBetweenEscapeCharacters(
             $t('AboutMe.section3'), 'span', 'gradient-text'
           )"

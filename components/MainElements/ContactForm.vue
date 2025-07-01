@@ -60,6 +60,7 @@
         primary
         block
         large
+        class="font-semibold"
       >
         {{ t('Submit') }}
       </Button>
