@@ -25,7 +25,7 @@
             >
           </nuxt-link>
           <nuxt-link :to="localePath('/')" class="leading-5 font-semibold section-pharagraph-small">
-            Marko Obradović
+            {{ config.full_name }}
           </nuxt-link>
         </div>
         <div class="flex items-center max-md:hidden">
@@ -64,7 +64,7 @@
                   >
                 </div>
                 <div class="flex flex-col section-pharagraph-small">
-                  <span class="font-semibold">Marko Obradović</span>
+                  <span class="font-semibold">{{ config.full_name }}</span>
                   <span class="text-base">{{ $t('Personal Website') }}</span>
                 </div>
               </div>
@@ -126,6 +126,7 @@ import Sidebar from '@/components/MainElements/Sidebar.vue';
 import Button from '@/components/UI/Button.vue';
 import LocaleSwitcher from '@/components/UI/LocaleSwitcher.vue';
 import ThemeSwitcher from '@/components/UI/ThemeSwitcher.vue';
+import config from '@/data/config.json';
 
 const route = useRoute();
 

@@ -10,11 +10,11 @@
         <div class="flex flex-col md:flex-row md:gap-6 gap-1 lg:text-lg mb-2">
           <div class="flex items-center gap-2 w-max section-pharagraph-small underline">
             <MdiIcon icon="mdiEmail"/>
-            <a class="break-words" href="mailto:marko123obradovic@gmail.com">marko123obradovic@gmail.com</a>
+            <a class="break-words" :href="`mailto:${config.email}`">{{ config.email }}</a>
           </div>
           <div class="flex items-center gap-2 section-pharagraph-small underline">
             <MdiIcon icon="mdiPhone"/>
-            <a href="tel:+381600324985">+381600324985</a>
+            <a :href="`tel:${config.phone}`">{{ config.phone }}</a>
           </div>
         </div>
 
@@ -92,6 +92,8 @@
   import ContactForm from '@/components/MainElements/ContactForm.vue';
   import Socials from '@/components/MainElements/Socials.vue';
   import Button from '@/components/UI/Button.vue';
+  import config from '@/data/config.json';
+
   const localePath = useLocalePath();
   const { t } = useI18n();
 

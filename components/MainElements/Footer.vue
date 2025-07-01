@@ -4,8 +4,8 @@
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 
         <div class="text-center md:text-left">
-          <h3 class="text-lg font-semibold">Marko Obradović</h3>
-          <p class="text-sm mt-1">Web Developer</p>
+          <h3 class="text-lg font-semibold">{{ config.full_name }}</h3>
+          <p class="text-sm mt-1">{{ config.job_title }}</p>
         </div>
 
         <Socials class="dark:dark-icons"/>
@@ -29,7 +29,7 @@
 
       <div class="border-t border-gray-700 mt-6 pt-6 text-center">
         <p class="text-gray-600 dark:text-gray-300 text-sm theme-transition">
-          © {{ new Date().getFullYear() }} Marko Obradović. {{ $t('All right reserved') }}.
+          © {{ new Date().getFullYear() }} {{ config.full_name }}. {{ $t('All right reserved') }}.
         </p>
       </div>
 
@@ -40,6 +40,7 @@
 <script setup>
 import Socials from '@/components/MainElements/Socials.vue';
 import Button from '@/components/UI/Button.vue';
+import config from '@/data/config.json';
 
 const route = useRoute();
 const localePath = useLocalePath();
