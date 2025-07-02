@@ -1,6 +1,6 @@
 <template>
   <div class="main-section-background">
-    <NuxtLayout class="nav-top-padding pb-10">
+    <NuxtLayout class="nav-top-padding pb-20">
       <div class="flex  items-center gap-10 md:gap-20 md:mb-6">
         <section-title class="mb-0 md:mb-0" :title="t('Contact me')"></section-title>
         <socials class="max-md:hidden"></socials>

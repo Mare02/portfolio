@@ -1,6 +1,9 @@
 <template>
   <NuxtLayout class="nav-top-padding pb-20">
-    <div class="w-full max-h-72 overflow-hidden flex items-start justify-center rounded-2xl border-2">
+    <div
+      class="w-full max-h-72 overflow-hidden flex items-start justify-center rounded-2xl border-2"
+      v-if="project.images[0]"
+    >
       <img
         :src="project.images[0]"
         :alt="project.name[locale]"
@@ -10,7 +13,10 @@
     </div>
     <div class="flex flex-col lg:flex-row lg:items-center lg:gap-20 mb-4 lg:mb-0">
       <section-title class="mb-4 md:mb-6 mt-8 gradient-text" :title="project.name[locale]"></section-title>
-      <div class="flex items-center gap-4 min-w-max">
+      <div
+        class="flex items-center gap-4 min-w-max"
+        v-if="project.website_url[locale] || project.source_code_url"
+      >
         <a :href="project.website_url[locale]" target="_blank" rel="noopener noreferrer" v-if="project.website_url[locale]">
           <Button link class="border-2">
             <MdiIcon icon="mdiWeb" class="mr-2"/>
@@ -25,10 +31,10 @@
         </a>
       </div>
     </div>
-    <p class="section-pharagraph mb-4 md:mb-6">
+    <p class="section-pharagraph mb-4 md:mb-6" v-if="project.description[locale]">
       {{ project.description[locale] }}
     </p>
-    <div class="py-4">
+    <div class="py-4" v-if="project.images.length">
       <h3 class="section-pharagraph mb-3 underline">{{ $t('Project gallery') }}</h3>
       <lightgallery
         :settings="{ speed: 500, plugins: [lgZoom] }"
