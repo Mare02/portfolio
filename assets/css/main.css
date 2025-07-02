@@ -11,10 +11,10 @@
   --section-dark-bg-color: theme('colors.zinc.900');
 }
 
-html, body {
+/* html, body {
   overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
-}
+} */
 
 .gradient-text {
   -webkit-background-clip: text;
