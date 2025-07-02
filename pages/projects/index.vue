@@ -18,17 +18,52 @@
         class="hover:opacity-80 theme-transition h-full"
       >
         <div class="flex rounded-2xl overflow-hidden border-2 h-full" :class="resourceView === 'grid' ? 'flex-col' : ''">
-          <div class="aspect-video overflow-hidden" :class="resourceView === 'list' ? 'w-1/3 md:w-1/4' : 'w-full'">
+          <div
+            class="overflow-hidden"
+            :class="resourceView === 'list' ? 'w-1/2 md:w-1/4 md:aspect-video' : 'w-full aspect-video'"
+          >
             <img
               :src="project.images[0]"
               :alt="project.name[locale]"
               class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <div class="rounded-b-2xl bg-gray-100 dark:bg-slate-900 flex-1 p-4 md:p-6 theme-transition" :class="resourceView === 'grid' ? 'border-t-2' : ''">
-            <h2 class="section-pharagraph font-semibold gradient-text">
-              {{ project.name[locale] }}
-            </h2>
+          <div
+            class="rounded-b-2xl bg-gray-100 dark:bg-slate-900 p-4 md:p-6 theme-transition w-full"
+            :class="resourceView === 'grid' ? 'border-t-2' : ''"
+          >
+            <div
+              class="flex"
+              :class="resourceView === 'list' ? 'flex-col sm:flex-row sm:items-center sm:justify-between' : 'items-center justify-between'"
+            >
+              <h2 class="section-pharagraph font-semibold gradient-text">
+                {{ project.name[locale] }}
+              </h2>
+              <div class="flex items-start gap-1">
+                <a
+                  @click.stop=""
+                  v-if="project.website_url[locale]"
+                  :href="project.website_url[locale]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button icon>
+                    <MdiIcon icon="mdiWeb" />
+                  </Button>
+                </a>
+                <a
+                  @click.stop=""
+                  v-if="project.source_code_url"
+                  :href="project.source_code_url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button icon>
+                    <MdiIcon icon="mdiCodeBraces" />
+                  </Button>
+                </a>
+              </div>
+            </div>
             <p class="section-pharagraph-small">
               {{ project.description[locale] }}
             </p>
@@ -50,9 +85,19 @@ import { ref } from 'vue';
 const localePath = useLocalePath();
 
 const resourceView = ref('grid');
+
 const toggleResourceView = (view) => {
   resourceView.value = view;
+  if (window && localStorage.getItem('resourceView') !== view) {
+    localStorage.setItem('resourceView', view);
+  }
 };
+
+onMounted(() => {
+  if (window && localStorage) {
+    resourceView.value = localStorage.getItem('resourceView') || 'grid';
+  }
+});
 
 useSeoMeta({
   title: t('seo.index.title'),
