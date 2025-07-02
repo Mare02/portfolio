@@ -8,7 +8,7 @@
       ref="target"
       icon
     >
-      <MdiIcon icon="mdiWeb"/>
+      <MdiIcon icon="mdiTranslate"/>
       <span class="mx-2 font-medium" v-if="showName">{{ localeProperties.name }}</span>
     </Button>
     <div

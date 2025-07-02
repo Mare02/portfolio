@@ -13,7 +13,7 @@
       <div class="flex items-center gap-4 min-w-max">
         <a :href="project.website_url[locale]" target="_blank" rel="noopener noreferrer" v-if="project.website_url[locale]">
           <Button link class="border-2">
-            <MdiIcon icon="mdiSearchWeb" class="mr-2"/>
+            <MdiIcon icon="mdiWeb" class="mr-2"/>
             {{ $t('Website') }}
           </Button>
         </a>
