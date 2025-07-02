@@ -28,6 +28,26 @@
     <p class="section-pharagraph mb-4 md:mb-6">
       {{ project.description[locale] }}
     </p>
+    <div class="py-4">
+      <h3 class="section-pharagraph mb-3 underline">{{ $t('Project gallery') }}</h3>
+      <lightgallery
+        :settings="{ speed: 500, plugins: [lgZoom] }"
+        class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4"
+      >
+        <a
+          v-for="image in project.images"
+          :key="image"
+          :href="image"
+          class="block aspect-square overflow-hidden rounded-lg border-2"
+        >
+          <img
+            :alt="image"
+            :src="image"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </a>
+      </lightgallery>
+    </div>
     <div class="prose dark:prose-invert dark:text-gray-200" v-if="project.html[locale]">
       <div v-html="project.html[locale]"></div>
     </div>
@@ -38,9 +58,28 @@
 import SectionTitle from '@/components/MainElements/SectionTitle.vue';
 import projects from '@/data/projects.json';
 import Button from '@/components/UI/Button.vue';
+
+import Lightgallery from 'lightgallery/vue';
+import lgZoom from 'lightgallery/plugins/zoom';
+import 'lightgallery/css/lightgallery.css';
+
 import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 const route = useRoute();
 
 const project = projects.find(project => project.slug.en === route.params.slug);
 </script>
+
+<style lang="css" scoped>
+/* .lg-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.lg-gallery a {
+  display: inline-block;
+  width: 200px;
+  margin: 5px;
+} */
+</style>
