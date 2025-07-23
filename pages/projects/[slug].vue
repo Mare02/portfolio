@@ -20,6 +20,16 @@ const urlFor = (source) =>
 const query = groq`*[_type == "project" && slug.en.current == $slug][0]`;
 const { data } = await useSanityQuery(query, { slug: route.params.slug });
 const project = data.value;
+
+const ogImage = urlFor(project.images[0].asset._ref);
+
+useSeoMeta({
+  title: project.name[locale.value],
+  description: project.description[locale.value],
+  ogTitle: project.name[locale.value],
+  ogDescription: project.description[locale.value],
+  ogImage: ogImage,
+});
 </script>
 
 <template>
