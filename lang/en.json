@@ -64,6 +64,10 @@
     "contact": {
       "title": "Contact",
       "description": "Contact me for collaboration and services or ask questions about your project."
+    },
+    "projects": {
+      "title": "My projects",
+      "description": "Projects I've worked on or currently working on."
     }
   }
 }

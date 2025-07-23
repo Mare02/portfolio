@@ -64,6 +64,10 @@
     "contact": {
       "title": "Kontakt | Marko Obradovic",
       "description": "Javite mi se za saradnju i usluge ili postavite pitanja o vašem projektu."
+    },
+    "projects": {
+      "title": "Moji projekti | Marko Obradovic",
+      "description": "Projekti na kojima sam radio ili trenutno radim."
     }
   }
 }

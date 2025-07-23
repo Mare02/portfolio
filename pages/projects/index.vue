@@ -30,8 +30,10 @@ onMounted(() => {
 });
 
 useSeoMeta({
-  title: t('seo.index.title'),
-  description: t('seo.index.description'),
+  title: t('seo.projects.title'),
+  description: t('seo.projects.description'),
+  ogTitle: t('seo.projects.title'),
+  ogDescription: t('seo.projects.description'),
 });
 
 const query = groq`*[_type == "project"]`;
