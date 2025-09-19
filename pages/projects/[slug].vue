@@ -12,11 +12,14 @@ const { locale } = useI18n();
 const route = useRoute();
 
 const { projectId, dataset } = useSanity().client.config();
+
+// ToDo: move this to a helper function
 const urlFor = (source) =>
   projectId && dataset
     ? imageUrlBuilder({ projectId, dataset }).image(source).url()
     : null;
 
+// ToDo: implement a service layer for fetching data
 const query = groq`*[_type == "project" && slug.en.current == $slug][0]`;
 const { data } = await useSanityQuery(query, { slug: route.params.slug });
 const project = data.value;

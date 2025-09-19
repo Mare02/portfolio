@@ -18,6 +18,8 @@ const toggleResourceView = (view) => {
 };
 
 const { projectId, dataset } = useSanity().client.config();
+
+// ToDo: move this to a helper function
 const urlFor = (source) =>
   projectId && dataset
     ? imageUrlBuilder({ projectId, dataset }).image(source)
@@ -36,6 +38,7 @@ useSeoMeta({
   ogDescription: t('seo.projects.description'),
 });
 
+// ToDo: implement a service layer for fetching data
 const query = groq`*[_type == "project"]`;
 const { data } = await useSanityQuery(query);
 const projects = data.value;
