@@ -4,9 +4,10 @@ import { useI18n } from 'vue-i18n';
 import Button from '@/components/UI/Button.vue';
 const { t, locale } = useI18n();
 import { ref } from 'vue';
-import imageUrlBuilder from "@sanity/image-url";
 
 const localePath = useLocalePath();
+const { getSanityImageUrl } = useUtils();
+
 
 const resourceView = ref('grid');
 
@@ -16,14 +17,6 @@ const toggleResourceView = (view) => {
     localStorage.setItem('resourceView', view);
   }
 };
-
-const { projectId, dataset } = useSanity().client.config();
-
-// ToDo: move this to a helper function
-const urlFor = (source) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source)
-    : null;
 
 onMounted(() => {
   if (window && localStorage) {
@@ -72,7 +65,7 @@ const projects = data.value;
             :class="resourceView === 'list' ? 'w-1/2 md:w-1/4 md:aspect-video' : 'w-full aspect-video'"
           >
             <img
-              :src="urlFor(project.images[0].asset._ref)"
+              :src="getSanityImageUrl(project.images[0].asset._ref)"
               :alt="project.name[locale]"
               class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             />

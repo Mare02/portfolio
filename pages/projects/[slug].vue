@@ -1,7 +1,6 @@
 <script setup>
 import SectionTitle from '@/components/MainElements/SectionTitle.vue';
 import Button from '@/components/UI/Button.vue';
-import imageUrlBuilder from "@sanity/image-url";
 
 import Lightgallery from 'lightgallery/vue';
 import lgZoom from 'lightgallery/plugins/zoom';
@@ -11,13 +10,7 @@ import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 const route = useRoute();
 
-const { projectId, dataset } = useSanity().client.config();
-
-// ToDo: move this to a helper function
-const urlFor = (source) =>
-  projectId && dataset
-    ? imageUrlBuilder({ projectId, dataset }).image(source).url()
-    : null;
+const { getSanityImageUrl } = useUtils();
 
 // ToDo: implement a service layer for fetching data
 const query = groq`*[_type == "project" && slug.en.current == $slug][0]`;
@@ -25,8 +18,8 @@ const { data } = await useSanityQuery(query, { slug: route.params.slug });
 const project = data.value;
 
 const ogImage = project.coverImage
-  ? urlFor(project.coverImage.asset._ref)
-  : urlFor(project.images[0].asset._ref);
+  ? getSanityImageUrl(project.coverImage.asset._ref)
+  : getSanityImageUrl(project.images[0].asset._ref);
 
 useSeoMeta({
   title: project.name[locale.value],
@@ -44,7 +37,7 @@ useSeoMeta({
       v-if="project && (project.coverImage || project.images[0])"
     >
       <img
-        :src="urlFor(project.coverImage ? project.coverImage.asset._ref : project.images[0].asset._ref)"
+        :src="getSanityImageUrl(project.coverImage ? project.coverImage.asset._ref : project.images[0].asset._ref)"
         :alt="project.name[locale]"
         class="w-full h-auto object-cover"
         loading="lazy"
@@ -82,13 +75,13 @@ useSeoMeta({
         <a
           v-for="image in project.images"
           :key="image.asset._ref"
-          :href="urlFor(image.asset._ref)"
-          :data-src="urlFor(image.asset._ref)"
+          :href="getSanityImageUrl(image.asset._ref)"
+          :data-src="getSanityImageUrl(image.asset._ref)"
           class="block aspect-square overflow-hidden rounded-lg border-2"
         >
           <img
             :alt="image"
-            :src="urlFor(image.asset._ref)"
+            :src="getSanityImageUrl(image.asset._ref)"
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
         </a>

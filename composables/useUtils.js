@@ -1,5 +1,6 @@
 import { useI18n } from 'vue-i18n';
 import { useWindowScroll } from '@vueuse/core';
+import imageUrlBuilder from "@sanity/image-url";
 
 export function useUtils() {
   const { locale } = useI18n();
@@ -33,11 +34,22 @@ export function useUtils() {
     return phoneRegex.test(phoneNumber);
   };
 
+  function getSanityImageUrl(imageRef) {
+    const { projectId, dataset } = useSanity().client.config();
+
+    if (!projectId || !dataset || !imageRef) {
+      return '';
+    }
+
+    return imageUrlBuilder({ projectId, dataset }).image(imageRef).url();
+  }
+
   return {
     addLineBreaks,
     replaceTextBetweenEscapeCharacters,
     getFormattedDate,
     isScrolled,
     isValidPhoneNumber,
+    getSanityImageUrl,
   };
 }
