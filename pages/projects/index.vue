@@ -31,10 +31,8 @@ useSeoMeta({
   ogDescription: t('seo.projects.description'),
 });
 
-// ToDo: implement a service layer for fetching data
-const query = groq`*[_type == "project"]`;
-const { data } = await useSanityQuery(query);
-const projects = data.value;
+const { getAllProjects } = useSanityService();
+const projects = await getAllProjects();
 </script>
 
 <template>
