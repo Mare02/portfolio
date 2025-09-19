@@ -2,14 +2,14 @@
   <div
     class="fixed w-full top z-50 transition-all duration-300"
     :class="
-        isScrolled(navChangeScrollDistance)
-          ? 'top-0'
-          : 'top-0 sm:top-6'
+      isMounted && isScrolled(navChangeScrollDistance)
+        ? 'top-0'
+        : 'top-0 sm:top-6'
       "
   >
     <div
       class="w-full py-3 shadow-md bg-white dark:bg-slate-800 theme-transition"
-      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-cyan-900': !isScrolled(navChangeScrollDistance)}"
+      :class="{'2xl:top-10 sm:rounded-full sm:container sm:mx-auto sm:inset-x-0 md:shadow-xl md:shadow-blue-200 dark:md:shadow-cyan-900': isMounted && !isScrolled(navChangeScrollDistance)}"
     >
       <div class="container px-4 md:px-10 mx-auto flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -154,6 +154,12 @@ import config from '@/data/config.json';
 const route = useRoute();
 
 const navChangeScrollDistance = 80;
+
+const isMounted = ref(false);
+
+onMounted(() => {
+  isMounted.value = true;
+});
 
 const showSnackbar = computed(() => {
   return snackbarStore.state.showSnackbar;
