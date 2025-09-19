@@ -88,7 +88,7 @@ const projects = data.value;
               <div class="flex items-start gap-1">
                 <a
                   @click.stop=""
-                  v-if="project.websiteUrl[locale]"
+                  v-if="project.websiteUrl && project.websiteUrl[locale]"
                   :href="project.websiteUrl[locale]"
                   target="_blank"
                   rel="noopener noreferrer"

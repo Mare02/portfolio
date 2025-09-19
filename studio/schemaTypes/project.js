@@ -83,6 +83,14 @@ export default {
       validation: Rule => Rule.min(1).error('At least one image is required')
     },
     {
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+    },
+    {
       name: 'websiteUrl',
       title: 'Website URL',
       type: 'object',

@@ -36,10 +36,10 @@ useSeoMeta({
   <NuxtLayout class="nav-top-padding pb-20">
     <div
       class="w-full max-h-72 overflow-hidden flex items-start justify-center rounded-2xl border-2"
-      v-if="project && project.images[0]"
+      v-if="project && (project.coverImage || project.images[0])"
     >
       <img
-        :src="urlFor(project.images[0].asset._ref)"
+        :src="urlFor(project.coverImage ? project.coverImage.asset._ref : project.images[0].asset._ref)"
         :alt="project.name[locale]"
         class="w-full h-auto object-cover"
         loading="lazy"
@@ -49,9 +49,9 @@ useSeoMeta({
       <section-title class="mb-4 md:mb-6 mt-8 gradient-text" :title="project.name[locale]"></section-title>
       <div
         class="flex items-center gap-4 min-w-max"
-        v-if="project.websiteUrl[locale] || project.sourceCodeUrl"
+        v-if="(project.websiteUrl && project.websiteUrl[locale]) || project.sourceCodeUrl"
       >
-        <a :href="project.websiteUrl[locale]" target="_blank" rel="noopener noreferrer" v-if="project.websiteUrl[locale]">
+        <a :href="project.websiteUrl[locale]" target="_blank" rel="noopener noreferrer" v-if="project.websiteUrl && project.websiteUrl[locale]">
           <Button link class="border-2">
             <MdiIcon icon="mdiWeb" class="mr-2"/>
             {{ $t('Website') }}
@@ -89,8 +89,8 @@ useSeoMeta({
         </a>
       </lightgallery>
     </div>
-    <div class="prose dark:prose-invert dark:text-gray-200" v-if="project && project.htmlContent[locale]">
-      <SanityContent :blocks="project.htmlContent[locale]" />
+    <div class="prose dark:prose-invert dark:text-gray-200 max-w-full" v-if="project && project.htmlContent[locale]">
+      <SanityContent :blocks="project.htmlContent[locale]"/>
     </div>
   </NuxtLayout>
 </template>
