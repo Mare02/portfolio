@@ -58,7 +58,17 @@ export default async function ProjectPage({ params }: Props) {
   const content = localized(project.htmlContent, locale);
   const images = (project.images || []).flatMap((image) => {
     const src = sanityImageUrl(image);
-    return src ? [{ src, alt: image.alt }] : [];
+    const dimensions = image.asset?._ref?.match(/-(\d+)x(\d+)-/);
+    return src
+      ? [
+          {
+            src,
+            alt: image.alt,
+            width: dimensions ? Number(dimensions[1]) : undefined,
+            height: dimensions ? Number(dimensions[2]) : undefined,
+          },
+        ]
+      : [];
   });
   return (
     <Container className="nav-top-padding pb-20">

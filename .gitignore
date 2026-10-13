@@ -7,5 +7,6 @@ node_modules
 dist
 .DS_Store
 .next
+.nuxt
 next-env.d.ts
 *.tsbuildinfo

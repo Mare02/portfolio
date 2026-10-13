@@ -31,25 +31,6 @@ textarea {
 .sidebar-dialog::backdrop {
   background: rgb(0 0 0 / 0.2);
 }
-.gallery-dialog {
-  width: 100vw;
-  max-width: none;
-  height: 100dvh;
-  max-height: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: rgb(0 0 0 / 0.94);
-  color: white;
-}
-.gallery-dialog[open] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gallery-dialog::backdrop {
-  background: black;
-}
 .scroll-indicator {
   width: 30px;
   height: 40px;
