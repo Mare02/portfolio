@@ -29,7 +29,7 @@ export default async function Contact({
       <Container className="nav-top-padding pb-20">
         <div className="flex items-center gap-10 md:gap-20 md:mb-6">
           <h1 className="section-title !min-w-0">{t["Contact me"]}</h1>
-          <Socials className="max-md:hidden" />
+          <Socials className="ml-auto shrink-0 max-md:hidden" />
         </div>
         <div className="flex justify-between flex-wrap mt-2 md:mb-5 gap-2">
           <div className="flex flex-col md:flex-row md:gap-6 gap-1 lg:text-lg mb-2">
@@ -44,7 +44,7 @@ export default async function Contact({
               <a href={`tel:${config.phone}`}>{config.phone}</a>
             </div>
           </div>
-          <Socials className="md:hidden" />
+          <Socials className="ml-auto shrink-0 md:hidden" />
         </div>
         <div className="flex flex-col md:flex-row items-center md:items-start md:gap-5 lg:gap-20">
           <div className="md:w-1/3">
