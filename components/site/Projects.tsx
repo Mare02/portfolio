@@ -74,10 +74,10 @@ export function Projects({
           return (
             <article
               key={project._id}
-              className={`group relative flex rounded-2xl overflow-hidden border-2 h-full ${view === "grid" ? "flex-col" : ""}`}
+              className={`group relative flex rounded-2xl overflow-hidden border-2 h-full ${view === "grid" ? "flex-col" : "flex-col sm:flex-row bg-gray-100 dark:bg-slate-900"}`}
             >
               <div
-                className={`relative overflow-hidden shrink-0 ${view === "list" ? "w-1/3 md:w-1/4 min-h-32" : "w-full aspect-video"}`}
+                className={`relative overflow-hidden shrink-0 aspect-video ${view === "list" ? "w-full sm:w-1/3 lg:w-1/4 sm:self-center" : "w-full"}`}
               >
                 {image && (
                   <Image
@@ -85,18 +85,24 @@ export function Projects({
                     alt={name}
                     fill
                     unoptimized
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes={
+                      view === "list"
+                        ? "(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
+                        : "(min-width: 768px) 50vw, 100vw"
+                    }
+                    className={
+                      view === "list"
+                        ? "object-contain"
+                        : "object-cover transition-transform duration-300 group-hover:scale-105"
+                    }
                   />
                 )}
               </div>
               <div
-                className={`bg-gray-100 dark:bg-slate-900 p-4 md:p-6 theme-transition w-full min-w-0 ${view === "grid" ? "border-t-2" : ""}`}
+                className={`bg-gray-100 dark:bg-slate-900 p-4 md:p-6 theme-transition min-w-0 ${view === "grid" ? "w-full border-t-2" : "flex-1 flex flex-col justify-center border-t-2 sm:border-t-0"}`}
               >
-                <div
-                  className={`flex gap-2 ${view === "list" ? "flex-col sm:flex-row sm:items-center sm:justify-between" : "items-center justify-between"}`}
-                >
-                  <h2 className="section-pharagraph font-semibold gradient-text break-words">
+                <div className="flex items-center justify-between gap-2">
+                  <h2 className="section-pharagraph font-semibold gradient-text min-w-0 break-words">
                     {path ? (
                       <Link
                         href={path}
@@ -108,7 +114,7 @@ export function Projects({
                       name
                     )}
                   </h2>
-                  <div className="flex items-start gap-1">
+                  <div className="flex shrink-0 items-center gap-1">
                     {website && (
                       <a
                         href={website}

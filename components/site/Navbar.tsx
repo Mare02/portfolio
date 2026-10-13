@@ -239,7 +239,7 @@ export function Navbar({ locale }: { locale: Locale }) {
                 key={link.path}
                 onClick={close}
                 href={localePath(link.path, locale)}
-                className={`${buttonClass} w-full justify-start ${path === localePath(link.path, locale) ? "bg-blue-100 dark:bg-blue-900" : ""}`}
+                className={`${buttonClass} w-full !justify-start text-left ${path === localePath(link.path, locale) ? "bg-blue-100 dark:bg-blue-900" : ""}`}
                 aria-current={
                   path === localePath(link.path, locale) ? "page" : undefined
                 }

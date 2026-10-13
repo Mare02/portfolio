@@ -74,11 +74,11 @@ export default async function ProjectPage({ params }: Props) {
           />
         </div>
       )}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:gap-20 mb-4 lg:mb-0">
-        <h1 className="section-title !min-w-0 break-words mb-4 md:mb-6 mt-8 gradient-text">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-20 mt-8 mb-4 md:mb-6">
+        <h1 className="section-title !min-w-0 break-words gradient-text">
           {name}
         </h1>
-        <div className="flex items-center gap-4 shrink-0">
+        <div className="flex flex-wrap items-center gap-4 shrink-0">
           {website && (
             <a
               href={website}
