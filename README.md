@@ -1,42 +1,39 @@
-# Nuxt 3 Minimal Starter
+# Marko Obradović — Next.js portfolio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The existing portfolio rewritten from Nuxt to Next.js App Router, with English and Serbian content, Sanity projects, dark mode, and the Mailgun contact form.
 
-## Setup
+## Development
 
-Make sure to install the dependencies:
+Use Node.js 24 (also pinned in `.nvmrc` and `package.json` for Vercel).
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
+```sh
+npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-## Production
+English routes: `/`, `/contact`, `/projects`, `/projects/:slug`.
+Serbian routes use `/sr`. Project slugs remain the existing English Sanity slugs in both languages.
 
-Build the application for production:
+The public Sanity project/dataset defaults match `studio/`; change `SANITY_PROJECT_ID` and `SANITY_DATASET` to override them. Contact delivery requires the four `MAILGUN_*` values documented in [.env.example](.env.example). Secrets remain server-only.
 
-```bash
+## Verification
+
+```sh
+npm run lint
+npm run typecheck
+npm test
 npm run build
+npx playwright install chromium
+npm run test:e2e
 ```
 
-Locally preview production build:
+Browser tests run against the production build on port 3100 and a mock Mailgun server on port 3101. They read the existing public Sanity dataset and never send real emails. Set `NODE_USE_ENV_PROXY=1` if the local environment requires an HTTP proxy. For Chromium behind the same proxy, set `PLAYWRIGHT_PROXY_SERVER` to its address; the tests fetch real CDN images through Node with TLS verification. `PLAYWRIGHT_CHROMIUM_EXECUTABLE` can select an installed system Chromium.
 
-```bash
-npm run preview
-```
+## Vercel
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Import or deploy the branch as usual. `vercel.json` selects Next.js and overrides the former Nuxt build settings. Add the Mailgun environment variables to Preview and Production environments. `PROD_DOMAIN` is optional; if absent, metadata uses the Vercel deployment URL.
+
+Sanity Studio stays a separate application with the same schema and configuration. Run its existing commands from `studio/`.
+
+See [migration notes](docs/nextjs-rewrite.md) for implementation and deployment details.

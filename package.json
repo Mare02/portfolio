@@ -1,38 +1,44 @@
 {
-  "name": "nuxt-app",
+  "name": "marko-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "^1.0.0-beta.1",
-    "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/i18n": "^8.0.0-rc.5",
-    "@nuxtjs/sanity": "^1.13.3",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^18",
-    "@vueuse/nuxt": "^10.5.0",
-    "autoprefixer": "^10.4.16",
-    "nuxt": "^3.17.5",
-    "nuxt-mdi": "^1.1.1",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.3"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "preview": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --import tsx tests/unit/run.ts",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@sanity/image-url": "^1.1.0",
-    "@vee-validate/i18n": "^4.12.2",
-    "@vee-validate/nuxt": "^4.12.2",
-    "@vee-validate/yup": "^4.12.2",
+    "@fontsource/ibm-plex-sans": "5.3.0",
+    "@mdi/js": "^7.4.47",
+    "@portabletext/react": "8.0.1",
+    "@portabletext/types": "4.0.2",
     "form-data": "^4.0.3",
-    "lightgallery": "^2.9.0-beta.1",
-    "mailgun.js": "^12.0.3"
+    "mailgun.js": "^12.0.3",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1"
   },
-  "overrides": {
-    "@jridgewell/sourcemap-codec": "1.4.15",
-    "cookie-es": "1.2.2"
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^24",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.19",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

@@ -1,27 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue",
-  ],
+  darkMode: "class",
+  content: ["./components/**/*.{js,ts,tsx}", "./app/**/*.{js,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        ibmsans: ['IBM Plex', 'sans-serif',],
-      },
-      screens: {
-        'xs': '480px',
-        // => @media (min-width: 480px) { ... }
-      },
+      fontFamily: { ibmsans: ["IBM Plex Sans", "sans-serif"] },
+      screens: { xs: "480px" },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
-
+  plugins: [require("@tailwindcss/typography")],
+};
