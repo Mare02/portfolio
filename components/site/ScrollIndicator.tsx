@@ -1,5 +1,5 @@
 "use client";
-import { useScrolled } from "./Navbar";
+import { useScrolled } from "./useScrolled";
 export function ScrollIndicator() {
   const scrolled = useScrolled(200);
   return scrolled ? null : (

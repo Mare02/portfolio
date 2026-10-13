@@ -6,8 +6,9 @@ import {
   normalizeContact,
   validateContact,
   type ContactValues,
+  CONTACT_LIMITS,
 } from "@/lib/contact";
-import { buttonClass } from "./Shared";
+import { buttonClass, primaryButtonClass } from "./Shared";
 import { Icon } from "./Icon";
 export function ContactForm({ locale }: { locale: Locale }) {
   const t = dictionary(locale);
@@ -37,28 +38,24 @@ export function ContactForm({ locale }: { locale: Locale }) {
       type: "email",
       label: t["Your email"],
       autoComplete: "email",
-      max: 254,
     },
     {
       name: "phone",
       type: "tel",
       label: `${t["Your phone number"]} (${t.optional})`,
       autoComplete: "tel",
-      max: 32,
     },
     {
       name: "subject",
       type: "text",
       label: t.Subject,
       autoComplete: "off",
-      max: 200,
     },
     {
       name: "message",
       type: "text",
       label: t["Your message"],
       autoComplete: "off",
-      max: 10000,
     },
   ] as const;
   async function submit(event: React.FormEvent<HTMLFormElement>) {
@@ -159,14 +156,18 @@ export function ContactForm({ locale }: { locale: Locale }) {
           value: values[field.name],
           placeholder: field.label,
           autoComplete: field.autoComplete,
-          maxLength: field.max,
+          maxLength: CONTACT_LIMITS[field.name],
           disabled: status === "sending",
           "aria-invalid": !!error,
           "aria-describedby": error ? `error-${field.name}` : undefined,
           onChange: (
             event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-          ) => setValues({ ...values, [field.name]: event.target.value }),
-          onBlur: () => setTouched({ ...touched, [field.name]: true }),
+          ) => {
+            const value = event.target.value;
+            setValues((current) => ({ ...current, [field.name]: value }));
+          },
+          onBlur: () =>
+            setTouched((current) => ({ ...current, [field.name]: true })),
           className: `input-field ${field.name === "message" ? "h-36 md:h-40" : ""} ${error ? "invalid" : ""}`,
         };
         return (
@@ -199,7 +200,7 @@ export function ContactForm({ locale }: { locale: Locale }) {
       <button
         type="submit"
         disabled={!valid || status === "sending"}
-        className={`${buttonClass} w-full bg-blue-500 dark:bg-white !text-white dark:!text-gray-800 hover:!bg-blue-600 dark:hover:!bg-gray-200 px-4 py-3 font-semibold disabled:opacity-75 disabled:cursor-not-allowed`}
+        className={`${primaryButtonClass} w-full px-4 py-3 font-semibold disabled:opacity-75 disabled:cursor-not-allowed`}
       >
         {status === "sending" && (
           <span

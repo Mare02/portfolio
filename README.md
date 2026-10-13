@@ -22,13 +22,10 @@ The public Sanity project/dataset defaults match `studio/`; change `SANITY_PROJE
 ```sh
 npm run lint
 npm run typecheck
-npm test
 npm run build
-npx playwright install chromium
-npm run test:e2e
 ```
 
-Browser tests run against the production build on port 3100 and a mock Mailgun server on port 3101. They read the existing public Sanity dataset and never send real emails. Set `NODE_USE_ENV_PROXY=1` if the local environment requires an HTTP proxy. For Chromium behind the same proxy, set `PLAYWRIGHT_PROXY_SERVER` to its address; the tests fetch real CDN images through Node with TLS verification. `PLAYWRIGHT_CHROMIUM_EXECUTABLE` can select an installed system Chromium.
+If the local environment requires an HTTP proxy, start the application with `NODE_USE_ENV_PROXY=1` so server-side Sanity requests use the configured proxy.
 
 ## Vercel
 

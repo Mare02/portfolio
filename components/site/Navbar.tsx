@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -12,20 +12,8 @@ import {
 } from "@/lib/i18n";
 import { Icon } from "./Icon";
 import { buttonClass, iconButtonClass } from "./Shared";
-
-export function useScrolled(distance: number) {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const update = () => setScrolled(window.scrollY > distance);
-    const frame = requestAnimationFrame(update);
-    window.addEventListener("scroll", update, { passive: true });
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", update);
-    };
-  }, [distance]);
-  return scrolled;
-}
+import { useScrolled } from "./useScrolled";
+import { useModalDialog } from "./useModalDialog";
 
 function ThemeSwitcher({ locale }: { locale: Locale }) {
   useEffect(() => {
@@ -138,26 +126,15 @@ export function Navbar({ locale }: { locale: Locale }) {
   const t = dictionary(locale);
   const scrolled = useScrolled(80);
   const path = switchLocalePath(usePathname() || "/", locale);
-  const dialog = useRef<HTMLDialogElement>(null);
-  const previousOverflow = useRef("");
-  function open() {
-    previousOverflow.current = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    dialog.current?.showModal();
-  }
-  function close() {
-    dialog.current?.close();
-  }
-  function restoreScroll() {
-    document.body.style.overflow = previousOverflow.current;
-  }
+  const { dialog, open, close, onClose } = useModalDialog();
   useEffect(() => {
-    const element = dialog.current;
-    return () => {
-      if (element?.open)
-        document.body.style.overflow = previousOverflow.current;
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const resize = () => {
+      if (desktop.matches) close();
     };
-  }, []);
+    desktop.addEventListener("change", resize);
+    return () => desktop.removeEventListener("change", resize);
+  }, [close]);
   const links = [
     { path: "/", label: t.Home, icon: "home" },
     { path: "/contact", label: t.Contact, icon: "email" },
@@ -225,7 +202,7 @@ export function Navbar({ locale }: { locale: Locale }) {
       </div>
       <dialog
         ref={dialog}
-        onClose={restoreScroll}
+        onClose={onClose}
         onClick={(event) => {
           if (event.target === event.currentTarget) close();
         }}

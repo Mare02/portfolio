@@ -30,7 +30,9 @@ async function query<T>(
   return body.result as T;
 }
 export const getAllProjects = cache(() =>
-  query<Project[]>('*[_type == "project"] | order(createdAt desc)'),
+  query<Project[]>(
+    '*[_type == "project"] | order(coalesce(createdAt, _createdAt) desc) { _id, name, description, slug, websiteUrl, sourceCodeUrl, coverImage, "images": images[defined(asset._ref)][0..0] }',
+  ),
 );
 export const getProjectBySlug = cache((slug: string) =>
   query<Project | null>(
@@ -46,4 +48,10 @@ export function sanityImageUrl(
   return match
     ? `https://cdn.sanity.io/images/${projectId}/${dataset}/${match[1]}-${match[2]}.${match[3]}`
     : undefined;
+}
+export function projectCoverUrl(project: Project): string | undefined {
+  return (
+    sanityImageUrl(project.coverImage) ||
+    project.images?.map(sanityImageUrl).find((url) => !!url)
+  );
 }

@@ -113,9 +113,6 @@ textarea {
   -webkit-text-fill-color: transparent;
   @apply bg-gradient-to-r from-blue-600 to-teal-700 dark:from-blue-400 dark:to-teal-300 theme-transition;
 }
-.gradient-bg {
-  @apply bg-gradient-to-r from-blue-50 to-teal-50;
-}
 
 .theme-transition {
   transition: all 0.3s ease-in-out;
@@ -128,14 +125,8 @@ textarea {
 .section-pharagraph {
   @apply text-lg text-gray-800 dark:text-gray-200 theme-transition;
 }
-.section-pharagraph-inverted {
-  @apply text-lg text-white dark:text-gray-800 theme-transition;
-}
 .section-pharagraph-small {
   @apply text-gray-800 dark:text-gray-200 theme-transition;
-}
-.section-pharagraph-small-white {
-  @apply text-white theme-transition;
 }
 .main-section-pharagraph {
   @apply text-xl text-gray-800 dark:text-gray-200 theme-transition;
@@ -240,25 +231,4 @@ textarea {
   100% {
     transform: translateX(-100%);
   }
-}
-
-.sidebar-wrapper {
-  @apply fixed inset-0 bg-black bg-opacity-20 z-50 flex justify-start md:hidden theme-transition;
-}
-.sidebar-wrapper .sidebar {
-  transform: translateX(-100%);
-  @apply w-2/3 h-full bg-white dark:bg-slate-800 shadow-lg shadow-gray-500 dark:shadow-gray-900 overflow-y-auto theme-transition;
-}
-.sidebar-wrapper.visible .sidebar {
-  transform: translateX(0);
-}
-.sidebar-wrapper .sidebar .sidebar-header {
-  @apply h-32 bg-gray-200 dark:bg-slate-700 grid content-center p-4 pl-7 theme-transition;
-}
-.sidebar-wrapper .sidebar .sidebar-content {
-  @apply flex flex-col items-start gap-2 px-4 py-2;
-}
-
-.light .dark-icons .github-link img {
-  filter: brightness(0) invert(1);
 }

@@ -30,7 +30,9 @@ export default async function ProjectsPage({
         locale={locale}
         projects={projects.map((project) => ({
           project,
-          image: sanityImageUrl(project.images?.[0] || project.coverImage),
+          image:
+            sanityImageUrl(project.images?.[0]) ||
+            sanityImageUrl(project.coverImage),
         }))}
       />
     </Container>

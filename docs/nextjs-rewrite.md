@@ -30,14 +30,12 @@ The old Mailjet/SendGrid public runtime values are removed because the contact e
 
 ## Verification
 
-Run the commands in README. The browser suite uses the real published Sanity content and a local Mailgun mock for delivery success/failure checks. Real provider delivery still depends on valid Vercel environment variables and the Mailgun account.
+Run `npm run lint`, `npm run typecheck`, and `npm run build`. Contact delivery requires valid Vercel environment variables and the Mailgun account.
 
-## Review results — 2026-10-13
+## Code review cleanup
 
-- Next.js 16.4.0 and React 19.3.0 were resolved from the registry's latest stable tags and pinned.
-- Production build, ESLint, and TypeScript checks passed.
-- 8 unit tests passed, including missing Mailgun configuration handling.
-- 16 Chromium browser tests passed against the production build: English/Serbian copy, every published Sanity project, metadata, gallery loading/zoom/navigation, locale selection, theme persistence, mobile navigation, localized 404 status codes, input validation, Mailgun success/failure, and responsive layouts at 1440/390/320px.
-- Real Sanity CDN images were fetched with verified TLS through Node in the managed proxy environment; image bytes were passed unchanged to Chromium. Mailgun delivery was mocked locally, so no real emails were sent.
-- Byte comparisons confirmed unchanged data, translations, Studio files, logos, flags, and all relocated original images.
-- Package-lock consistency and a dry-run of `npm ci` passed. No Nuxt dependencies remain in the frontend lockfile, and no email configuration variables appear in the browser bundles.
+- Project list queries send only card fields and the first valid thumbnail, with a fallback to Sanity creation timestamps for ordering. Project details retain the full published content.
+- Cover images fall back to valid gallery images. Rich-text links preserve relative paths, fragments, email addresses, and phone numbers while rejecting unsafe URL protocols.
+- Native dialogs share scroll locking and cleanup. The mobile menu closes when resizing to desktop, and the gallery viewer mounts its image only while open.
+- Client and server contact validation share field limits. The server stops reading request bodies above 64 KiB before parsing JSON.
+- Unused Nuxt styles/configuration, test files, test attributes, Playwright configuration, and test dependencies are removed.

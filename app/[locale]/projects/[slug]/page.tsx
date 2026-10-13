@@ -4,8 +4,12 @@ import { PortableText } from "@portabletext/react";
 import type { PortableTextComponents } from "@portabletext/react";
 import { dictionary, isLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
-import { getProjectBySlug, sanityImageUrl } from "@/lib/sanity";
-import { localized, safeExternalUrl } from "@/lib/types";
+import {
+  getProjectBySlug,
+  sanityImageUrl,
+  projectCoverUrl,
+} from "@/lib/sanity";
+import { localized, safeExternalUrl, safeContentUrl } from "@/lib/types";
 import { buttonClass, Container } from "@/components/site/Shared";
 import { Icon } from "@/components/site/Icon";
 import { Gallery } from "@/components/site/Gallery";
@@ -20,15 +24,19 @@ export async function generateMetadata({ params }: Props) {
     `/projects/${encodeURIComponent(slug)}`,
     localized(project.name, locale) || "Project",
     localized(project.description, locale) || "",
-    sanityImageUrl(project.coverImage || project.images?.[0]),
+    projectCoverUrl(project),
   );
 }
 const components: Partial<PortableTextComponents> = {
   marks: {
     link: ({ value, children }) => {
-      const href = safeExternalUrl(value?.href);
+      const href = safeContentUrl(value?.href);
       return href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <a
+          href={href}
+          target={/^https?:\/\//i.test(href) ? "_blank" : undefined}
+          rel="noopener noreferrer"
+        >
           {children}
         </a>
       ) : (
@@ -44,7 +52,7 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
   const t = dictionary(locale);
   const name = localized(project.name, locale) || "Project";
-  const cover = sanityImageUrl(project.coverImage || project.images?.[0]);
+  const cover = projectCoverUrl(project);
   const website = safeExternalUrl(localized(project.websiteUrl, locale));
   const code = safeExternalUrl(project.sourceCodeUrl);
   const content = localized(project.htmlContent, locale);

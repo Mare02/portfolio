@@ -4,15 +4,7 @@ import nextTypescript from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTypescript,
-  globalIgnores([
-    ".next/**",
-    ".nuxt/**",
-    ".output/**",
-    "studio/**",
-    "next-env.d.ts",
-    "playwright-report/**",
-    "test-results/**",
-  ]),
+  globalIgnores([".next/**", "studio/**", "next-env.d.ts"]),
   {
     files: ["tailwind.config.js"],
     rules: { "@typescript-eslint/no-require-imports": "off" },

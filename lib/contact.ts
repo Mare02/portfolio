@@ -4,6 +4,12 @@ export type ContactValues = {
   subject: string;
   message: string;
 };
+export const CONTACT_LIMITS = {
+  email: 254,
+  phone: 32,
+  subject: 200,
+  message: 10000,
+} as const;
 export type ContactErrors = Partial<
   Record<
     keyof ContactValues,
@@ -32,12 +38,7 @@ export function validateContact(values: ContactValues): ContactErrors {
     errors.email = "invalidEmail";
   if (values.phone && !/^\+\d{5,17}$/.test(values.phone))
     errors.phone = "invalidPhoneNumber";
-  for (const [field, limit] of Object.entries({
-    email: 254,
-    phone: 32,
-    subject: 200,
-    message: 10000,
-  })) {
+  for (const [field, limit] of Object.entries(CONTACT_LIMITS)) {
     if (values[field as keyof ContactValues].length > limit)
       errors[field as keyof ContactValues] = "tooLong";
   }

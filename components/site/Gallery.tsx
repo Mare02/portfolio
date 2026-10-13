@@ -1,9 +1,10 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Icon } from "./Icon";
 import { iconButtonClass } from "./Shared";
 import type { Locale } from "@/lib/i18n";
+import { useModalDialog } from "./useModalDialog";
 export function Gallery({
   images,
   name,
@@ -13,29 +14,23 @@ export function Gallery({
   name: string;
   locale: Locale;
 }) {
-  const dialog = useRef<HTMLDialogElement>(null);
+  const { dialog, isOpen, open: openDialog, close, onClose } = useModalDialog();
   const [selected, setSelected] = useState(0);
   const [zoomed, setZoomed] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    if (!isOpen) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [isOpen]);
   if (!images.length) return null;
+  const selectedIndex = Math.min(selected, images.length - 1);
+  const currentImage = images[selectedIndex];
   const label = (en: string, sr: string) => (locale === "sr" ? sr : en);
   function open(index: number) {
     setSelected(index);
     setZoomed(false);
-    dialog.current?.showModal();
-    setIsOpen(true);
+    openDialog();
   }
   function move(direction: number) {
     setSelected(
-      (current) => (current + direction + images.length) % images.length,
+      (current) =>
+        (Math.min(current, images.length - 1) + direction + images.length) %
+        images.length,
     );
     setZoomed(false);
   }
@@ -65,9 +60,9 @@ export function Gallery({
         ref={dialog}
         className="gallery-dialog"
         aria-label={label("Project gallery", "Galerija projekta")}
-        onClose={() => setIsOpen(false)}
+        onClose={onClose}
         onClick={(event) => {
-          if (event.target === event.currentTarget) dialog.current?.close();
+          if (event.target === event.currentTarget) close();
         }}
         onKeyDown={(event) => {
           if (event.key === "ArrowRight") {
@@ -82,7 +77,7 @@ export function Gallery({
       >
         <div className="absolute top-2 right-2 flex items-center gap-2 z-10 text-white">
           <span className="text-sm">
-            {selected + 1} / {images.length}
+            {selectedIndex + 1} / {images.length}
           </span>
           <button
             type="button"
@@ -96,7 +91,7 @@ export function Gallery({
           <button
             type="button"
             className={`${iconButtonClass} !text-white hover:!bg-gray-700`}
-            onClick={() => dialog.current?.close()}
+            onClick={close}
             aria-label={label("Close gallery", "Zatvori galeriju")}
           >
             <Icon name="close" />
@@ -110,18 +105,25 @@ export function Gallery({
         >
           <Icon name="left" />
         </button>
-        <div className="w-full h-full overflow-auto py-14 px-12">
+        <div
+          className="w-full h-full overflow-auto py-14 px-12"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) close();
+          }}
+        >
           <div
             className={`relative ${zoomed ? "w-[180vw] h-[180vh]" : "w-full h-full"}`}
           >
-            <Image
-              src={images[selected].src}
-              alt={images[selected].alt || `${name} — ${selected + 1}`}
-              fill
-              unoptimized
-              sizes="100vw"
-              className="object-contain"
-            />
+            {isOpen && (
+              <Image
+                src={currentImage.src}
+                alt={currentImage.alt || `${name} — ${selectedIndex + 1}`}
+                fill
+                unoptimized
+                sizes="100vw"
+                className="object-contain"
+              />
+            )}
           </div>
         </div>
         <button

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import config from "@/data/config.json";
 import type { ReactNode } from "react";
-export const buttonClass =
-  "inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 section-pharagraph-small hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500";
-export const iconButtonClass = `${buttonClass} rounded-full p-1.5`;
+const buttonBaseClass =
+  "inline-flex items-center justify-center gap-2 section-pharagraph-small hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500";
+export const buttonClass = `${buttonBaseClass} rounded-lg px-3 py-2`;
+export const iconButtonClass = `${buttonBaseClass} rounded-full p-1.5`;
+export const primaryButtonClass = `${buttonClass} bg-blue-600 dark:bg-white !text-white dark:!text-gray-800 hover:!bg-blue-700 dark:hover:!bg-gray-200`;
 export function Socials({ className = "" }: { className?: string }) {
   return (
     <div className={`flex gap-4 md:gap-6 ${className}`}>

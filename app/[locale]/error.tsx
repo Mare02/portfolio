@@ -4,7 +4,7 @@ import { dictionary } from "@/lib/i18n";
 import { buttonClass, Container } from "@/components/site/Shared";
 import { Icon } from "@/components/site/Icon";
 export default function PageError({ reset }: { reset: () => void }) {
-  const locale = (usePathname() || "/").startsWith("/sr") ? "sr" : "en";
+  const locale = /^\/sr(?:\/|$)/.test(usePathname() || "/") ? "sr" : "en";
   const t = dictionary(locale);
   return (
     <Container className="nav-top-padding pb-20">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { dictionary, localePath, type Locale } from "@/lib/i18n";
-import { buttonClass, Container } from "./Shared";
+import { primaryButtonClass, Container } from "./Shared";
 import { Icon } from "./Icon";
 export function NotFoundPage({ locale }: { locale: Locale }) {
   const t = dictionary(locale);
@@ -11,10 +11,7 @@ export function NotFoundPage({ locale }: { locale: Locale }) {
         <h2 className="section-title">{t.errorPage.title}</h2>
         <p className="section-pharagraph my-6">{t.errorPage.description}</p>
         <div className="flex justify-center">
-          <Link
-            href={localePath("/", locale)}
-            className={`${buttonClass} bg-blue-500 dark:bg-white section-pharagraph-inverted`}
-          >
+          <Link href={localePath("/", locale)} className={primaryButtonClass}>
             <Icon name="home" />
             {t.errorPage.goHome}
           </Link>

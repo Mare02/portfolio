@@ -59,8 +59,6 @@ export function Projects({
         </p>
       )}
       <div
-        data-testid="projects"
-        data-view={view}
         className={`grid py-8 gap-6 lg:gap-8 ${view === "grid" ? "md:grid-cols-2" : ""}`}
       >
         {projects.map(({ project, image }) => {
@@ -76,37 +74,21 @@ export function Projects({
           return (
             <article
               key={project._id}
-              className={`relative flex rounded-2xl overflow-hidden border-2 h-full ${view === "grid" ? "flex-col" : ""}`}
+              className={`group relative flex rounded-2xl overflow-hidden border-2 h-full ${view === "grid" ? "flex-col" : ""}`}
             >
               <div
-                className={`relative overflow-hidden shrink-0 ${view === "list" ? "w-1/3 md:w-1/4" : "w-full aspect-video"}`}
+                className={`relative overflow-hidden shrink-0 ${view === "list" ? "w-1/3 md:w-1/4 min-h-32" : "w-full aspect-video"}`}
               >
-                {image &&
-                  (path ? (
-                    <Link
-                      href={path}
-                      aria-label={name}
-                      className="block h-full min-h-32"
-                    >
-                      <Image
-                        src={image}
-                        alt={name}
-                        fill
-                        unoptimized
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-300 hover:scale-105"
-                      />
-                    </Link>
-                  ) : (
-                    <Image
-                      src={image}
-                      alt={name}
-                      fill
-                      unoptimized
-                      sizes="50vw"
-                      className="object-cover"
-                    />
-                  ))}
+                {image && (
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    unoptimized
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                )}
               </div>
               <div
                 className={`bg-gray-100 dark:bg-slate-900 p-4 md:p-6 theme-transition w-full min-w-0 ${view === "grid" ? "border-t-2" : ""}`}
