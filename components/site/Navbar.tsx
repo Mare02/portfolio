@@ -93,7 +93,7 @@ function LocaleSwitcher({
         )}
       </summary>
       <div
-        className={`absolute py-2 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded shadow-lg z-10 ${showName ? "left-0" : "right-0"}`}
+        className={`absolute top-full mt-2 w-max min-w-full overflow-hidden py-2 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg shadow-lg z-10 ${showName ? "left-0" : "right-0"}`}
       >
         {(["en", "sr"] as const).map((option) => (
           <a
@@ -110,7 +110,7 @@ function LocaleSwitcher({
             <Image
               width={24}
               height={16}
-              className="w-6 h-auto"
+              className="w-6 h-auto shrink-0"
               src={`/svg-icons/${option}.svg`}
               alt=""
             />
