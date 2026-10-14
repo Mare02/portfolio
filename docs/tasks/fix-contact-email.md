@@ -8,8 +8,6 @@ Slanje kontakt forme na Vercel preview deploymentu ne radi. `POST /api/sendEmail
 
 Tačan uzrok neuspeha Mailgun poziva još nije utvrđen. Lokalna provera sa simuliranim odgovorima Mailguna prolazi, ali stvarna isporuka mejla nije potvrđena. Direktan pristup Mailgunu iz razvojnog okruženja blokirala je mrežna politika.
 
-Dodato je serversko logovanje Mailgun `status`, `message` i `details`, uz maskiranje API ključa. Za dalju dijagnostiku ponoviti slanje na deploymentu sa tom izmenom i pregledati Vercel log.
-
 ## Šta treba uraditi
 
 - Utvrditi konkretan uzrok greške iz Mailgun odgovora, pa popraviti kod ili konfiguraciju.
