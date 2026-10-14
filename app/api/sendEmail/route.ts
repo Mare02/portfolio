@@ -78,29 +78,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       data: { id: result.id, message: result.message },
     });
-  } catch (error) {
-    const providerError =
-      error && typeof error === "object"
-        ? (error as { status?: unknown; message?: unknown; details?: unknown })
-        : {};
-    const redact = (value: unknown) =>
-      typeof value === "string"
-        ? value
-            .replaceAll(MAILGUN_API_KEY, "[redacted]")
-            .replaceAll(
-              Buffer.from(`api:${MAILGUN_API_KEY}`).toString("base64"),
-              "[redacted]",
-            )
-            .slice(0, 1000)
-        : undefined;
-    console.error("Mailgun contact delivery failed", {
-      status:
-        typeof providerError.status === "number"
-          ? providerError.status
-          : undefined,
-      message: redact(providerError.message),
-      details: redact(providerError.details),
-    });
+  } catch {
     return NextResponse.json(
       { error: "Unable to send contact form" },
       { status: 502 },
